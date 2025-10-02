@@ -15,6 +15,23 @@ export const TextHoverEffect = ({
   const [hovered, setHovered] = useState(false);
   const [maskPosition, setMaskPosition] = useState({ cx: "50%", cy: "50%" });
 
+  const [viewBox, setViewBox] = useState("0 0 100 30");
+
+  useEffect(() => {
+    const updateViewBox = () => {
+      if (window.innerWidth < 768) {
+        setViewBox("0 0 110 30");
+      } else {
+        setViewBox("0 0 300 30");
+      }
+    };
+
+    updateViewBox();
+    window.addEventListener("resize", updateViewBox);
+
+    return () => window.removeEventListener("resize", updateViewBox);
+  }, []);
+
   useEffect(() => {
     if (svgRef.current && cursor.x !== null && cursor.y !== null) {
       const svgRect = svgRef.current.getBoundingClientRect();
@@ -30,7 +47,7 @@ export const TextHoverEffect = ({
   return (
     <svg
       ref={svgRef}
-      viewBox="0 0 400 30"
+      viewBox={viewBox}
       xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -79,25 +96,13 @@ export const TextHoverEffect = ({
         </mask>
       </defs>
 
-      <text
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        strokeWidth="0.5"
-        className="fill-transparent stroke-neutral-200 font-[helvetica] text-xl font-bold dark:stroke-neutral-800"
-        style={{ opacity: hovered ? 0.7 : 0 }}
-      >
-        {text}
-      </text>
-
       <motion.text
         x="50%"
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.5"
-        className="fill-transparent stroke-neutral-200 font-[helvetica] text-xl font-bold dark:stroke-neutral-800"
+        className="fill-transparent stroke-neutral-200 font-[helvetica] font-normal sm:font-bold dark:stroke-neutral-800"
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
           strokeDashoffset: 0,
@@ -119,7 +124,7 @@ export const TextHoverEffect = ({
         stroke="url(#textGradient)"
         strokeWidth="0.5"
         mask="url(#textMask)"
-        className="fill-transparent font-[helvetica] text-xl font-bold"
+        className="fill-transparent font-[helvetica] font-normal sm:font-bold"
       >
         {text}
       </text>
