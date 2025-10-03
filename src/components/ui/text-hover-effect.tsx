@@ -8,7 +8,6 @@ export const TextHoverEffect = ({
 }: {
   text: string;
   duration?: number;
-  automatic?: boolean;
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
@@ -64,11 +63,11 @@ export const TextHoverEffect = ({
         >
           {hovered && (
             <>
-              <stop offset="0%" stopColor="#eab308" />
-              <stop offset="25%" stopColor="#ef4444" />
-              <stop offset="50%" stopColor="#3b82f6" />
-              <stop offset="75%" stopColor="#06b6d4" />
-              <stop offset="100%" stopColor="#8b5cf6" />
+              <stop offset="0%" stopColor="#facc15" />
+              <stop offset="25%" stopColor="#a3e635" />
+              <stop offset="50%" stopColor="#34d399" />
+              <stop offset="75%" stopColor="#059669" />
+              <stop offset="100%" stopColor="#065f46" />
             </>
           )}
         </linearGradient>

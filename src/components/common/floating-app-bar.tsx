@@ -66,7 +66,7 @@ export default function FloatingAppBar() {
       icon: (
         <IconBrandWhatsapp className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "https://api.whatsapp.com/send/?phone=0546456&text&type=phone_number&app_absent=0",
+      href: "https://api.whatsapp.com/send/?phone=%2B201205224238&text&type=phone_number&app_absent=0",
     },
   ];
 
