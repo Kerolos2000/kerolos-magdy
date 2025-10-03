@@ -1,17 +1,10 @@
 import Link from "next/link";
-import {
-  CardBody,
-  CardContainer,
-  CardItem,
-  TextHoverEffect,
-} from "src/components/ui";
+import { CardBody, CardContainer, CardItem } from "src/components/ui";
 import { aboutMeSectionData } from "src/lib";
 
 export default function HomeAboutMeSection() {
   return (
     <section className="py-4 container mx-auto px-4" id="home-about-me-section">
-      <TextHoverEffect text="About Me" />
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {aboutMeSectionData.map(({ details, icon: Icon, title }, i) => (
           <CardContainer key={i} className="inter-var">
