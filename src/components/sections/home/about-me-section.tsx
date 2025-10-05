@@ -51,8 +51,8 @@ export default function HomeAboutMeSection() {
               </div>
 
               <CardItem
-                translateZ="60"
-                className="absolute right-4 bottom-4 w-32 sm:w-40 h-32 sm:h-40 text-emerald-500/10 pointer-events-none select-none"
+                translateZ="30"
+                className="absolute -z-10 right-4 bottom-4 w-32 sm:w-40 h-32 sm:h-40 text-emerald-500/10 pointer-events-none select-none"
               >
                 <Icon className="w-full h-full text-neutral-100" />
               </CardItem>

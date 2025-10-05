@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased mb-28`}>
+      <body className={`${inter.variable} antialiased mb-14 sm:mb-28`}>
         {children}
         <FloatingAppBar />
       </body>

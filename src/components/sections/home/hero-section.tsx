@@ -1,4 +1,8 @@
-import { BackgroundRippleEffect } from "src/components/ui";
+import {
+  AnimatedGradientText,
+  BackgroundRippleEffect,
+  Highlighter,
+} from "src/components/ui";
 
 export default function HomeHeroSection() {
   return (
@@ -9,19 +13,30 @@ export default function HomeHeroSection() {
       <BackgroundRippleEffect />
 
       <div className="relative z-10 flex flex-col items-center justify-center gap-3 sm:gap-4">
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-500">
-          Hello I&apos;m
+        <p className="leading-relaxed text-gray-700 text-base sm:text-lg md:text-xl">
+          <Highlighter action="underline" color="#008299">
+            Hello I&apos;m
+          </Highlighter>
         </p>
-
-        <h1
-          className="font-bold text-center
+        <div>
+          <AnimatedGradientText
+            colorTo="#000"
+            colorFrom="#888"
+            className="font-bold text-center
           text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
-        >
-          Kerolos Magdy
-        </h1>
+          >
+            Kerolos Magdy
+          </AnimatedGradientText>
+        </div>
 
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600">
-          Frontend Developer
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-black">
+          <Highlighter
+            animationDuration={1500}
+            action="highlight"
+            color="#e6f9f2"
+          >
+            Frontend Developer
+          </Highlighter>
         </p>
       </div>
     </section>

@@ -23,20 +23,6 @@ export interface AboutMeCard {
 
 export const aboutMeSectionData: AboutMeCard[] = [
   {
-    title: "Education",
-    icon: GraduationCap,
-    details: [
-      {
-        icon: GraduationCap,
-        text: "Faculty of Business MIS Department",
-        translateZ: "50",
-      },
-      { icon: MapPin, text: "Alexandria, Egypt", translateZ: "40" },
-      { icon: Award, text: "Very Good with Honor", translateZ: "50" },
-      { icon: Calendar, text: "2018 – 2022", translateZ: "40" },
-    ],
-  },
-  {
     title: "Personal",
     icon: User,
     details: [
@@ -51,6 +37,20 @@ export const aboutMeSectionData: AboutMeCard[] = [
       },
       { icon: Briefcase, text: "Available to work", translateZ: "50" },
       { icon: null, translateZ: "60", isButton: true },
+    ],
+  },
+  {
+    title: "Education",
+    icon: GraduationCap,
+    details: [
+      {
+        icon: GraduationCap,
+        text: "Faculty of Business MIS Department",
+        translateZ: "50",
+      },
+      { icon: MapPin, text: "Alexandria, Egypt", translateZ: "40" },
+      { icon: Award, text: "Very Good with Honor", translateZ: "50" },
+      { icon: Calendar, text: "2018 – 2022", translateZ: "40" },
     ],
   },
 ];
