@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import { FloatingAppBar, SmoothScroll } from "src/components";
 import "./globals.css";
@@ -21,9 +22,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased mb-14 sm:mb-28`}>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <FloatingAppBar />
+        </ThemeProvider>
         <SmoothScroll />
-        <FloatingAppBar />
       </body>
     </html>
   );

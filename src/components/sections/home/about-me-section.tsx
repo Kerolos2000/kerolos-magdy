@@ -11,13 +11,13 @@ export default function HomeAboutMeSection() {
             <CardBody
               className="relative group/card rounded-xl p-8 shadow-lg border border-black/10 dark:border-white/20 
               bg-transparent transition-colors duration-300 
-              hover:border-emerald-500"
+              hover:border-emerald-500 dark:hover:border-emerald-400/40"
             >
               <CardItem
                 translateZ="60"
-                className="flex items-center gap-3 text-2xl font-bold text-neutral-800 dark:text-white mb-4"
+                className="flex items-center gap-3 text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-4"
               >
-                <div className="p-2 bg-emerald-500/10 rounded-lg">
+                <div className="p-2 bg-emerald-500/10 dark:bg-emerald-400/10 rounded-lg">
                   <Icon className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />
                 </div>
                 {title}
@@ -30,7 +30,7 @@ export default function HomeAboutMeSection() {
                       <Link
                         href="/Kerolos-Magdy-Resume.pdf"
                         download
-                        className="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-lg"
+                        className="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-lg transition-colors duration-300"
                       >
                         Hire Me
                       </Link>
@@ -39,10 +39,10 @@ export default function HomeAboutMeSection() {
                     <CardItem
                       key={j}
                       translateZ={translateZ}
-                      className="flex items-center gap-3 text-neutral-600 dark:text-neutral-300 mb-2"
+                      className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300 mb-2"
                     >
                       {Icon && (
-                        <Icon className="w-4 h-4 text-neutral-800 dark:text-neutral-600" />
+                        <Icon className="w-4 h-4 text-neutral-700 dark:text-neutral-400" />
                       )}
                       {text}
                     </CardItem>
@@ -54,7 +54,7 @@ export default function HomeAboutMeSection() {
                 translateZ="30"
                 className="absolute -z-10 right-4 bottom-4 w-32 sm:w-40 h-32 sm:h-40 text-emerald-500/10 pointer-events-none select-none"
               >
-                <Icon className="w-full h-full text-neutral-100" />
+                <Icon className="w-full h-full text-neutral-200 dark:text-neutral-800" />
               </CardItem>
             </CardBody>
           </CardContainer>
