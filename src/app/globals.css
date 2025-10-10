@@ -63,9 +63,6 @@
 
 body {
   font-family: var(--font-sans);
-  overscroll-behavior: none;
-  scroll-behavior: auto !important;
-  overflow: hidden;
 }
 
 :root {

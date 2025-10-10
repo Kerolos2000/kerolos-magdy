@@ -15,6 +15,8 @@ export default function SmoothScroll() {
       smoothWheel: true,
     });
 
+    document.body.style.overflow = "hidden";
+
     lenis.on("scroll", ScrollTrigger.update);
 
     gsap.ticker.add((time) => {
@@ -23,7 +25,10 @@ export default function SmoothScroll() {
 
     gsap.ticker.lagSmoothing(0);
 
-    return () => lenis.destroy();
+    return () => {
+      lenis.destroy();
+      document.body.style.overflow = "";
+    };
   }, []);
 
   return null;
