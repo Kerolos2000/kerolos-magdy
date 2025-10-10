@@ -10,11 +10,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@studio-freight/lenis": "^1.0.42",
     "@tabler/icons-react": "^3.35.0",
     "@tailwindcss/cli": "^4.1.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "git-cz": "^4.9.0",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.545.0",
     "motion": "^12.23.22",
     "next": "15.5.4",

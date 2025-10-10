@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { FloatingAppBar } from "src/components";
+import { FloatingAppBar, SmoothScroll } from "src/components";
 import "./globals.css";
 
 const inter = Inter({
@@ -22,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased mb-14 sm:mb-28`}>
         {children}
+        <SmoothScroll />
         <FloatingAppBar />
       </body>
     </html>
