@@ -5,3 +5,4 @@ export * from "./floating-dock";
 export * from "./highlighter";
 export * from "./scroll-based-velocity";
 export * from "./text-hover-effect";
+export * from "./timeline";
