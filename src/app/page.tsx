@@ -1,6 +1,7 @@
 import {
   HomeAboutMeSection,
   HomeBreakSection,
+  HomeCounterSection,
   HomeHeroSection,
   HomeTimelineSection,
 } from "src/components";
@@ -12,6 +13,7 @@ export default function Home() {
       <HomeAboutMeSection />
       <HomeBreakSection />
       <HomeTimelineSection />
+      <HomeCounterSection />
     </main>
   );
 }
