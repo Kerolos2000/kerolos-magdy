@@ -61,6 +61,10 @@
   }
 }
 
+html {
+  scrollbar-width: none;
+}
+
 body {
   font-family: var(--font-sans);
 }

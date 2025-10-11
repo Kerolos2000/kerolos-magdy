@@ -29,10 +29,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full bg-white dark:bg-neutral-950 font-sans"
-    >
+    <div ref={containerRef} className="w-full">
       <TextHoverEffect text="My Experience" />
 
       <div ref={ref} className="relative pt-10">
