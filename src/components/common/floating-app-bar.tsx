@@ -1,3 +1,5 @@
+"use client";
+
 import {
   IconBrandGithub,
   IconBrandLinkedin,
@@ -6,18 +8,47 @@ import {
   IconFileDownload,
   IconFolder,
   IconMessage,
+  IconMoon,
+  IconSun,
   IconUser,
 } from "@tabler/icons-react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { FloatingDock } from "../ui/floating-dock";
 
 export default function FloatingAppBar() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  const toggleTheme = () => {
+    if (!mounted) return;
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  if (!mounted) {
+    return null;
+  }
+
   const links = [
+    {
+      title: "Toggle Theme",
+      icon:
+        theme === "dark" ? (
+          <IconSun className="h-full w-full text-yellow-500" />
+        ) : (
+          <IconMoon className="h-full w-full text-indigo-900" />
+        ),
+      onClick: toggleTheme,
+    },
     {
       title: "Download CV",
       icon: (
         <IconFileDownload className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "/Kerolos-Magdy-Resume.pdf",
+      download: true,
     },
     {
       title: "About Me",
