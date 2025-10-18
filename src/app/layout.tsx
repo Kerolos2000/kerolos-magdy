@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
-import { FloatingAppBar, SmoothScroll } from "src/components";
+import { FloatingAppBar, Footer, SmoothScroll } from "src/components";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,6 +29,7 @@ export default function RootLayout({
         >
           {children}
           <FloatingAppBar />
+          <Footer />
         </ThemeProvider>
         <SmoothScroll />
       </body>
