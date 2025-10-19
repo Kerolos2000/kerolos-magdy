@@ -88,7 +88,10 @@ export default function HomeProjectsSection() {
   );
 
   return (
-    <section id="home-projects-section">
+    <section
+      id="home-projects-section"
+      className="min-h-[125dvh] sm:min-h-auto w-full h-full overflow-hidden"
+    >
       <div
         ref={ref}
         className="relative flex flex-col items-center [perspective:1000px] [transform-style:preserve-3d] py-16 md:py-32 pb-32 sm:pb-40 md:pb-48"
