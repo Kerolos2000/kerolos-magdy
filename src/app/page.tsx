@@ -4,6 +4,7 @@ import {
   HomeCounterSection,
   HomeExperienceSection,
   HomeHeroSection,
+  HomeProjectsSection,
 } from "src/components";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <HomeBreakSection />
       <HomeExperienceSection />
       <HomeCounterSection />
+      <HomeProjectsSection />
     </main>
   );
 }
