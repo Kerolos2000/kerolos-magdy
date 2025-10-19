@@ -2,8 +2,8 @@ import {
   HomeAboutMeSection,
   HomeBreakSection,
   HomeCounterSection,
+  HomeExperienceSection,
   HomeHeroSection,
-  HomeTimelineSection,
 } from "src/components";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       <HomeHeroSection />
       <HomeAboutMeSection />
       <HomeBreakSection />
-      <HomeTimelineSection />
+      <HomeExperienceSection />
       <HomeCounterSection />
     </main>
   );

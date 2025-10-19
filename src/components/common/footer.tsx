@@ -6,10 +6,23 @@ import {
   IconBrandWhatsapp,
   IconFileText,
   IconMail,
+  IconProps,
 } from "@tabler/icons-react";
 import Link from "next/link";
 
-const socials = [
+interface SectionItem {
+  label: string;
+  href: string;
+  download?: boolean;
+  icon?: React.ComponentType<IconProps>;
+}
+
+interface Section {
+  title: string;
+  items: SectionItem[];
+}
+
+const socials: SectionItem[] = [
   {
     href: "https://github.com/Kerolos2000",
     icon: IconBrandGithub,
@@ -21,7 +34,7 @@ const socials = [
     label: "LinkedIn",
   },
   {
-    href: "mailto:contact@kerolos1410@gmail.com",
+    href: "mailto:kerolos1410@gmail.com",
     icon: IconMail,
     label: "Email",
   },
@@ -32,77 +45,76 @@ const socials = [
   },
 ];
 
-const sections = [
+const sections: Section[] = [
   {
     title: "Navigate",
-    items: ["About", "Projects", "Skills", "Contact"],
-    href: (item: string) => `#${item.toLowerCase()}`,
+    items: [
+      { label: "About", href: "#home-about-me-section" },
+      { label: "Experience", href: "#home-experience-section" },
+      { label: "Projects", href: "#home-projects-section" },
+      { label: "Skills", href: "#home-skills-section" },
+      { label: "Contact", href: "#home-contact-section" },
+    ],
   },
   {
     title: "Resources",
-    items: ["Resume"],
-    href: (item: string) =>
-      item.toLowerCase() === "resume"
-        ? "/Kerolos-Magdy-Resume.pdf"
-        : `/${item.toLowerCase()}`,
+    items: [
+      {
+        label: "Resume",
+        href: "/Kerolos-Magdy-Resume.pdf",
+        download: true,
+        icon: IconFileText,
+      },
+    ],
   },
 ];
 
 export default function Footer() {
   return (
-    <footer className="mt-8 relative py-16 px-6 border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between gap-12">
+    <footer className="relative mt-8 overflow-hidden border-t border-neutral-200 py-16 px-6 dark:border-neutral-800 dark:bg-neutral-950">
+      <div className="container mx-auto flex flex-col justify-between gap-12 md:flex-row">
         <div className="flex-1">
-          <Link href="/" className="group inline-block">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 dark:from-neutral-100 dark:via-neutral-300 dark:to-neutral-100 bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
+          <Link href="/" className="group inline-block" title="Back to home">
+            <h2 className="bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 bg-clip-text text-2xl font-bold text-transparent transition-transform duration-300 group-hover:scale-105 dark:from-neutral-100 dark:via-neutral-300 dark:to-neutral-100">
               Kerolos Magdy
             </h2>
           </Link>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-4 max-w-xs leading-relaxed">
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
             Frontend developer crafting beautiful and functional web
             experiences.
           </p>
-          <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-6">
+          <p className="mt-6 text-xs text-neutral-500 dark:text-neutral-500">
             © {new Date().getFullYear()} Kerolos Magdy. All rights reserved.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-12 flex-1">
-          {sections.map(({ title, items, href }, idx) => (
+        <div className="grid flex-1 grid-cols-2 gap-12 md:grid-cols-3">
+          {sections.map(({ title, items }, idx) => (
             <div key={title} className={idx === 1 ? "flex flex-col" : ""}>
-              <h3 className="font-semibold mb-5 text-neutral-800 dark:text-neutral-100 text-sm uppercase tracking-wider">
+              <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-neutral-800 dark:text-neutral-100">
                 {title}
               </h3>
-              <div className="flex flex-col gap-3 mb-6">
-                {items.map((item) =>
-                  item.toLowerCase() === "resume" ? (
-                    <a
-                      key={item}
-                      href={href(item)}
-                      download
-                      className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-all duration-300 text-sm hover:translate-x-1 inline-flex items-center gap-1"
-                    >
-                      <IconFileText className="w-4 h-4" />
-                      {item}
-                    </a>
-                  ) : (
-                    <Link
-                      key={item}
-                      href={href(item)}
-                      className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-all duration-300 text-sm hover:translate-x-1 inline-flex items-center gap-1"
-                    >
-                      {item}
-                    </Link>
-                  )
-                )}
+              <div className="mb-6 flex flex-col gap-3">
+                {items.map(({ label, href, download, icon: Icon }) => (
+                  <Link
+                    key={label}
+                    href={href}
+                    download={download}
+                    title={label}
+                    className="inline-flex items-center gap-1 text-sm text-neutral-600 transition-all duration-300 hover:translate-x-1 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+                  >
+                    {Icon && <Icon className="h-4 w-4" />}
+                    {label}
+                  </Link>
+                ))}
               </div>
 
               {idx === 1 && (
                 <div>
-                  <h3 className="font-semibold mb-5 text-neutral-800 dark:text-neutral-100 text-sm uppercase tracking-wider">
+                  <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-neutral-800 dark:text-neutral-100">
                     Connect
                   </h3>
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap gap-3">
                     {socials.map(({ href, icon: Icon, label }) => (
                       <Link
                         key={label}
@@ -110,9 +122,10 @@ export default function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={label}
-                        className="group p-2.5 rounded-lg bg-neutral-200 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-900 dark:hover:bg-neutral-100 hover:text-white dark:hover:text-black transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1 flex items-center justify-center"
+                        title={label}
+                        className="flex items-center justify-center rounded-lg bg-neutral-200 p-2.5 text-neutral-700 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-900 hover:text-white hover:shadow-md dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-100 dark:hover:text-black"
                       >
-                        <Icon className="w-5 h-5" />
+                        {Icon && <Icon className="h-5 w-5" />}
                       </Link>
                     ))}
                   </div>
@@ -123,10 +136,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="my-12 h-px bg-gradient-to-r from-transparent via-neutral-400 dark:via-neutral-700 to-transparent"></div>
+      <div className="my-12 h-px bg-gradient-to-r from-transparent via-neutral-400 to-transparent dark:via-neutral-700" />
 
       <div className="relative flex items-center justify-center">
-        <h1 className="mb-0 sm:mb-6 text-center text-4xl md:text-6xl lg:text-[7rem] font-black bg-clip-text text-transparent bg-gradient-to-b from-neutral-600 via-neutral-400 to-neutral-200 dark:from-neutral-400 dark:via-neutral-600 dark:to-neutral-900 select-none tracking-tight">
+        <h1 className="mb-0 text-center text-5xl font-black tracking-tight text-transparent sm:mb-6 md:text-6xl lg:text-[7rem] bg-gradient-to-b from-neutral-600 via-neutral-400 to-neutral-200 bg-clip-text dark:from-neutral-400 dark:via-neutral-600 dark:to-neutral-900 select-none">
           KEROLOS
         </h1>
       </div>

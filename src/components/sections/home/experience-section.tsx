@@ -4,14 +4,14 @@ import { Briefcase, GraduationCap, Laptop, MapPin, Wrench } from "lucide-react";
 import Image from "next/image";
 import { Timeline } from "src/components/ui";
 
-export default function HomeTimelineSection() {
+export default function HomeExperienceSection() {
   const data = [
     {
       title: "Freelance Frontend Engineer",
       content: (
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-            <Laptop className="h-4 w-4 text-sky-600" />
+            <Laptop className="h-4 w-4 text-emerald-700" />
             <span>Remote — Ongoing</span>
           </div>
           <p className="text-sm text-neutral-800 dark:text-neutral-200">
@@ -72,11 +72,11 @@ export default function HomeTimelineSection() {
       content: (
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-            <Briefcase className="h-4 w-4 text-sky-600" />
+            <Briefcase className="h-4 w-4 text-emerald-700" />
             <span>Part-Time • 04/2025 – 07/2025</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-            <MapPin className="h-4 w-4 text-sky-600" />
+            <MapPin className="h-4 w-4 text-emerald-700" />
             <span>Alexandria, Egypt</span>
           </div>
           <p className="text-sm text-neutral-800 dark:text-neutral-200">
@@ -107,11 +107,11 @@ export default function HomeTimelineSection() {
       content: (
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-            <Briefcase className="h-4 w-4 text-sky-600" />
+            <Briefcase className="h-4 w-4 text-emerald-700" />
             <span>Full-Time • 10/2024 – 04/2025</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-            <MapPin className="h-4 w-4 text-sky-600" />
+            <MapPin className="h-4 w-4 text-emerald-700" />
             <span>Remote - Netherlands</span>
           </div>
           <p className="text-sm text-neutral-800 dark:text-neutral-200">
@@ -157,11 +157,11 @@ export default function HomeTimelineSection() {
       content: (
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-            <Briefcase className="h-4 w-4 text-sky-500" />
+            <Briefcase className="h-4 w-4 text-emerald-700" />
             <span>Full-Time • 08/2023 – 09/2024</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-            <MapPin className="h-4 w-4 text-sky-500" />
+            <MapPin className="h-4 w-4 text-emerald-700" />
             <span>Alexandria, Egypt</span>
           </div>
           <p className="text-sm text-neutral-800 dark:text-neutral-200">
@@ -219,7 +219,7 @@ export default function HomeTimelineSection() {
 
   return (
     <section
-      id="home-timeline-section"
+      id="home-experience-section"
       className="container mx-auto px-4 py-8 sm:py-12"
     >
       <Timeline data={data} />

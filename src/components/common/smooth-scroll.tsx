@@ -11,7 +11,7 @@ export default function SmoothScroll() {
     if (window.innerWidth < 992) return;
 
     const lenis = new Lenis({
-      duration: 1.5,
+      duration: 1.75,
       smoothWheel: true,
     });
 

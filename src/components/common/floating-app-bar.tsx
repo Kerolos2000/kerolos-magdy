@@ -55,28 +55,28 @@ export default function FloatingAppBar() {
       icon: (
         <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#about",
+      href: "#home-about-me-section",
     },
     {
       title: "Skills",
       icon: (
         <IconBulb className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#skills",
+      href: "#home-skills-section",
     },
     {
       title: "Projects",
       icon: (
         <IconFolder className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#projects",
+      href: "#home-projects-section",
     },
     {
       title: "Contact",
       icon: (
         <IconMessage className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#contact",
+      href: "#home-contact-section",
     },
     {
       title: "GitHub",
