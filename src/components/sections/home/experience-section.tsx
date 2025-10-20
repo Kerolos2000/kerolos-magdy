@@ -220,7 +220,7 @@ export default function HomeExperienceSection() {
   return (
     <section
       id="home-experience-section"
-      className="container mx-auto px-4 py-8 sm:py-12"
+      className="container mx-auto px-4 py-8"
     >
       <Timeline data={data} />
     </section>

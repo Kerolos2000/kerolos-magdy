@@ -6,10 +6,7 @@ import {
 
 export default function HomeBreakSection() {
   return (
-    <section
-      id="home-break-section"
-      className="py-4 max-w-full overflow-hidden"
-    >
+    <section id="home-break-section" className=" max-w-full overflow-hidden">
       <div
         className="relative flex w-full flex-col items-center justify-center overflow-hidden rotate-1 my-8 
         bg-neutral-50 dark:bg-neutral-900 transition-colors duration-300"

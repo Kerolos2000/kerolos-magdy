@@ -1,14 +1,8 @@
 "use client";
-import {
-  motion,
-  useAnimation,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "motion/react";
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function HomeProjectsSection() {
   const products = [
@@ -90,7 +84,7 @@ export default function HomeProjectsSection() {
   return (
     <section
       id="home-projects-section"
-      className="min-h-[125dvh] sm:min-h-auto w-full h-full overflow-hidden"
+      className="py-8 sm:min-h-auto w-full h-full overflow-hidden"
     >
       <div
         ref={ref}
@@ -117,29 +111,19 @@ const InfiniteRow = ({
   products: { title: string; link: string; thumbnail: string }[];
   reverse?: boolean;
 }) => {
-  const controls = useAnimation();
-
-  useEffect(() => {
-    const duration = window.innerWidth < 768 ? 40 : 30;
-
-    controls.start({
-      x: reverse ? [0, 500] : [0, -500],
-      transition: { duration, repeat: Infinity, ease: "linear" },
-    });
-  }, [controls, reverse]);
-
   return (
     <div className="overflow-hidden w-full">
-      <motion.div
-        animate={controls}
+      <div
         className={`flex ${
-          reverse ? "flex-row-reverse" : "flex-row"
+          reverse
+            ? "flex-row-reverse animate-marquee-reverse"
+            : "animate-marquee"
         } gap-4 md:gap-8`}
       >
-        {[...products, ...products].map((product, i) => (
+        {[...products, ...products, ...products].map((product, i) => (
           <ProductCard key={product.title + i} product={product} />
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -159,7 +143,6 @@ export const ProductCard = ({
       fill
       className="object-cover"
       alt={product.title}
-      sizes="(max-width: 768px) 100vw, 50vw"
     />
     <div className="absolute inset-0 bg-black opacity-0 group-hover/product:opacity-60 transition-opacity pointer-events-none"></div>
     <h2 className="absolute bottom-4 left-4 text-white text-sm sm:text-base md:text-lg font-medium opacity-0 group-hover/product:opacity-100 transition-opacity pointer-events-none">
