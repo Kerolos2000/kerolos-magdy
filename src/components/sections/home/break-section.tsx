@@ -16,16 +16,18 @@ export default function HomeBreakSection() {
           text-neutral-900 dark:text-neutral-100"
         >
           <ScrollVelocityRow baseVelocity={20} direction={1}>
-            <span className="px-3 py-2">Frontend Developer</span>
+            <span className="px-3 py-2">
+              Frontend Developer{" "}
+              <AnimatedGradientText className="px-3 py-2">
+                •
+              </AnimatedGradientText>
+            </span>
           </ScrollVelocityRow>
 
           <ScrollVelocityRow baseVelocity={20} direction={-1}>
-            <AnimatedGradientText
-              className="px-3 py-2"
-              colorFrom={undefined}
-              colorTo={undefined}
-            >
-              React & Next.js
+            <AnimatedGradientText className="px-3 py-2">
+              React & Next.js{" "}
+              <span className="px-3 py-2 text-accent-foreground">•</span>
             </AnimatedGradientText>
           </ScrollVelocityRow>
         </ScrollVelocityContainer>

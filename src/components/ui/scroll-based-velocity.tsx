@@ -11,7 +11,6 @@ import {
   useVelocity,
 } from "motion/react";
 import React, { useContext, useEffect, useRef, useState } from "react";
-
 import { cn } from "src/lib/utils";
 
 interface ScrollVelocityRowProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -40,7 +39,13 @@ export function ScrollVelocityContainer({
     damping: 50,
     stiffness: 400,
   });
+
+  const isDesktop =
+    typeof window !== "undefined" &&
+    window.matchMedia("(pointer: fine)").matches;
+
   const velocityFactor = useTransform(smoothVelocity, (v) => {
+    if (!isDesktop) return 0;
     const sign = v < 0 ? -1 : 1;
     const magnitude = Math.min(5, (Math.abs(v) / 1000) * 5);
     return sign * magnitude;
@@ -57,11 +62,10 @@ export function ScrollVelocityContainer({
 
 export function ScrollVelocityRow(props: ScrollVelocityRowProps) {
   const sharedVelocityFactor = useContext(ScrollVelocityContext);
-  if (sharedVelocityFactor) {
+  if (sharedVelocityFactor)
     return (
       <ScrollVelocityRowImpl {...props} velocityFactor={sharedVelocityFactor} />
     );
-  }
   return <ScrollVelocityRowLocal {...props} />;
 }
 
@@ -85,7 +89,6 @@ function ScrollVelocityRowImpl({
   const baseDirectionRef = useRef<number>(direction >= 0 ? 1 : -1);
   const currentDirectionRef = useRef<number>(direction >= 0 ? 1 : -1);
   const unitWidth = useMotionValue(0);
-
   const isInViewRef = useRef(true);
   const isPageVisibleRef = useRef(true);
   const prefersReducedMotionRef = useRef(false);
@@ -149,12 +152,10 @@ function ScrollVelocityRowImpl({
     const vf = velocityFactor.get();
     const absVf = Math.min(5, Math.abs(vf));
     const speedMultiplier = prefersReducedMotionRef.current ? 1 : 1 + absVf;
-
     if (absVf > 0.1) {
       const scrollDirection = vf >= 0 ? 1 : -1;
       currentDirectionRef.current = baseDirectionRef.current * scrollDirection;
     }
-
     const bw = unitWidth.get() || 0;
     if (bw <= 0) return;
     const pixelsPerSecond = (bw * baseVelocity) / 100;
@@ -195,7 +196,11 @@ function ScrollVelocityRowLocal(props: ScrollVelocityRowProps) {
     damping: 50,
     stiffness: 400,
   });
+  const isDesktop =
+    typeof window !== "undefined" &&
+    window.matchMedia("(pointer: fine)").matches;
   const localVelocityFactor = useTransform(localSmoothVelocity, (v) => {
+    if (!isDesktop) return 0;
     const sign = v < 0 ? -1 : 1;
     const magnitude = Math.min(5, (Math.abs(v) / 1000) * 5);
     return sign * magnitude;
