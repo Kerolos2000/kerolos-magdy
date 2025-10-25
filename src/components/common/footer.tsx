@@ -71,11 +71,11 @@ const sections: Section[] = [
 
 export default function Footer() {
   return (
-    <footer className="relative mt-8 overflow-hidden border-t border-neutral-200 py-16 px-6 dark:border-neutral-800 dark:bg-neutral-950">
+    <footer className="mt-8 overflow-hidden border-t border-neutral-200 py-16 px-6 dark:border-neutral-800 dark:bg-neutral-950">
       <div className="container mx-auto flex flex-col justify-between gap-12 md:flex-row">
         <div className="flex-1">
           <Link href="/" className="group inline-block" title="Back to home">
-            <h2 className="bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 bg-clip-text text-2xl font-bold text-transparent transition-transform duration-300 group-hover:scale-105 dark:from-neutral-100 dark:via-neutral-300 dark:to-neutral-100">
+            <h2 className="bg-linear-to-r from-neutral-900 via-neutral-700 to-neutral-900 bg-clip-text text-2xl font-bold text-transparent transition-transform duration-300 group-hover:scale-105 dark:from-neutral-100 dark:via-neutral-300 dark:to-neutral-100">
               Kerolos Magdy
             </h2>
           </Link>
@@ -136,10 +136,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="my-12 h-px bg-gradient-to-r from-transparent via-neutral-400 to-transparent dark:via-neutral-700" />
+      <div className="my-12 h-px bg-linear-to-r from-transparent via-neutral-400 to-transparent dark:via-neutral-700" />
 
       <div className="relative flex items-center justify-center">
-        <h1 className="mb-0 text-center text-5xl font-black tracking-tight text-transparent sm:mb-6 md:text-6xl lg:text-[7rem] bg-gradient-to-b from-neutral-600 via-neutral-400 to-neutral-200 bg-clip-text dark:from-neutral-400 dark:via-neutral-600 dark:to-neutral-900 select-none">
+        <h1 className="mb-0 text-center text-5xl font-black tracking-tight text-transparent sm:mb-6 md:text-6xl lg:text-[7rem] bg-linear-to-b from-neutral-600 via-neutral-400 to-neutral-200 bg-clip-text dark:from-neutral-400 dark:via-neutral-600 dark:to-neutral-900 select-none">
           KEROLOS
         </h1>
       </div>

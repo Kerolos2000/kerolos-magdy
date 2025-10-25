@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { gsap } from "gsap";
 import { Observer } from "gsap/Observer";

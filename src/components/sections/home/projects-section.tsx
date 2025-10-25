@@ -88,7 +88,7 @@ export default function HomeProjectsSection() {
     >
       <div
         ref={ref}
-        className="relative flex flex-col items-center [perspective:1000px] [transform-style:preserve-3d] py-16 md:py-32 pb-32 sm:pb-40 md:pb-48"
+        className="relative flex flex-col items-center perspective-[1000px] transform-3d py-16 md:py-32 pb-32 sm:pb-40 md:pb-48"
       >
         <Header />
         <motion.div
@@ -136,12 +136,13 @@ export const ProductCard = ({
   <Link
     href={product.link}
     target="_blank"
-    className="group/product relative shrink-0 w-[14rem] h-[9rem] sm:w-[20rem] sm:h-[12rem] md:w-[26rem] md:h-[16rem] border border-primary/20 rounded-2xl shadow-sm overflow-hidden cursor-pointer block"
+    className="group/product relative shrink-0 w-56 h-36 sm:w-[20rem] sm:h-48 md:w-104 md:h-64 border border-primary/20 rounded-2xl shadow-sm overflow-hidden cursor-pointer block"
   >
     <Image
       src={product.thumbnail}
       fill
-      className="object-cover"
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      className="object-fill"
       alt={product.title}
     />
     <div className="absolute inset-0 bg-black opacity-0 group-hover/product:opacity-60 transition-opacity pointer-events-none"></div>

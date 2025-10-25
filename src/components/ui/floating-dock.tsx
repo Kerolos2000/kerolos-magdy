@@ -10,8 +10,7 @@ import {
 } from "motion/react";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { cn } from "src/lib/utils";
-
+import { cn } from "src/lib";
 export interface Items {
   title: string;
   icon: React.ReactNode;
@@ -73,9 +72,9 @@ const FloatingDockMobile = ({
                     target={item.href.startsWith("http") ? "_blank" : "_self"}
                     href={item.href}
                     download={item.download}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100/30 hover:bg-neutral-200/40 dark:bg-neutral-800/30 dark:hover:bg-neutral-700/40 backdrop-blur-[5px] transition-colors"
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100/60 hover:bg-neutral-200/70 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/60 backdrop-blur-[6px] transition-colors"
                   >
-                    <div className="text-neutral-700 dark:text-neutral-100">
+                    <div className="text-neutral-800 dark:text-neutral-50">
                       {item.icon}
                     </div>
                   </Link>
@@ -83,9 +82,9 @@ const FloatingDockMobile = ({
                   <button
                     aria-label={item.title}
                     onClick={item.onClick}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100/30 hover:bg-neutral-200/40 dark:bg-neutral-800/30 dark:hover:bg-neutral-700/40 backdrop-blur-[5px] transition-colors"
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100/60 hover:bg-neutral-200/70 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/60 backdrop-blur-[6px] transition-colors"
                   >
-                    <div className="text-neutral-700 dark:text-neutral-100">
+                    <div className="text-neutral-800 dark:text-neutral-50">
                       {item.icon}
                     </div>
                   </button>
@@ -99,9 +98,9 @@ const FloatingDockMobile = ({
       <button
         aria-label={open ? "Close menu" : "Open menu"}
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200/30 hover:bg-neutral-300/40 dark:bg-neutral-800/30 dark:hover:bg-neutral-900/40 backdrop-blur-[5px] transition-colors shadow-sm"
+        className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200/60 hover:bg-neutral-300/70 dark:bg-neutral-800/50 dark:hover:bg-neutral-900/60 backdrop-blur-[6px] transition-colors shadow-sm"
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-700 dark:text-neutral-200" />
+        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-800 dark:text-neutral-50" />
       </button>
     </div>
   );
@@ -121,7 +120,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-neutral-100/30 backdrop-blur-[5px] px-4 pb-3 md:flex dark:bg-neutral-900/30",
+        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-neutral-100/60 backdrop-blur-[6px] px-4 pb-3 md:flex dark:bg-neutral-900/50",
         className
       )}
     >
@@ -176,7 +175,7 @@ function IconContainer({
             initial={{ opacity: 0, y: 10, x: "-50%" }}
             animate={{ opacity: 1, y: 0, x: "-50%" }}
             exit={{ opacity: 0, y: 2, x: "-50%" }}
-            className="absolute -top-8 left-1/2 w-fit rounded-md border border-neutral-300 bg-neutral-100/50 backdrop-blur-[5px] px-2 py-0.5 text-xs text-neutral-700 dark:border-neutral-700 dark:bg-neutral-900/50 dark:text-neutral-100 whitespace-pre"
+            className="absolute -top-8 left-1/2 w-fit rounded-md border border-neutral-300 bg-neutral-100/70 backdrop-blur-[6px] px-2 py-0.5 text-xs text-neutral-800 dark:border-neutral-600 dark:bg-neutral-800/60 dark:text-neutral-50 whitespace-pre"
           >
             {title}
           </motion.div>
@@ -184,7 +183,7 @@ function IconContainer({
       </AnimatePresence>
       <motion.div
         style={{ width: iconSize, height: iconSize }}
-        className="flex items-center justify-center text-neutral-800 dark:text-neutral-100"
+        className="flex items-center justify-center text-neutral-800 dark:text-neutral-50"
       >
         {icon}
       </motion.div>
@@ -196,7 +195,7 @@ function IconContainer({
     onMouseLeave: () => setHovered(false),
     style: { width, height },
     className:
-      "relative flex aspect-square items-center justify-center rounded-full bg-neutral-200/30 hover:bg-neutral-300/40 dark:bg-neutral-800/30 dark:hover:bg-neutral-700/40 backdrop-blur-[5px] transition-colors cursor-pointer",
+      "relative flex aspect-square items-center justify-center rounded-full bg-neutral-200/60 hover:bg-neutral-300/70 dark:bg-neutral-700/50 dark:hover:bg-neutral-600/60 backdrop-blur-[6px] transition-colors cursor-pointer",
   };
 
   if (href)
