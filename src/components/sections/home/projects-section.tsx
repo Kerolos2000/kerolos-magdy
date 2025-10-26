@@ -136,15 +136,17 @@ export const ProductCard = ({
   <Link
     href={product.link}
     target="_blank"
-    className="group/product relative shrink-0 w-56 h-36 sm:w-[20rem] sm:h-48 md:w-104 md:h-64 border border-primary/20 rounded-2xl shadow-sm overflow-hidden cursor-pointer block"
+    className="group/product relative shrink-0 w-56 sm:w-[20rem] md:w-104 border border-primary/20 rounded-2xl shadow-sm overflow-hidden cursor-pointer block"
   >
-    <Image
-      src={product.thumbnail}
-      fill
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      className="object-fill"
-      alt={product.title}
-    />
+    <div className="relative w-full aspect-video overflow-hidden rounded-2xl">
+      <Image
+        src={product.thumbnail}
+        alt={product.title}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className="object-cover"
+      />
+    </div>
     <div className="absolute inset-0 bg-black opacity-0 group-hover/product:opacity-60 transition-opacity pointer-events-none"></div>
     <h2 className="absolute bottom-4 left-4 text-white text-sm sm:text-base md:text-lg font-medium opacity-0 group-hover/product:opacity-100 transition-opacity pointer-events-none">
       {product.title}
