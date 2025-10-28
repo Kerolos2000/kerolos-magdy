@@ -4,6 +4,7 @@ export * from "./background-ripple-effect";
 export * from "./ballpit";
 export * from "./floating-dock";
 export * from "./highlighter";
+export * from "./light-grid";
 export * from "./number-ticker";
 export * from "./scroll-based-velocity";
 export * from "./text-hover-effect";
