@@ -71,7 +71,7 @@ const sections: Section[] = [
 
 export default function Footer() {
   return (
-    <footer className="mt-8 overflow-hidden border-t border-neutral-200 py-16 px-6 dark:border-neutral-800 dark:bg-neutral-950">
+    <footer className="overflow-hidden border-t border-neutral-200 py-16 px-6 dark:border-neutral-800 dark:bg-neutral-950">
       <div className="container mx-auto flex flex-col justify-between gap-12 md:flex-row">
         <div className="flex-1">
           <Link href="/" className="group inline-block" title="Back to home">

@@ -3,6 +3,7 @@ import {
   HomeBreakSection,
   HomeCounterSection,
   HomeExperienceSection,
+  HomeGetInTouchSection,
   HomeHeroSection,
   HomeProjectsSection,
 } from "src/components";
@@ -16,6 +17,7 @@ export default function Home() {
       <HomeExperienceSection />
       <HomeCounterSection />
       <HomeProjectsSection />
+      <HomeGetInTouchSection />
     </main>
   );
 }
