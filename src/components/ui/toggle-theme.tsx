@@ -25,7 +25,7 @@ type AnimationType =
   | "wave-ripple";
 
 // 2. Interface is renamed
-interface ToggleThemeProps extends React.ComponentPropsWithoutRef<"button"> {
+interface ToggleThemeProps extends React.ComponentPropsWithoutRef<"div"> {
   duration?: number;
   animationType?: AnimationType;
 }
@@ -38,7 +38,7 @@ export const ToggleTheme = ({
   ...props
 }: ToggleThemeProps) => {
   const [isDark, setIsDark] = useState(false);
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const updateTheme = () => {
@@ -283,7 +283,7 @@ export const ToggleTheme = ({
 
   return (
     <>
-      <button
+      <div
         ref={buttonRef}
         onClick={toggleTheme}
         className={cn(
@@ -297,7 +297,7 @@ export const ToggleTheme = ({
         ) : (
           <Moon className="text-neutral-500 dark:text-neutral-300" />
         )}
-      </button>
+      </div>
 
       {/* This inline <style> block is necessary to override the default 
                 view transition animation for all JS-based effects.
