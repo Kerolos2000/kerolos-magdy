@@ -1,5 +1,3 @@
-"use client";
-
 import {
   IconBrandGithub,
   IconBrandLinkedin,
@@ -8,41 +6,16 @@ import {
   IconFileDownload,
   IconFolder,
   IconMessage,
-  IconMoon,
-  IconSun,
   IconUser,
 } from "@tabler/icons-react";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { FloatingDock } from "../ui/floating-dock";
+import { FloatingDock, Items } from "../ui/floating-dock";
+import { ToggleTheme } from "../ui/toggle-theme";
 
 export default function FloatingAppBar() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    requestAnimationFrame(() => setMounted(true));
-  }, []);
-
-  const toggleTheme = () => {
-    if (!mounted) return;
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
-  if (!mounted) {
-    return null;
-  }
-
-  const links = [
+  const links: Items[] = [
     {
       title: "Toggle Theme",
-      icon:
-        theme === "dark" ? (
-          <IconSun className="h-full w-full text-yellow-500" />
-        ) : (
-          <IconMoon className="h-full w-full text-indigo-900" />
-        ),
-      onClick: toggleTheme,
+      icon: <ToggleTheme />,
     },
     {
       title: "Download CV",
