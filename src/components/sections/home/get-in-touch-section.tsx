@@ -5,7 +5,7 @@ export default function HomeGetInTouchSection() {
   return (
     <section id="home-get-in-touch-section" className="mt-6 sm:mt-0">
       <LightGrid>
-        <div className="flex flex-col items-center justify-between text-center gap-8 md:flex-row md:text-left">
+        <div className="flex flex-col flex-wrap items-center justify-between text-center gap-8 md:flex-row md:text-left">
           <div className="flex flex-col items-center md:items-start">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-neutral-900 dark:text-neutral-400">
               Ready to collaborate on{" "}
@@ -17,8 +17,7 @@ export default function HomeGetInTouchSection() {
               efficiently and at scale.
             </p>
           </div>
-
-          <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row justify-center md:justify-end">
+          <div className="flex flex-col gap-4 sm:w-auto sm:flex-row justify-center md:justify-end">
             <Link
               href="https://api.whatsapp.com/send/?phone=201205224238&text&type=phone_number&app_absent=0"
               target="_blank"
