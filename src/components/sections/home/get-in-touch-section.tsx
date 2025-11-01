@@ -3,7 +3,10 @@ import { LightGrid } from "src/components/ui";
 
 export default function HomeGetInTouchSection() {
   return (
-    <section id="home-get-in-touch-section" className="mt-6 sm:mt-0">
+    <section
+      id="home-get-in-touch-section"
+      className="mt-6 sm:mt-0 border-b border-neutral-200 dark:border-neutral-800"
+    >
       <LightGrid>
         <div className="flex flex-col flex-wrap items-center justify-between text-center gap-8 md:flex-row md:text-left">
           <div className="flex flex-col items-center md:items-start">
