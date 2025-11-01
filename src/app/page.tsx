@@ -28,6 +28,10 @@ const HomeGetInTouchSection = dynamic(
   () => import("src/components/sections/home/get-in-touch-section"),
   { ssr: true }
 );
+const HomeContactUsSection = dynamic(
+  () => import("src/components/sections/home/contact-us-section"),
+  { ssr: true }
+);
 
 export default function Home() {
   return (
@@ -39,6 +43,7 @@ export default function Home() {
       <HomeCounterSection />
       <HomeProjectsSection />
       <HomeGetInTouchSection />
+      <HomeContactUsSection />
     </main>
   );
 }
