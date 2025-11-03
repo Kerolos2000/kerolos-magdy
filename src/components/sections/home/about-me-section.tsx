@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { CardBody, CardContainer, CardItem } from "src/components/ui";
+import { Ballpit, CardBody, CardContainer, CardItem } from "src/components/ui";
 import { aboutMeSectionData } from "src/lib";
 
 export default function HomeAboutMeSection() {
   return (
     <section
-      className="pb-4 pt-8 container mx-auto "
+      className="pb-4 pt-8 container mx-auto px-6 w-full"
       id="home-about-me-section"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -16,6 +16,23 @@ export default function HomeAboutMeSection() {
               bg-transparent transition-colors duration-300 
               hover:border-emerald-500 dark:hover:border-emerald-400/40"
             >
+              <div className="absolute inset-0 blur-xs">
+                <Ballpit
+                  count={30}
+                  gravity={0.2}
+                  colors={[
+                    "#022C22",
+                    "#064E3B",
+                    "#065F46",
+                    "#047857",
+                    "#059669",
+                    "#10B981",
+                    "#34D399",
+                    "#6EE7B7",
+                  ]}
+                  followCursor={false}
+                />
+              </div>
               <CardItem
                 translateZ="60"
                 className="flex items-center gap-3 text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-4"
@@ -42,7 +59,7 @@ export default function HomeAboutMeSection() {
                     <CardItem
                       key={j}
                       translateZ={translateZ}
-                      className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300 mb-2"
+                      className="flex items-center gap-3 text-neutral-900 dark:text-neutral-100 mb-2"
                     >
                       {Icon && (
                         <Icon className="w-4 h-4 text-neutral-700 dark:text-neutral-400" />
@@ -55,9 +72,9 @@ export default function HomeAboutMeSection() {
 
               <CardItem
                 translateZ="30"
-                className="absolute -z-10 right-4 bottom-4 w-32 sm:w-40 h-32 sm:h-40 text-emerald-500/10 pointer-events-none select-none"
+                className="absolute right-4 bottom-4 w-32 sm:w-40 h-32 sm:h-40 text-emerald-500/10 pointer-events-none select-none"
               >
-                <Icon className="w-full h-full text-neutral-200 dark:text-neutral-800" />
+                <Icon className="w-full h-full text-neutral-300 dark:text-neutral-600" />
               </CardItem>
             </CardBody>
           </CardContainer>
