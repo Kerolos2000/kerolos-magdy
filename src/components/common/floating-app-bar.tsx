@@ -51,7 +51,7 @@ export default function FloatingAppBar() {
       icon: (
         <IconMessage className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#home-contact-section",
+      href: "#home-contact-us-section",
     },
     {
       title: "GitHub",

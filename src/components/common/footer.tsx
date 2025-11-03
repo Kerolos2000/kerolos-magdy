@@ -53,7 +53,7 @@ const sections: Section[] = [
       { label: "Experience", href: "#home-experience-section" },
       { label: "Projects", href: "#home-projects-section" },
       { label: "Skills", href: "#home-skills-section" },
-      { label: "Contact", href: "#home-contact-section" },
+      { label: "Contact", href: "#home-contact-us-section" },
     ],
   },
   {
