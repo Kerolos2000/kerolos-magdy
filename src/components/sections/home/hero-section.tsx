@@ -1,72 +1,80 @@
+"use client";
+import { IconFileDownload } from "@tabler/icons-react";
 import Link from "next/link";
-import {
-  AnimatedGradientText,
-  BackgroundBeamsWithCollision,
-  Ballpit,
-  Highlighter,
-} from "src/components/ui";
+import { useRef } from "react";
+import { AnimatedGradientText } from "src/components/ui";
 
 export default function HomeHeroSection() {
+  const heroRef = useRef<HTMLElement | null>(null);
+
   return (
     <section
-      id="home-hero-section"
-      className="relative w-full flex items-center"
+      ref={heroRef}
+      className="relative w-full py-16 flex items-center justify-center overflow-hidden bg-background"
     >
-      <BackgroundBeamsWithCollision>
-        <div className="relative flex w-full flex-col items-center justify-center py-16 sm:py-24 md:py-32 lg:py-40">
-          <div className="absolute inset-0">
-            <Ballpit
-              count={50}
-              gravity={0.01}
-              friction={0.9975}
-              wallBounce={0.95}
-              colors={[
-                "#022C22",
-                "#064E3B",
-                "#065F46",
-                "#047857",
-                "#059669",
-                "#10B981",
-                "#34D399",
-                "#6EE7B7",
-              ]}
-              followCursor={false}
-            />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-70 dark:opacity-50">
+        <div className="absolute w-px h-full top-0 left-[25%] bg-linear-to-b from-transparent via-emerald-700 dark:via-emerald-200 to-transparent" />
+        <div className="absolute w-px h-full top-0 right-[25%] bg-linear-to-b from-transparent via-emerald-700 dark:via-emerald-200 to-transparent" />
+        <div className="absolute w-full h-px left-0 top-[29%] bg-linear-to-r from-transparent via-emerald-700 dark:via-emerald-200 to-transparent" />
+        <div className="absolute w-full h-px left-0 bottom-[25%] bg-linear-to-r from-transparent via-emerald-700 dark:via-emerald-200 to-transparent" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="text-center space-y-12">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full backdrop-blur-xl bg-card/50 border border-border">
+            <div className="w-2 h-2 rounded-full bg-emerald-500" />
+            <span className="text-sm font-medium tracking-wide text-muted-foreground">
+              AVAILABLE FOR WORK
+            </span>
           </div>
 
-          <div className="relative z-10 flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 text-center px-4 max-w-5xl mx-auto">
-            <div className="space-y-3 sm:space-y-4">
-              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl lg:text-2xl font-medium">
-                <Highlighter action="underline" color="#10B981">
-                  Hello I&apos;m
-                </Highlighter>
-              </p>
+          <div className="space-y-6">
+            <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold text-foreground">
+              <AnimatedGradientText>KEROLOS</AnimatedGradientText>
+              <br />
+              <span className="text-5xl sm:text-7xl md:text-8xl">MAGDY</span>
+            </h1>
 
-              <div className="py-2">
-                <AnimatedGradientText
-                  colorFrom="#064E3B"
-                  colorTo="#34D399"
-                  className="font-bold text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight"
-                >
-                  Kerolos Magdy
-                </AnimatedGradientText>
-              </div>
+            <p className="text-xl sm:text-2xl md:text-3xl font-light tracking-wide max-w-3xl mx-auto text-muted-foreground">
+              React
+              <span className="text-emerald-500"> | </span>
+              Next.js
+            </p>
+          </div>
 
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-muted-foreground max-w-2xl mx-auto px-4 mt-4">
-                Frontend developer crafting beautiful and functional web
-                experiences.
-              </p>
-            </div>
-
-            <Link href="#home-contact-section">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
+            <Link
+              href="https://api.whatsapp.com/send/?phone=%2B201205224238&text&type=phone_number&app_absent=0"
+              target="_blank"
+            >
               <button className="cursor-pointer group relative px-8 py-3 sm:px-10 sm:py-4 bg-linear-to-r from-emerald-600 to-emerald-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 active:scale-95 text-sm sm:text-base md:text-lg">
-                <span className="relative z-10">Get In Touch</span>
+                <span className="relative z-10">LET&apos;S WORK TOGETHER</span>
                 <div className="absolute inset-0 rounded-full bg-linear-to-r from-emerald-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
             </Link>
+
+            <Link
+              href="/Kerolos-Magdy-Resume.pdf"
+              download
+              className="group px-10 py-5 rounded-full backdrop-blur-xl bg-card/50 border border-border text-foreground hover:scale-105 transition-all duration-300 flex items-center gap-3"
+            >
+              <IconFileDownload className="w-5 h-5" />
+              <span className="font-semibold text-lg tracking-wide">
+                VIEW RESUME
+              </span>
+            </Link>
           </div>
         </div>
-      </BackgroundBeamsWithCollision>
+
+        <div className="mt-8 flex flex-col items-center gap-2">
+          <span className="text-xs text-muted-foreground uppercase tracking-wider">
+            Scroll Down
+          </span>
+          <div className="w-6 h-10 border-2 border-emerald-500/50 rounded-full flex justify-center p-2">
+            <div className="w-1 h-3 bg-emerald-500 rounded-full animate-bounce" />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
