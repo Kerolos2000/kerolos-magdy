@@ -4,7 +4,10 @@ import { aboutMeSectionData } from "src/lib";
 
 export default function HomeAboutMeSection() {
   return (
-    <section className="pb-4 pt-8 container mx-auto px-4" id="home-about-me-section">
+    <section
+      className="pb-4 pt-8 container mx-auto "
+      id="home-about-me-section"
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {aboutMeSectionData.map(({ details, icon: Icon, title }, i) => (
           <CardContainer key={i} className="inter-var">

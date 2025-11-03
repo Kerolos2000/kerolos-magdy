@@ -10,7 +10,7 @@ export const LightGrid = ({ children }: { children: React.ReactNode }) => {
           "bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)]"
         )}
       />
-      <div className="relative z-10 mx-auto w-full max-w-7xl py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full container py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8">
         {children}
       </div>
     </div>

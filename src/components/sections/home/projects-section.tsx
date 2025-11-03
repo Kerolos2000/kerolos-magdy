@@ -155,7 +155,7 @@ export const ProductCard = ({
 );
 
 export const Header = () => (
-  <div className="max-w-7xl mx-auto py-10 md:py-20 px-4 w-full text-center md:text-left">
+  <div className="container mx-auto py-10 md:py-20 px-4 w-full text-center md:text-left">
     <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold dark:text-white">
       Explore My Projects
     </h1>

@@ -13,7 +13,7 @@ export default function HomeCounterSection() {
       id="home-counter-section"
       className="py-8 bg-neutral-50 dark:bg-neutral-900 "
     >
-      <div className="relative max-w-7xl mx-auto px-6 w-full">
+      <div className="relative container mx-auto px-6 w-full">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ">
           {stats.map(({ label, value }) => (
             <div
