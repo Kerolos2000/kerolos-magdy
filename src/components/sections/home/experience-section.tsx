@@ -220,7 +220,7 @@ export default function HomeExperienceSection() {
   return (
     <section
       id="home-experience-section"
-      className="container mx-auto px-4 py-8 overflow-y-clip"
+      className="container mx-auto py-8 overflow-y-clip"
     >
       <Timeline data={data} />
     </section>

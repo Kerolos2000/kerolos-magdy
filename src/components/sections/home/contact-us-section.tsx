@@ -47,69 +47,68 @@ export default function HomeContactUsSection() {
   };
 
   return (
-    <section id="home-contact-us-section" className="py-8">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-        <div className="col-span-12 md:col-span-6">
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="w-full bg-transparent rounded-2xl p-6 space-y-4"
+    <section
+      className="py-8 container mx-auto px-4 sm:px-6 lg:px-8 w-full"
+      id="home-contact-us-section"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-full bg-transparent rounded-2xl space-y-4"
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-neutral-900 dark:text-neutral-400">
+            Contact <span className="font-bold dark:text-white">Me</span>
+          </h2>
+          <div>
+            <input
+              type="text"
+              placeholder="Your Name"
+              {...register("name")}
+              className="w-full rounded-lg border border-card-foreground/30 p-2 bg-transparent outline-none"
+            />
+            {errors.name && (
+              <p className="text-red-500 text-sm">{errors.name.message}</p>
+            )}
+          </div>
+          <div>
+            <input
+              type="email"
+              placeholder="Your Email"
+              {...register("email")}
+              className="w-full rounded-lg border border-card-foreground/30 p-2 bg-transparent outline-none"
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email.message}</p>
+            )}
+          </div>
+          <div>
+            <textarea
+              placeholder="Your Message"
+              {...register("message")}
+              className="w-full h-28 rounded-lg border border-card-foreground/30 p-2 bg-transparent outline-none resize-none"
+            />
+            {errors.message && (
+              <p className="text-red-500 text-sm">{errors.message.message}</p>
+            )}
+          </div>
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className="cursor-pointer text-center w-full px-6 sm:px-7 py-2 rounded-lg bg-neutral-50/50 dark:bg-neutral-100/10 backdrop-blur-sm border border-card-foreground/30 hover:border-card-foreground/50 text-foreground transition-all duration-300 flex items-center justify-center"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-neutral-900 dark:text-neutral-400">
-              Contact <span className="font-bold dark:text-white">Me</span>
-            </h2>
-            <div>
-              <input
-                type="text"
-                placeholder="Your Name"
-                {...register("name")}
-                className="w-full rounded-lg border border-gray-300 dark:border-gray-600 p-2 bg-transparent outline-none"
-              />
-              {errors.name && (
-                <p className="text-red-500 text-sm">{errors.name.message}</p>
-              )}
-            </div>
-            <div>
-              <input
-                type="email"
-                placeholder="Your Email"
-                {...register("email")}
-                className="w-full rounded-lg border border-gray-300 dark:border-gray-600 p-2 bg-transparent outline-none"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm">{errors.email.message}</p>
-              )}
-            </div>
-            <div>
-              <textarea
-                placeholder="Your Message"
-                {...register("message")}
-                className="w-full h-28 rounded-lg border border-gray-300 dark:border-gray-600 p-2 bg-transparent outline-none resize-none"
-              />
-              {errors.message && (
-                <p className="text-red-500 text-sm">{errors.message.message}</p>
-              )}
-            </div>
-            <button
-              type="submit"
-              disabled={status === "sending"}
-              className="w-full py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition disabled:opacity-50"
-            >
-              {status === "sending" ? "Sending..." : "Send Message"}
-            </button>
-            {status === "success" && (
-              <p className="text-emerald-500 text-center text-sm">
-                Message sent successfully.
-              </p>
-            )}
-            {status === "error" && (
-              <p className="text-red-500 text-center text-sm">
-                Failed to send. Try again.
-              </p>
-            )}
-          </form>
-        </div>
-
-        <div className="col-span-12 md:col-span-6"></div>
+            {status === "sending" ? "Sending..." : "Send Message"}
+          </button>
+          {status === "success" && (
+            <p className="text-emerald-500 text-center text-sm">
+              Message sent successfully.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="text-red-500 text-center text-sm">
+              Failed to send. Try again.
+            </p>
+          )}
+        </form>
       </div>
     </section>
   );

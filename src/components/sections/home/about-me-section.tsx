@@ -1,3 +1,4 @@
+import { IconFileDownload } from "@tabler/icons-react";
 import Link from "next/link";
 import { Ballpit, CardBody, CardContainer, CardItem } from "src/components/ui";
 import { aboutMeSectionData } from "src/lib";
@@ -5,7 +6,7 @@ import { aboutMeSectionData } from "src/lib";
 export default function HomeAboutMeSection() {
   return (
     <section
-      className="pb-4 pt-8 container mx-auto px-6 w-full"
+      className="pb-4 pt-8 container mx-auto px-4 sm:px-6 lg:px-8 w-full"
       id="home-about-me-section"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -50,9 +51,12 @@ export default function HomeAboutMeSection() {
                       <Link
                         href="/Kerolos-Magdy-Resume.pdf"
                         download
-                        className="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-lg transition-colors duration-300"
+                        className="w-fit px-6 py-3 sm:px-7 rounded-xl bg-neutral-50/50 dark:bg-neutral-100/10 backdrop-blur-sm border border-card-foreground/30 hover:border-card-foreground/50 text-foreground transition-all duration-300 flex items-center gap-2"
                       >
-                        Hire Me
+                        <IconFileDownload className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <span className="font-medium text-xs sm:text-sm tracking-wide">
+                          VIEW RESUME
+                        </span>
                       </Link>
                     </CardItem>
                   ) : (
@@ -72,7 +76,7 @@ export default function HomeAboutMeSection() {
 
               <CardItem
                 translateZ="30"
-                className="absolute right-4 bottom-4 w-32 sm:w-40 h-32 sm:h-40 text-emerald-500/10 pointer-events-none select-none"
+                className="absolute z-[-1] right-4 bottom-4 w-32 sm:w-40 h-32 sm:h-40 text-emerald-500/10 pointer-events-none select-none"
               >
                 <Icon className="w-full h-full text-neutral-300 dark:text-neutral-600" />
               </CardItem>
