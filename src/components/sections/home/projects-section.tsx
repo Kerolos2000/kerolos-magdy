@@ -48,7 +48,7 @@ export default function HomeProjectsSection() {
     },
     {
       title: "NextShop",
-      link: "next-shop-products.vercel.app/ar",
+      link: "https://next-shop-products.vercel.app/ar",
       thumbnail: "/project4.webp",
     },
   ];
