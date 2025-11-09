@@ -38,30 +38,30 @@ export default function HomeExperienceSection() {
             <Image
               src="/freelance1.webp"
               alt="Freelance Project 1"
-              width={500}
-              height={600}
-              className="h-ful lw-full rounded-xl object-cover object-top shadow-lg"
+              width={600}
+              height={250}
+              className="h-full w-full rounded-lg object-cover object-top shadow-sm"
             />
             <Image
               src="/freelance2.webp"
               alt="Freelance Project 2"
-              width={500}
-              height={600}
-              className="h-ful lw-full rounded-xl object-cover object-top shadow-lg"
+              width={600}
+              height={250}
+              className="h-full w-full rounded-lg object-cover object-top shadow-sm"
             />
             <Image
               src="/freelance3.webp"
               alt="Freelance Project 3"
-              width={500}
-              height={600}
-              className="h-ful lw-full rounded-xl object-cover object-top shadow-lg"
+              width={600}
+              height={250}
+              className="h-full w-full rounded-lg object-cover object-top shadow-sm"
             />
             <Image
               src="/freelance4.webp"
               alt="Freelance Project 4"
-              width={500}
-              height={600}
-              className="h-ful lw-full rounded-xl object-cover object-top shadow-lg"
+              width={600}
+              height={250}
+              className="h-full w-full rounded-lg object-cover object-top shadow-sm"
             />
           </div>
         </div>
@@ -127,16 +127,16 @@ export default function HomeExperienceSection() {
             <Image
               src="/runnet1.webp"
               alt="Runnet Admin Dashboard"
-              width={500}
-              height={300}
-              className="w-full rounded-xl object-cover shadow-lg"
+              width={600}
+              height={250}
+              className="w-full rounded-lg object-cover shadow-sm"
             />
             <Image
               src="/runnet2.webp"
               alt="Runnet Analytics"
-              width={500}
-              height={300}
-              className="w-full rounded-xl object-cover shadow-lg"
+              width={600}
+              height={250}
+              className="w-full rounded-lg object-cover shadow-sm"
             />
           </div>
           <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-600 dark:text-neutral-400">
@@ -191,7 +191,7 @@ export default function HomeExperienceSection() {
       content: (
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-            <GraduationCap className="h-4 w-4 text-amber-500" />
+            <GraduationCap className="h-4 w-4 text-amber-600" />
             <span>Route Egypt Academy — Alexandria Branch</span>
           </div>
           <p className="text-sm text-neutral-800 dark:text-neutral-200">
@@ -209,7 +209,7 @@ export default function HomeExperienceSection() {
               alt="Front-End Diploma Certificate"
               width={500}
               height={300}
-              className="w-full sm:w-1/2 rounded-xl object-contain shadow-lg"
+              className="w-full sm:w-1/2 rounded-lg object-contain shadow-sm"
             />
           </div>
         </div>

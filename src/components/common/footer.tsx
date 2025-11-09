@@ -123,7 +123,7 @@ export default function Footer() {
                         rel="noopener noreferrer"
                         aria-label={label}
                         title={label}
-                        className="flex items-center justify-center rounded-lg bg-neutral-200 p-2.5 text-neutral-700 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-900 hover:text-white hover:shadow-md dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-100 dark:hover:text-black"
+                        className="flex items-center justify-center rounded-lg bg-neutral-200 p-2.5 text-neutral-700 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-900 hover:text-white hover:shadow-sm dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-100 dark:hover:text-black"
                       >
                         {Icon && <Icon className="h-5 w-5" />}
                       </Link>

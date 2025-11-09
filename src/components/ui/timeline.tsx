@@ -1,7 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
-import { TextHoverEffect } from "./text-hover-effect";
 
 interface TimelineEntry {
   title: string;
@@ -36,8 +35,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full mb-4 sm:mb-0">
-      <TextHoverEffect text="My Experience" />
-      <div ref={ref} className="relative pt-10">
+      <div ref={ref} className="relative">
         {data.map(({ title, content }, index) => (
           <div
             key={`${title}-${index}`}

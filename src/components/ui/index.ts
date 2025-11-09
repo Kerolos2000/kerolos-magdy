@@ -8,5 +8,4 @@ export * from "./highlighter";
 export * from "./light-grid";
 export * from "./number-ticker";
 export * from "./scroll-based-velocity";
-export * from "./text-hover-effect";
 export * from "./timeline";

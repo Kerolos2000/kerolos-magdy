@@ -6,18 +6,18 @@ import { aboutMeSectionData } from "src/lib";
 export default function HomeAboutMeSection() {
   return (
     <section
-      className="pb-4 pt-8 container mx-auto px-4 sm:px-6 lg:px-8 w-full"
+      className="py-8 container mx-auto px-4 sm:px-6 lg:px-8 w-full"
       id="home-about-me-section"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {aboutMeSectionData.map(({ details, icon: Icon, title }, i) => (
           <CardContainer key={i} className="inter-var">
             <CardBody
-              className="relative group/card rounded-xl p-8 shadow-lg border border-black/10 dark:border-white/20 
+              className="relative group/card rounded-lg p-8 shadow-sm border border-black/10 dark:border-white/20 
               bg-transparent transition-colors duration-300 
               hover:border-emerald-500 dark:hover:border-emerald-400/40"
             >
-              <div className="absolute inset-0 blur-xs">
+              <div className="absolute inset-0 -z-2">
                 <Ballpit
                   count={30}
                   gravity={0.2}
@@ -51,7 +51,7 @@ export default function HomeAboutMeSection() {
                       <Link
                         href="/Kerolos-Magdy-Resume.pdf"
                         download
-                        className="w-fit px-6 py-3 sm:px-7 rounded-xl bg-neutral-50/50 dark:bg-neutral-100/10 backdrop-blur-sm border border-card-foreground/30 hover:border-card-foreground/50 text-foreground transition-all duration-300 flex items-center gap-2"
+                        className="w-fit px-6 py-3 sm:px-7 rounded-lg bg-neutral-50/50 dark:bg-neutral-100/10 backdrop-blur-sm border border-card-foreground/30 hover:border-card-foreground/50 text-foreground transition-all duration-300 flex items-center gap-2"
                       >
                         <IconFileDownload className="w-4 h-4 sm:w-5 sm:h-5" />
                         <span className="font-medium text-xs sm:text-sm tracking-wide">

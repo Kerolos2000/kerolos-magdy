@@ -44,7 +44,7 @@ export default function HomeHeroSection() {
           <Link
             href="https://api.whatsapp.com/send/?phone=%2B201205224238&text&type=phone_number&app_absent=0"
             target="_blank"
-            className="w-fit px-6 py-3 sm:px-7 rounded-xl bg-neutral-50/50 dark:bg-neutral-100/10 backdrop-blur-sm border border-card-foreground/30 hover:border-card-foreground/50 text-foreground transition-all duration-300 flex items-center gap-2"
+            className="w-fit px-6 py-3 sm:px-7 rounded-lg bg-neutral-50/50 dark:bg-neutral-100/10 backdrop-blur-sm border border-card-foreground/30 hover:border-card-foreground/50 text-foreground transition-all duration-300 flex items-center gap-2"
           >
             <IconBrandWhatsapp size="1.2rem" />
             <span className="font-medium text-xs sm:text-sm tracking-wide">
