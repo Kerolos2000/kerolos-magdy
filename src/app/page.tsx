@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-
 const HomeHeroSection = dynamic(
   () => import("src/components/sections/home/hero-section"),
   { ssr: true }
@@ -33,12 +32,18 @@ const HomeContactUsSection = dynamic(
   { ssr: true }
 );
 
+const HomeSkillsSection = dynamic(
+  () => import("src/components/sections/home/skills-section"),
+  { ssr: true }
+);
+
 export default function Home() {
   return (
     <main id="home-page">
       <HomeHeroSection />
       <HomeAboutMeSection />
       <HomeBreakSection />
+      <HomeSkillsSection />
       <HomeExperienceSection />
       <HomeCounterSection />
       <HomeProjectsSection />
