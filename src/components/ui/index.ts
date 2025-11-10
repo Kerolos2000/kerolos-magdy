@@ -4,7 +4,6 @@ export * from './background-beams-with-collision';
 export * from './ballpit';
 export * from './floating-dock';
 export * from './flowing-menu';
-export * from './highlighter';
 export * from './light-grid';
 export * from './number-ticker';
 export * from './scroll-based-velocity';

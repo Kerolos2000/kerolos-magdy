@@ -11,9 +11,6 @@
   "editor.formatOnSave": true,
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 100,
-  "typescript.tsserver.maxTsServerMemory": 4096,
-  "typescript.referencesCodeLens.enabled": false,
-  "typescript.implementationsCodeLens.enabled": false,
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#F5F5DC",
     "activityBar.background": "#E8E3D3",
