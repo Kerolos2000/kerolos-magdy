@@ -3,8 +3,9 @@ import {
 	IconBrandLinkedin,
 	IconBrandWhatsapp,
 	IconBulb,
-	IconFileDownload,
-	IconFolder,
+	IconCertificate,
+	IconCode,
+	IconDownload,
 	IconMessage,
 	IconUser,
 } from '@tabler/icons-react';
@@ -20,7 +21,7 @@ export default function FloatingAppBar() {
 		{
 			title: 'Download CV',
 			icon: (
-				<IconFileDownload className='h-full w-full text-neutral-500 dark:text-neutral-300' />
+				<IconDownload className='h-full w-full text-neutral-500 dark:text-neutral-300' />
 			),
 			href: '/Kerolos-Magdy-Resume.pdf',
 			download: true,
@@ -40,9 +41,16 @@ export default function FloatingAppBar() {
 			href: '#home-skills-section',
 		},
 		{
+			title: 'Experience',
+			icon: (
+				<IconCertificate className='h-full w-full text-neutral-500 dark:text-neutral-300' />
+			),
+			href: '#home-experience-section',
+		},
+		{
 			title: 'Projects',
 			icon: (
-				<IconFolder className='h-full w-full text-neutral-500 dark:text-neutral-300' />
+				<IconCode className='h-full w-full text-neutral-500 dark:text-neutral-300' />
 			),
 			href: '#home-projects-section',
 		},
