@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { LightGrid } from 'src/components/ui';
+import { LightGrid, MainTitle } from 'src/components/ui';
 
 export default function HomeGetInTouchSection() {
 	return (
@@ -10,10 +10,10 @@ export default function HomeGetInTouchSection() {
 			<LightGrid>
 				<div className='flex flex-col flex-wrap items-center justify-between text-center md:flex-row md:text-left space-y-2'>
 					<div className='flex flex-col items-center md:items-start space-y-2'>
-						<h2 className='text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-neutral-900 dark:text-neutral-400'>
-							Ready to collaborate on{' '}
-							<span className='font-bold dark:text-white'>Next Project</span> ?
-						</h2>
+						<MainTitle
+							regularText='Ready to collaborate on'
+							boldText='Next Project ?'
+						/>
 						<p className='max-w-2xl text-base text-neutral-600 dark:text-neutral-300'>
 							Whether you need a modern website, a fast web app, or a complete
 							design system, I can help you plan, build, and launch it

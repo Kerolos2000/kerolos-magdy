@@ -15,6 +15,7 @@ import {
 	IconLanguage,
 	IconSettings,
 } from '@tabler/icons-react';
+import { MainTitle } from 'src/components/ui';
 
 const frontendSkills = [
 	{ name: 'JavaScript', icon: IconBrandJavascript },
@@ -43,8 +44,12 @@ export default function HomeSkillsSection() {
 	return (
 		<section
 			id='home-skills-section'
-			className='relative py-8 container mx-auto px-4 sm:px-6 lg:px-8 w-full'
+			className='space-y-8 py-8 container mx-auto px-4 sm:px-6 lg:px-8 w-full'
 		>
+			<MainTitle
+				regularText='Some of My'
+				boldText='Skills'
+			/>
 			<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2'>
 				{frontendSkills.map(skill => {
 					const Icon = skill.icon;

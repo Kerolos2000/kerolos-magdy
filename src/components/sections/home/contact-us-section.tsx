@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FlowingMenu } from 'src/components';
+import { FlowingMenu, MainTitle } from 'src/components';
 import { z } from 'zod';
 
 const demoItems = [
@@ -82,9 +82,10 @@ export default function HomeContactUsSection() {
 					onSubmit={handleSubmit(onSubmit)}
 					className='w-full bg-transparent rounded-2xl space-y-4'
 				>
-					<h2 className='text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-neutral-900 dark:text-neutral-400'>
-						Contact <span className='font-bold dark:text-white'>Me</span>
-					</h2>
+					<MainTitle
+						regularText='Contact'
+						boldText='Me'
+					/>
 					<div>
 						<input
 							type='text'

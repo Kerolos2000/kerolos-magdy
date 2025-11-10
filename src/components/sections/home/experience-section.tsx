@@ -2,7 +2,7 @@
 
 import { Briefcase, GraduationCap, Laptop, MapPin, Wrench } from 'lucide-react';
 import Image from 'next/image';
-import { Timeline } from 'src/components/ui';
+import { MainTitle, Timeline } from 'src/components/ui';
 
 export default function HomeExperienceSection() {
 	const data = [
@@ -57,7 +57,7 @@ export default function HomeExperienceSection() {
 							className='h-full w-full rounded-lg object-cover object-top shadow-sm'
 						/>
 						<Image
-							src='/freelance4.webp'
+							src='/project4.webp'
 							alt='Freelance Project 4'
 							width={600}
 							height={250}
@@ -220,8 +220,12 @@ export default function HomeExperienceSection() {
 	return (
 		<section
 			id='home-experience-section'
-			className='container mx-auto py-8 overflow-y-clip'
+			className='space-y-8 container mx-auto py-8 px-4 sm:px-6 lg:px-8 overflow-y-clip'
 		>
+			<MainTitle
+				regularText='Explore My'
+				boldText='Experience'
+			/>
 			<Timeline data={data} />
 		</section>
 	);
