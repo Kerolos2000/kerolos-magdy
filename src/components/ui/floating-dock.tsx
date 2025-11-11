@@ -10,8 +10,9 @@ import {
 } from 'motion/react';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
-import { cn } from 'src/lib';
-export interface Items {
+import { cn } from 'src/utils';
+
+export interface FloatingDockItems {
 	title: string;
 	icon: React.ReactNode;
 	href?: string;
@@ -24,7 +25,7 @@ export const FloatingDock = ({
 	desktopClassName,
 	mobileClassName,
 }: {
-	items: Items[];
+	items: FloatingDockItems[];
 	desktopClassName?: string;
 	mobileClassName?: string;
 }) => {
@@ -46,7 +47,7 @@ const FloatingDockMobile = ({
 	items,
 	className,
 }: {
-	items: Items[];
+	items: FloatingDockItems[];
 	className?: string;
 }) => {
 	const [open, setOpen] = useState(false);
@@ -116,7 +117,7 @@ const FloatingDockDesktop = ({
 	items,
 	className,
 }: {
-	items: Items[];
+	items: FloatingDockItems[];
 	className?: string;
 }) => {
 	const mouseX = useMotionValue(Infinity);

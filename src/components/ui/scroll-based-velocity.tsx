@@ -11,7 +11,7 @@ import {
 	useVelocity,
 } from 'motion/react';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { cn } from 'src/lib';
+import { cn } from 'src/utils';
 interface ScrollVelocityRowProps extends React.HTMLAttributes<HTMLDivElement> {
 	children: React.ReactNode;
 	baseVelocity?: number;

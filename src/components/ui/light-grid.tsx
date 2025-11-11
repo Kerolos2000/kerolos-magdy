@@ -1,4 +1,4 @@
-import { cn } from 'src/lib';
+import { cn } from 'src/utils';
 
 export const LightGrid = ({ children }: { children: React.ReactNode }) => {
 	return (

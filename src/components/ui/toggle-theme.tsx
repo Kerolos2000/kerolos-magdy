@@ -3,7 +3,7 @@
 import { Moon, Sun } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
-import { cn } from 'src/lib';
+import { cn } from 'src/utils';
 
 // 1. Define the possible animation types (UPDATED to include all demo types)
 // NOTE: Type is renamed from 'AnimationType' to 'ThemeAnimationType'
