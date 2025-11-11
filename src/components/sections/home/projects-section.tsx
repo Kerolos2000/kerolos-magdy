@@ -44,7 +44,7 @@ export default function HomeProjectsSection() {
 		},
 		{
 			title: 'Old Portfolio',
-			link: 'https://kerolos-magdy.vercel.app/',
+			link: 'https://kerolos-magdy-old.vercel.app/',
 			thumbnail: '/project3.webp',
 		},
 		{
