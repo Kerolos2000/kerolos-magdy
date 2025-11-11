@@ -1,39 +1,39 @@
 import dynamic from 'next/dynamic';
+
 const HomeHeroSection = dynamic(
-	() => import('src/components/sections/home/hero-section'),
+	() => import('src/components').then(m => m.HomeHeroSection),
 	{ ssr: true },
 );
 const HomeAboutMeSection = dynamic(
-	() => import('src/components/sections/home/about-me-section'),
+	() => import('src/components').then(m => m.HomeAboutMeSection),
 	{ ssr: true },
 );
 const HomeBreakSection = dynamic(
-	() => import('src/components/sections/home/break-section'),
+	() => import('src/components').then(m => m.HomeBreakSection),
+	{ ssr: true },
+);
+const HomeSkillsSection = dynamic(
+	() => import('src/components').then(m => m.HomeSkillsSection),
 	{ ssr: true },
 );
 const HomeExperienceSection = dynamic(
-	() => import('src/components/sections/home/experience-section'),
+	() => import('src/components').then(m => m.HomeExperienceSection),
 	{ ssr: true },
 );
 const HomeCounterSection = dynamic(
-	() => import('src/components/sections/home/counter-section'),
+	() => import('src/components').then(m => m.HomeCounterSection),
 	{ ssr: true },
 );
 const HomeProjectsSection = dynamic(
-	() => import('src/components/sections/home/projects-section'),
+	() => import('src/components').then(m => m.HomeProjectsSection),
 	{ ssr: true },
 );
 const HomeGetInTouchSection = dynamic(
-	() => import('src/components/sections/home/get-in-touch-section'),
+	() => import('src/components').then(m => m.HomeGetInTouchSection),
 	{ ssr: true },
 );
 const HomeContactUsSection = dynamic(
-	() => import('src/components/sections/home/contact-us-section'),
-	{ ssr: true },
-);
-
-const HomeSkillsSection = dynamic(
-	() => import('src/components/sections/home/skills-section'),
+	() => import('src/components').then(m => m.HomeContactUsSection),
 	{ ssr: true },
 );
 

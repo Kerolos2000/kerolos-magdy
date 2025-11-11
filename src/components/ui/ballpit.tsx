@@ -959,7 +959,7 @@ export const Ballpit: React.FC<BallpitProps> = ({
 
 	return (
 		<canvas
-			className={`${className} w-full h-full`}
+			className={`${className} w-full h-full rounded-lg`}
 			ref={canvasRef}
 		/>
 	);

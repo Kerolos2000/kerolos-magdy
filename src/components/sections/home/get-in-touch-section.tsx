@@ -5,11 +5,11 @@ export default function HomeGetInTouchSection() {
 	return (
 		<section
 			id='home-get-in-touch-section'
-			className='mt-6 sm:mt-0 border-b border-neutral-200 dark:border-neutral-800'
+			className='border-b border-neutral-200 dark:border-neutral-800'
 		>
 			<LightGrid>
-				<div className='flex flex-col flex-wrap items-center justify-between text-center md:flex-row md:text-left space-y-2'>
-					<div className='flex flex-col items-center md:items-start space-y-2'>
+				<div className='flex flex-col flex-wrap items-start sm:items-center justify-between md:flex-row gap-4'>
+					<div className='flex flex-col items-start space-y-4'>
 						<MainTitle
 							regularText='Ready to collaborate on'
 							boldText='Next Project ?'

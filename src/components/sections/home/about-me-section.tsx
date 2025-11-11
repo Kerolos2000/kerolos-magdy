@@ -20,23 +20,22 @@ export default function HomeAboutMeSection() {
               bg-transparent transition-colors duration-300 
               hover:border-emerald-500 dark:hover:border-emerald-400/40'
 						>
-							<div className='absolute inset-0 -z-2'>
-								<Ballpit
-									count={30}
-									gravity={0.2}
-									colors={[
-										'#022C22',
-										'#064E3B',
-										'#065F46',
-										'#047857',
-										'#059669',
-										'#10B981',
-										'#34D399',
-										'#6EE7B7',
-									]}
-									followCursor={false}
-								/>
-							</div>
+							<Ballpit
+								className='absolute inset-0 -z-2'
+								count={25}
+								gravity={0.25}
+								colors={[
+									'#022C22',
+									'#064E3B',
+									'#065F46',
+									'#047857',
+									'#059669',
+									'#10B981',
+									'#34D399',
+									'#6EE7B7',
+								]}
+								followCursor={false}
+							/>
 							<div className='p-8'>
 								<CardItem
 									translateZ='60'

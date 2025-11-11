@@ -3,6 +3,7 @@ import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { MainTitle } from 'src/components/ui';
 
 export default function HomeProjectsSection() {
 	const products = [
@@ -77,23 +78,23 @@ export default function HomeProjectsSection() {
 		springConfig,
 	);
 	const translateY = useSpring(
-		useTransform(scrollYProgress, [0, 0.2], [-200, 150]),
+		useTransform(scrollYProgress, [0, 0.2], [0, 0]),
 		springConfig,
 	);
 
 	return (
 		<section
 			id='home-projects-section'
-			className='py-8 sm:min-h-auto w-full h-full overflow-hidden'
+			className='py-8  w-full  overflow-hidden'
 		>
 			<div
 				ref={ref}
-				className='relative flex flex-col items-center perspective-[1000px] transform-3d py-16 md:py-32 pb-32 sm:pb-40 md:pb-48'
+				className='relative flex flex-col items-center perspective-[1000px] transform-3d pointer-events-none'
 			>
 				<Header />
 				<motion.div
 					style={{ rotateX, rotateZ, translateY, opacity }}
-					className='flex flex-col items-center gap-4 md:gap-8'
+					className='flex flex-col items-center gap-4 md:gap-8 pointer-events-auto'
 				>
 					<InfiniteRow
 						products={firstRow}
@@ -164,11 +165,12 @@ export const ProductCard = ({
 );
 
 export const Header = () => (
-	<div className='container mx-auto py-10 md:py-20 px-4 w-full text-center md:text-left'>
-		<h1 className='text-3xl sm:text-4xl md:text-7xl font-bold dark:text-white'>
-			Explore My Projects
-		</h1>
-		<p className='max-w-2xl mx-auto md:mx-0 text-sm sm:text-base md:text-xl mt-4 md:mt-6 dark:text-neutral-200'>
+	<div className='container mx-auto pt-0 pb-8 sm:py-16 px-4 w-full text-left relative -z-10 space-y-4'>
+		<MainTitle
+			boldText='Projects'
+			regularText='Explore My'
+		/>
+		<p className='max-w-2xl text-base text-neutral-600 dark:text-neutral-300'>
 			I create modern and elegant web products using cutting-edge technologies
 			and frameworks, focusing on performance, scalability, and user experience.
 		</p>
