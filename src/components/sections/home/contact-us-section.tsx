@@ -59,9 +59,8 @@ export default function HomeContactUsSection() {
 				process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID!,
 				process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID!,
 				{
-					from_name: data.name,
-					from_email: data.email,
-					message: data.message,
+					...data,
+					time: new Date().toLocaleString(),
 				},
 				process.env.NEXT_PUBLIC_EMAIL_USER_ID,
 			);

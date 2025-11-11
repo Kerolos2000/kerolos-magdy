@@ -6,3 +6,4 @@ export { default as HomeExperienceSection } from './experience-section';
 export { default as HomeGetInTouchSection } from './get-in-touch-section';
 export { default as HomeHeroSection } from './hero-section';
 export { default as HomeProjectsSection } from './projects-section';
+export { default as HomeSkillsSection } from './skills-section';
