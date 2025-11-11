@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { Inter } from 'next/font/google';
@@ -38,6 +40,8 @@ export default function RootLayout({
 					<Footer />
 				</ThemeProvider>
 				<SmoothScroll />
+				<Analytics mode='production' />
+				<SpeedInsights />
 			</body>
 		</html>
 	);
