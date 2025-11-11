@@ -12,6 +12,9 @@ const inter = Inter({
 export const metadata: Metadata = {
 	title: 'Kerolos Magdy',
 	description: 'Kerolos Magdy Portfolio',
+	icons: {
+		icon: '/fav.webp',
+	},
 };
 
 export default function RootLayout({
@@ -27,7 +30,7 @@ export default function RootLayout({
 			<body className={`${inter.variable} antialiased`}>
 				<ThemeProvider
 					attribute='class'
-					defaultTheme='light'
+					defaultTheme='dark'
 					disableTransitionOnChange
 				>
 					{children}
