@@ -23,16 +23,16 @@ interface SkillsItem {
 }
 
 export const SkillsItems: SkillsItem[] = [
-	{ name: 'JavaScript', Icon: IconBrandJavascript },
 	{ name: 'TypeScript', Icon: IconBrandTypescript },
-	{ name: 'React.js', Icon: IconBrandReact },
+	{ name: 'JavaScript', Icon: IconBrandJavascript },
 	{ name: 'Next.js', Icon: IconBrandNextjs },
+	{ name: 'React.js', Icon: IconBrandReact },
 	{ name: 'React Native', Icon: IconBrandReact },
-	{ name: 'Zustand', Icon: IconSettings },
 	{ name: 'React Hook Form', Icon: IconForms },
 	{ name: 'Zod', Icon: IconDatabase },
 	{ name: 'Axios', Icon: IconApi },
 	{ name: 'React Query', Icon: IconApi },
+	{ name: 'Zustand', Icon: IconSettings },
 	{ name: 'i18next', Icon: IconLanguage },
 	{ name: 'Tailwind', Icon: IconBrandTailwind },
 	{ name: 'Material UI', Icon: IconBrandVscode },

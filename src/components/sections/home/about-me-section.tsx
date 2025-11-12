@@ -9,7 +9,7 @@ export default function HomeAboutMeSection() {
 			className='pb-8 pt-4 container mx-auto px-4 sm:px-6 lg:px-8 w-full'
 			id='home-about-me-section'
 		>
-			<div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+			<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
 				{AboutMeSectionData.map(({ details, icon: Icon, title }, index) => (
 					<CardContainer
 						key={index}

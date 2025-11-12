@@ -60,7 +60,7 @@ export const ExperienceItems: TimelineEntry[] = [
 						className='h-full w-full rounded-lg object-cover object-top shadow-sm'
 					/>
 					<Image
-						src='/project4.webp'
+						src='/freelance4.webp'
 						alt='Freelance Project 4'
 						width={600}
 						height={250}
