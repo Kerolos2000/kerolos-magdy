@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import React, { useEffect, useRef, useState } from 'react';
 
-interface TimelineEntry {
+export interface TimelineEntry {
 	title: string;
 	content: React.ReactNode;
 }
@@ -38,7 +38,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 			ref={ref}
 			className='relative'
 		>
-			{data.map(({ title, content }, index) => (
+			{data?.map(({ title, content }, index) => (
 				<div
 					key={`${title}-${index}`}
 					className={`flex justify-start ${

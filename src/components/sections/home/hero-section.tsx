@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {
 	AnimatedGradientText,
 	BackgroundBeamsWithCollision,
-} from 'src/components';
+} from 'src/components/ui';
 
 export default function HomeHeroSection() {
 	return (

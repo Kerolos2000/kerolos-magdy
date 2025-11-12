@@ -60,7 +60,7 @@ const FloatingDockMobile = ({
 						layoutId='nav'
 						className='absolute inset-x-0 bottom-full mb-2 flex flex-col gap-2'
 					>
-						{items.map((item, idx) => (
+						{items.map((item, index) => (
 							<motion.div
 								key={item.title}
 								initial={{ opacity: 0, y: 10 }}
@@ -68,9 +68,9 @@ const FloatingDockMobile = ({
 								exit={{
 									opacity: 0,
 									y: 10,
-									transition: { delay: idx * 0.05 },
+									transition: { delay: index * 0.05 },
 								}}
-								transition={{ delay: (items.length - 1 - idx) * 0.05 }}
+								transition={{ delay: (items.length - 1 - index) * 0.05 }}
 							>
 								{item.href ? (
 									<Link

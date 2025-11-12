@@ -1,73 +1,5 @@
-'use client';
-
-import {
-	IconBrandGithub,
-	IconBrandLinkedin,
-	IconBrandWhatsapp,
-	IconFileText,
-	IconMail,
-	IconProps,
-} from '@tabler/icons-react';
 import Link from 'next/link';
-
-interface SectionItem {
-	label: string;
-	href: string;
-	download?: boolean;
-	icon?: React.ComponentType<IconProps>;
-}
-
-interface Section {
-	title: string;
-	items: SectionItem[];
-}
-
-const socials: SectionItem[] = [
-	{
-		href: 'https://github.com/Kerolos2000',
-		icon: IconBrandGithub,
-		label: 'GitHub',
-	},
-	{
-		href: 'https://www.linkedin.com/in/kerolos-magdy-314644212/',
-		icon: IconBrandLinkedin,
-		label: 'LinkedIn',
-	},
-	{
-		href: 'mailto:kerolos1410@gmail.com',
-		icon: IconMail,
-		label: 'Email',
-	},
-	{
-		href: 'https://api.whatsapp.com/send/?phone=%2B201205224238&text&type=phone_number&app_absent=0',
-		icon: IconBrandWhatsapp,
-		label: 'WhatsApp',
-	},
-];
-
-const sections: Section[] = [
-	{
-		title: 'Navigate',
-		items: [
-			{ label: 'About', href: '#home-about-me-section' },
-			{ label: 'Experience', href: '#home-experience-section' },
-			{ label: 'Projects', href: '#home-projects-section' },
-			{ label: 'Skills', href: '#home-skills-section' },
-			{ label: 'Contact', href: '#home-contact-us-section' },
-		],
-	},
-	{
-		title: 'Resources',
-		items: [
-			{
-				label: 'Resume',
-				href: '/Kerolos-Magdy-Resume.pdf',
-				download: true,
-				icon: IconFileText,
-			},
-		],
-	},
-];
+import { FooterSections, FooterSocials } from 'src/lib';
 
 export default function Footer() {
 	return (
@@ -93,10 +25,10 @@ export default function Footer() {
 				</div>
 
 				<div className='grid flex-1 grid-cols-2 gap-12 md:grid-cols-3'>
-					{sections.map(({ title, items }, idx) => (
+					{FooterSections.map(({ title, items }, index) => (
 						<div
-							key={title}
-							className={idx === 1 ? 'flex flex-col' : ''}
+							key={index}
+							className={index === 1 ? 'flex flex-col' : ''}
 						>
 							<h3 className='mb-5 text-sm font-semibold uppercase tracking-wider text-neutral-800 dark:text-neutral-100'>
 								{title}
@@ -116,13 +48,13 @@ export default function Footer() {
 								))}
 							</div>
 
-							{idx === 1 && (
+							{index === 1 && (
 								<div>
 									<h3 className='mb-5 text-sm font-semibold uppercase tracking-wider text-neutral-800 dark:text-neutral-100'>
 										Connect
 									</h3>
 									<div className='flex flex-wrap gap-3'>
-										{socials.map(({ href, icon: Icon, label }) => (
+										{FooterSocials.map(({ href, icon: Icon, label }) => (
 											<Link
 												key={label}
 												href={href}

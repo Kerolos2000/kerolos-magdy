@@ -1,44 +1,5 @@
-import {
-	IconApi,
-	IconBrandBootstrap,
-	IconBrandCss3,
-	IconBrandGithub,
-	IconBrandHtml5,
-	IconBrandJavascript,
-	IconBrandNextjs,
-	IconBrandReact,
-	IconBrandTailwind,
-	IconBrandTypescript,
-	IconBrandVscode,
-	IconDatabase,
-	IconForms,
-	IconLanguage,
-	IconSettings,
-} from '@tabler/icons-react';
 import { MainTitle } from 'src/components/ui';
-
-const frontendSkills = [
-	{ name: 'JavaScript', icon: IconBrandJavascript },
-	{ name: 'TypeScript', icon: IconBrandTypescript },
-	{ name: 'React.js', icon: IconBrandReact },
-	{ name: 'Next.js', icon: IconBrandNextjs },
-	{ name: 'React Native', icon: IconBrandReact },
-	{ name: 'Zustand', icon: IconSettings },
-	{ name: 'React Hook Form', icon: IconForms },
-	{ name: 'Zod', icon: IconDatabase },
-	{ name: 'Axios', icon: IconApi },
-	{ name: 'React Query', icon: IconApi },
-	{ name: 'i18next', icon: IconLanguage },
-	{ name: 'Tailwind', icon: IconBrandTailwind },
-	{ name: 'Material UI', icon: IconBrandVscode },
-	{ name: 'Bootstrap', icon: IconBrandBootstrap },
-	{ name: 'React Admin', icon: IconBrandVscode },
-	{ name: 'HTML5', icon: IconBrandHtml5 },
-	{ name: 'CSS3', icon: IconBrandCss3 },
-	{ name: 'SCSS', icon: IconBrandCss3 },
-	{ name: 'Supabase', icon: IconDatabase },
-	{ name: 'Git & GitHub', icon: IconBrandGithub },
-];
+import { SkillsItems } from 'src/lib';
 
 export default function HomeSkillsSection() {
 	return (
@@ -51,11 +12,10 @@ export default function HomeSkillsSection() {
 				boldText='Skills'
 			/>
 			<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2'>
-				{frontendSkills.map(skill => {
-					const Icon = skill.icon;
+				{SkillsItems.map(({ name, Icon }) => {
 					return (
 						<div
-							key={skill.name}
+							key={name}
 							className='group relative'
 						>
 							<div className='relative h-full flex items-center pointer-events-none backdrop-blur-sm bg-card/20 border border-border/50 hover:border-emerald-500/50 rounded-lg px-4 py-2.5 transition-all duration-300 hover:bg-card/40 hover:shadow-sm hover:shadow-emerald-500/5'>
@@ -71,7 +31,7 @@ export default function HomeSkillsSection() {
 									</div>
 
 									<span className='text-sm font-medium text-foreground/90 group-hover:text-emerald-500 transition-colors duration-300 tracking-tight'>
-										{skill.name}
+										{name}
 									</span>
 								</div>
 

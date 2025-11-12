@@ -1,7 +1,7 @@
 import { IconFileDownload } from '@tabler/icons-react';
 import Link from 'next/link';
 import { Ballpit, CardBody, CardContainer, CardItem } from 'src/components/ui';
-import { aboutMeSectionData } from 'src/lib';
+import { AboutMeSectionData } from 'src/lib';
 
 export default function HomeAboutMeSection() {
 	return (
@@ -10,9 +10,9 @@ export default function HomeAboutMeSection() {
 			id='home-about-me-section'
 		>
 			<div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
-				{aboutMeSectionData.map(({ details, icon: Icon, title }, i) => (
+				{AboutMeSectionData.map(({ details, icon: Icon, title }, index) => (
 					<CardContainer
-						key={i}
+						key={index}
 						className='inter-var'
 					>
 						<CardBody

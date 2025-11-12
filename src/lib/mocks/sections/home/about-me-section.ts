@@ -21,7 +21,7 @@ export interface AboutMeCard {
 	details: AboutMeDetail[];
 }
 
-export const aboutMeSectionData: AboutMeCard[] = [
+export const AboutMeSectionData: AboutMeCard[] = [
 	{
 		title: 'Personal',
 		icon: User,

@@ -1,5 +1,4 @@
 'use client';
-
 import type { MotionValue } from 'motion/react';
 import {
 	motion,
@@ -179,11 +178,11 @@ function ScrollVelocityRowImpl({
 				className='inline-flex transform-gpu items-center will-change-transform select-none'
 				style={{ x }}
 			>
-				{Array.from({ length: numCopies }).map((_, i) => (
+				{Array.from({ length: numCopies }).map((_, index) => (
 					<div
-						key={i}
-						ref={i === 0 ? blockRef : null}
-						aria-hidden={i !== 0}
+						key={index}
+						ref={index === 0 ? blockRef : null}
+						aria-hidden={index !== 0}
 						className='inline-flex shrink-0 items-center'
 					>
 						{children}

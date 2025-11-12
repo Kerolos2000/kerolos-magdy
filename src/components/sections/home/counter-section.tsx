@@ -1,13 +1,7 @@
 import { NumberTicker } from 'src/components/ui';
+import { CounterStats } from 'src/lib';
 
 export default function HomeCounterSection() {
-	const stats = [
-		{ label: 'Projects completed', value: 35 },
-		{ label: 'Active projects', value: 2 },
-		{ label: 'Happy clients', value: 25 },
-		{ label: 'Years of experience', value: 3 },
-	];
-
 	return (
 		<section
 			id='home-counter-section'
@@ -15,7 +9,7 @@ export default function HomeCounterSection() {
 		>
 			<div className='relative container mx-auto px-4 sm:px-6 lg:px-8 w-full'>
 				<div className='grid grid-cols-2 md:grid-cols-4 gap-4 '>
-					{stats.map(({ label, value }) => (
+					{CounterStats.map(({ label, value }) => (
 						<div
 							key={label}
 							className='relative border border-primary/20 rounded-2xl shadow-sm px-4 py-6 text-center bg-white dark:bg-neutral-800'
