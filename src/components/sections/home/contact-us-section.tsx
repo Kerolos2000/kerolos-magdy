@@ -5,15 +5,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FlowingMenu, MainTitle } from 'src/components';
 import { ContactUsItems } from 'src/lib';
-import { z } from 'zod';
-
-const contactSchema = z.object({
-	name: z.string().min(2, 'Name is required'),
-	email: z.string().email('Invalid email'),
-	message: z.string().min(5, 'Message is too short'),
-});
-
-type ContactForm = z.infer<typeof contactSchema>;
+import { ContactUsSchema, contactUsSchema } from 'src/validation';
 
 export default function HomeContactUsSection() {
 	const [status, setStatus] = useState<
@@ -24,11 +16,11 @@ export default function HomeContactUsSection() {
 		handleSubmit,
 		formState: { errors },
 		reset,
-	} = useForm<ContactForm>({
-		resolver: zodResolver(contactSchema),
+	} = useForm<ContactUsSchema>({
+		resolver: zodResolver(contactUsSchema),
 	});
 
-	const onSubmit = async (data: ContactForm) => {
+	const onSubmit = async (data: ContactUsSchema) => {
 		try {
 			setStatus('sending');
 			await emailjs.send(
