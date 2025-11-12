@@ -12,11 +12,38 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	title: 'Kerolos Magdy',
-	description: 'Kerolos Magdy Portfolio',
-	icons: {
-		icon: '/fav.webp',
+	title: 'Kerolos Magdy | Frontend Developer',
+	description:
+		'Frontend Developer specializing in React, Next.js, TypeScript, and modern UI frameworks. Explore my projects and experience.',
+	keywords: [
+		'Kerolos',
+		'Kerolos Magdy',
+		'kero',
+		'Kero M.',
+		'Frontend Developer',
+		'React',
+		'Next.js',
+		'Portfolio',
+		'Web Developer',
+		'JavaScript',
+		'TypeScript',
+	],
+	authors: [{ name: 'Kerolos Magdy' }],
+	openGraph: {
+		title: 'Kerolos Magdy | Frontend Developer',
+		description:
+			'Explore my work in React, Next.js, and modern frontend development.',
+		url: 'https://kerolos-magdy-portfolio.vercel.app/',
+		siteName: 'Kerolos Magdy Portfolio',
+		locale: 'en_US',
+		type: 'website',
 	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Kerolos Magdy | Frontend Developer',
+		description: 'Frontend Developer | React | Next.js | TypeScript',
+	},
+	icons: { icon: '/fav.webp' },
 };
 
 export default function RootLayout({
