@@ -27,7 +27,7 @@ export const ProductsItems: ProductItem[] = [
 	},
 	{
 		title: 'El Romany E-Commerce',
-		link: 'https://elromany.vercel.app/',
+		link: 'https://romany1.com/',
 		thumbnail: '/freelance1.webp',
 	},
 	{
