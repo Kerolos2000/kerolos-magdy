@@ -16,24 +16,24 @@ export const ProductsItems: ProductItem[] = [
 		thumbnail: '/freelance2.webp',
 	},
 	{
-		title: 'Innova EG',
-		link: 'https://innova.com.eg/',
-		thumbnail: '/freelance3.webp',
-	},
-	{
-		title: 'Noxe',
-		link: 'https://movies-app-react-lime.vercel.app/',
-		thumbnail: '/freelance4.webp',
-	},
-	{
 		title: 'El Romany E-Commerce',
 		link: 'https://romany1.com/',
 		thumbnail: '/freelance1.webp',
 	},
 	{
-		title: 'Tic Tac Toe',
-		link: 'https://xogame-orcin.vercel.app/',
-		thumbnail: '/project1.webp',
+		title: 'Noxe',
+		link: 'https://movies-app-react-lime.vercel.app/',
+		thumbnail: '/project4.webp',
+	},
+	{
+		title: 'Innova EG',
+		link: 'https://innova.com.eg/',
+		thumbnail: '/freelance3.webp',
+	},
+	{
+		title: 'NextShop',
+		link: 'https://next-shop-products.vercel.app/ar',
+		thumbnail: '/freelance4.webp',
 	},
 	{
 		title: 'Angora Template Clone',
@@ -46,8 +46,8 @@ export const ProductsItems: ProductItem[] = [
 		thumbnail: '/project3.webp',
 	},
 	{
-		title: 'NextShop',
-		link: 'https://next-shop-products.vercel.app/ar',
-		thumbnail: '/project4.webp',
+		title: 'Tic Tac Toe',
+		link: 'https://xogame-orcin.vercel.app/',
+		thumbnail: '/project1.webp',
 	},
 ];
