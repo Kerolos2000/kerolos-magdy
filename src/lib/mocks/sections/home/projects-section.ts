@@ -31,8 +31,8 @@ export const ProductsItems: ProductItem[] = [
 		thumbnail: '/freelance3.webp',
 	},
 	{
-		title: 'NextShop',
-		link: 'https://next-shop-products.vercel.app/ar',
+		title: 'Shop Next',
+		link: 'https://shop-next-ts.vercel.app/en',
 		thumbnail: '/freelance4.webp',
 	},
 	{
