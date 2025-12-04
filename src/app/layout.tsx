@@ -12,6 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+	publisher: 'Kerolos Magdy',
 	title: 'Kerolos Magdy | Frontend Developer',
 	description:
 		'Frontend Developer specializing in React, Next.js, TypeScript, and modern UI frameworks. Explore my projects and experience.',
@@ -37,11 +38,15 @@ export const metadata: Metadata = {
 		siteName: 'Kerolos Magdy Portfolio',
 		locale: 'en_US',
 		type: 'website',
-	},
-	twitter: {
-		card: 'summary_large_image',
-		title: 'Kerolos Magdy | Frontend Developer',
-		description: 'Frontend Developer | React | Next.js | TypeScript',
+		images: [
+			{
+				url: 'https://kerolos-magdy-portfolio.vercel.app/fav.webp',
+				width: 1200,
+				height: 630,
+				alt: 'Kerolos Magdy Portfolio',
+				type: 'image/webp',
+			},
+		],
 	},
 	icons: { icon: '/fav.webp' },
 };
