@@ -48,9 +48,8 @@ export const ChatWindow = ({ onClose }: ChatWindowProps) => {
 		<div className='flex h-full flex-col overflow-hidden bg-neutral-50 dark:bg-neutral-950'>
 			<div className='flex items-center justify-between border-b px-4 py-3 bg-white dark:bg-neutral-900 dark:border-neutral-800 shadow-sm z-10'>
 				<div className='flex items-center gap-2'>
-					<div className='relative h-2 w-2'>
+					<div className='relative h-1.5 w-1.5'>
 						<span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75' />
-						<span className='relative inline-flex h-2 w-2 rounded-full bg-emerald-500' />
 					</div>
 					<h3 className='font-semibold text-neutral-800 dark:text-white'>
 						Portfolio AI

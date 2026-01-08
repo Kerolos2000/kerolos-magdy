@@ -3,8 +3,12 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { Inter } from 'next/font/google';
-import { FloatingAppBar, Footer, SmoothScroll } from 'src/components';
-import { ChatWidget } from 'src/components/chat';
+import {
+	ChatWidget,
+	FloatingAppBar,
+	Footer,
+	SmoothScroll,
+} from 'src/components';
 import './globals.css';
 
 const inter = Inter({
@@ -29,6 +33,20 @@ export const metadata: Metadata = {
 		'Web Developer',
 		'JavaScript',
 		'TypeScript',
+		'Alexandria, Egypt',
+		'Egypt',
+		'Alexandria Frontend Developer',
+		'Alexandria Web Developer',
+		'Alexandria JavaScript Developer',
+		'Alexandria TypeScript Developer',
+		'Alexandria React Developer',
+		'Alexandria Next.js Developer',
+		'Alexandria Frontend Developer',
+		'Alexandria Web Developer',
+		'Alexandria JavaScript Developer',
+		'Alexandria TypeScript Developer',
+		'Alexandria React Developer',
+		'Alexandria Next.js Developer',
 	],
 	authors: [{ name: 'Kerolos Magdy' }],
 	openGraph: {

@@ -9,14 +9,14 @@ export const ChatWidget = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<div className='fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4'>
+		<div className='fixed bottom-4 right-4 z-50 flex flex-col items-end gap-4'>
 			<AnimatePresence>
 				{isOpen && (
 					<motion.div
 						initial={{ opacity: 0, scale: 0.9, y: 20 }}
 						animate={{ opacity: 1, scale: 1, y: 0 }}
 						exit={{ opacity: 0, scale: 0.9, y: 20 }}
-						className='h-125 w-87.5 overflow-hidden rounded-2xl border bg-white shadow-2xl dark:bg-neutral-900 dark:border-neutral-800'
+						className='h-125 w-[calc(100vw-2rem)] sm:w-85 mb-3 overflow-hidden rounded-2xl border bg-white shadow-2xl dark:bg-neutral-900 dark:border-neutral-800'
 					>
 						<ChatWindow onClose={() => setIsOpen(false)} />
 					</motion.div>
@@ -27,9 +27,9 @@ export const ChatWidget = () => {
 				whileHover={{ scale: 1.05 }}
 				whileTap={{ scale: 0.95 }}
 				onClick={() => setIsOpen(!isOpen)}
-				className='flex h-14 w-14 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg shadow-emerald-600/20 transition-colors hover:bg-emerald-700'
+				className='flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100/60 hover:bg-neutral-200/70 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/60 backdrop-blur-[6px] transition-colors'
 			>
-				<IconMessageChatbot size={28} />
+				<IconMessageChatbot className='h-5 w-5 text-neutral-800 dark:text-neutral-50' />
 			</motion.button>
 		</div>
 	);
