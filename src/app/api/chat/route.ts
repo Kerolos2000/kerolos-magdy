@@ -1,15 +1,15 @@
-import { portfolioData } from 'src/lib/portfolioData';
+import { portfolioData } from 'src/lib';
 
 const getRandom = (arr: string[]) =>
 	arr[Math.floor(Math.random() * arr.length)];
 
-// helper لتحديد لغة النص
 const detectLanguage = (text: string) => {
 	const arabic = /[\u0600-\u06FF]/.test(text);
 	return arabic ? 'ar' : 'en';
 };
 
 const responses = [
+	// english response
 	{
 		pattern: /(name|who are you|who is|what is your name)/i,
 		lang: 'en',

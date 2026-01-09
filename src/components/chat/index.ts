@@ -1,3 +1,3 @@
-export * from './ChatMessage';
-export * from './ChatWidget';
-export * from './ChatWindow';
+export * from './chat-message';
+export * from './chat-widget';
+export * from './chat-window';

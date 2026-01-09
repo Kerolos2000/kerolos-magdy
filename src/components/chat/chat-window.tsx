@@ -3,7 +3,7 @@ import { IconSend, IconX } from '@tabler/icons-react';
 import { useEffect, useRef } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { useChat } from 'src/hooks/useChat';
-import { ChatMessage } from './ChatMessage';
+import { ChatMessage } from './chat-message';
 
 interface ChatWindowProps {
 	onClose: () => void;

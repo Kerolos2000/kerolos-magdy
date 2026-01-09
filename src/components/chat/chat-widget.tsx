@@ -3,7 +3,7 @@
 import { IconMessageChatbot } from '@tabler/icons-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
-import { ChatWindow } from './ChatWindow';
+import { ChatWindow } from './chat-window';
 
 export const ChatWidget = () => {
 	const [isOpen, setIsOpen] = useState(false);
