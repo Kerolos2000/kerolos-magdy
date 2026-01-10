@@ -1,24 +1,38 @@
+'use client';
 import { gsap } from 'gsap';
-import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useEffect, useRef, useState } from 'react';
 
-interface MenuItemProps {
+interface MenuItemData {
 	link: string;
 	text: string;
 	image: string;
 }
 
 interface FlowingMenuProps {
-	items?: MenuItemProps[];
+	items?: MenuItemData[];
+	speed?: number;
 }
 
-export const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
+interface MenuItemProps extends MenuItemData {
+	speed: number;
+	isFirst: boolean;
+}
+
+export const FlowingMenu: React.FC<FlowingMenuProps> = ({
+	items = [],
+	speed = 15,
+}) => {
 	return (
-		<div className='w-full h-full overflow-hidden'>
+		<div className='w-full h-full overflow-hidden bg-background'>
 			<nav className='flex flex-col h-full m-0 p-0'>
-				{items.map((item, index) => (
+				{items.map((item, idx) => (
 					<MenuItem
-						key={index}
+						key={idx}
 						{...item}
+						speed={speed}
+						isFirst={idx === 0}
 					/>
 				))}
 			</nav>
@@ -26,10 +40,18 @@ export const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
 	);
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
-	const itemRef = React.useRef<HTMLDivElement>(null);
-	const marqueeRef = React.useRef<HTMLDivElement>(null);
-	const marqueeInnerRef = React.useRef<HTMLDivElement>(null);
+const MenuItem: React.FC<MenuItemProps> = ({
+	link,
+	text,
+	image,
+	speed,
+	isFirst,
+}) => {
+	const itemRef = useRef<HTMLDivElement>(null);
+	const marqueeRef = useRef<HTMLDivElement>(null);
+	const marqueeInnerRef = useRef<HTMLDivElement>(null);
+	const animationRef = useRef<gsap.core.Tween | null>(null);
+	const [repetitions, setRepetitions] = useState(4);
 
 	const animationDefaults = { duration: 0.6, ease: 'expo' };
 
@@ -45,6 +67,55 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
 		return topEdgeDist < bottomEdgeDist ? 'top' : 'bottom';
 	};
 
+	useEffect(() => {
+		const calculateRepetitions = () => {
+			if (!marqueeInnerRef.current) return;
+			const marqueeContent = marqueeInnerRef.current.querySelector(
+				'.marquee-part',
+			) as HTMLElement;
+			if (!marqueeContent) return;
+			const contentWidth = marqueeContent.offsetWidth;
+			const viewportWidth = window.innerWidth;
+			const needed = Math.ceil(viewportWidth / contentWidth) + 2;
+			setRepetitions(Math.max(4, needed));
+		};
+
+		calculateRepetitions();
+		window.addEventListener('resize', calculateRepetitions);
+		return () => window.removeEventListener('resize', calculateRepetitions);
+	}, [text, image]);
+
+	useEffect(() => {
+		const setupMarquee = () => {
+			if (!marqueeInnerRef.current) return;
+			const marqueeContent = marqueeInnerRef.current.querySelector(
+				'.marquee-part',
+			) as HTMLElement;
+			if (!marqueeContent) return;
+			const contentWidth = marqueeContent.offsetWidth;
+			if (contentWidth === 0) return;
+
+			if (animationRef.current) {
+				animationRef.current.kill();
+			}
+
+			animationRef.current = gsap.to(marqueeInnerRef.current, {
+				x: -contentWidth,
+				duration: speed,
+				ease: 'none',
+				repeat: -1,
+			});
+		};
+
+		const timer = setTimeout(setupMarquee, 50);
+		return () => {
+			clearTimeout(timer);
+			if (animationRef.current) {
+				animationRef.current.kill();
+			}
+		};
+	}, [text, image, repetitions, speed]);
+
 	const handleMouseEnter = (ev: React.MouseEvent<HTMLAnchorElement>) => {
 		if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current)
 			return;
@@ -56,10 +127,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
 			rect.height,
 		);
 
-		const tl = gsap.timeline({ defaults: animationDefaults });
-		tl.set(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' })
-			.set(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' })
-			.to([marqueeRef.current, marqueeInnerRef.current], { y: '0%' });
+		gsap
+			.timeline({ defaults: animationDefaults })
+			.set(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' }, 0)
+			.set(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' }, 0)
+			.to([marqueeRef.current, marqueeInnerRef.current], { y: '0%' }, 0);
 	};
 
 	const handleMouseLeave = (ev: React.MouseEvent<HTMLAnchorElement>) => {
@@ -73,35 +145,19 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
 			rect.height,
 		);
 
-		const tl = gsap.timeline({ defaults: animationDefaults });
-		tl.to(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' }).to(
-			marqueeInnerRef.current,
-			{
-				y: edge === 'top' ? '101%' : '-101%',
-			},
-		);
+		gsap
+			.timeline({ defaults: animationDefaults })
+			.to(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' }, 0)
+			.to(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' }, 0);
 	};
-
-	const repeatedMarqueeContent = React.useMemo(() => {
-		return Array.from({ length: 4 }).map((_, index) => (
-			<React.Fragment key={index}>
-				<span className='text-neutral-900 dark:text-white uppercase font-normal text-[4vh] leading-[1.2] p-[1vh_1vw_0]'>
-					{text}
-				</span>
-				<div
-					className='w-10 h-10 my-[1em] mx-[1vw] p-[0.5em_0] rounded-[12px] bg-cover bg-center'
-					style={{ backgroundImage: `url(${image})` }}
-				/>
-			</React.Fragment>
-		));
-	}, [text, image]);
 
 	return (
 		<div
-			className='flex-1 relative overflow-hidden text-center shadow-[0_-1px_0_0_#fff] dark:shadow-[0_-1px_0_0_#000] group'
+			className='flex-1 relative overflow-hidden text-center border-accent-foreground'
 			ref={itemRef}
+			style={{ borderTop: isFirst ? 'none' : `1px solid` }}
 		>
-			<a
+			<Link
 				target='_blank'
 				className='flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-neutral-900 dark:text-white text-[4vh] group-hover:text-white dark:group-hover:text-neutral-900 focus:text-neutral-900 dark:focus:text-white'
 				href={link}
@@ -109,18 +165,31 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
 				onMouseLeave={handleMouseLeave}
 			>
 				{text}
-			</a>
+			</Link>
 			<div
-				className='absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-neutral-100 dark:bg-neutral-900 translate-y-[101%] transition-colors duration-300'
+				className='absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-background translate-y-[101%]'
 				ref={marqueeRef}
 			>
 				<div
-					className='h-full w-[200%] flex'
+					className='h-full w-fit flex'
 					ref={marqueeInnerRef}
 				>
-					<div className='flex items-center relative h-full w-[200%] will-change-transform animate-marquee'>
-						{repeatedMarqueeContent}
-					</div>
+					{[...Array(repetitions)].map((_, idx) => (
+						<div
+							className='marquee-part flex items-center shrink-0'
+							key={idx}
+						>
+							<span className='whitespace-nowrap uppercase font-normal text-[4vh] leading-none px-[1vw]'>
+								{text}
+							</span>
+							<Image
+								alt='image'
+								width={50}
+								height={50}
+								src={image}
+							/>
+						</div>
+					))}
 				</div>
 			</div>
 		</div>

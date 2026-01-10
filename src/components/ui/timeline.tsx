@@ -40,7 +40,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 		>
 			{data?.map(({ title, content }, index) => (
 				<div
-					key={`${title}-${index}`}
+					key={index}
 					className={`flex justify-start ${
 						index === 0 ? 'pt-0' : 'pt-10'
 					} md:gap-10`}
@@ -57,7 +57,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 						<h3 className='md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500'>
 							{title}
 						</h3>
-						{content}
+						<div key={index}>{content}</div>
 					</div>
 				</div>
 			))}
