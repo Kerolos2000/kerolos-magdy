@@ -37,7 +37,9 @@ export const ChatMessage = ({ role, content }: ChatMessageProps) => {
 						: 'rounded-2xl rounded-tl-none bg-white text-neutral-800 border dark:bg-neutral-900 dark:text-neutral-100 dark:border-neutral-800',
 				)}
 			>
-				<p className='whitespace-pre-wrap leading-relaxed'>{content}</p>
+				{content && (
+					<p className='whitespace-pre-wrap leading-relaxed'>{content}</p>
+				)}
 			</div>
 		</motion.div>
 	);

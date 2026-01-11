@@ -3,180 +3,104 @@ import { portfolioData } from 'src/lib';
 const getRandom = (arr: string[]) =>
 	arr[Math.floor(Math.random() * arr.length)];
 
-const detectLanguage = (text: string) => {
-	const arabic = /[\u0600-\u06FF]/.test(text);
-	return arabic ? 'ar' : 'en';
-};
+const detectLanguage = (text: string) =>
+	/[\u0600-\u06FF]/.test(text) ? 'ar' : 'en';
+
+const normalizeArabic = (text: string) =>
+	text
+		.replace(/[\u064B-\u065F]/g, '')
+		.replace(/[إأآا]/g, 'ا')
+		.replace(/ى/g, 'ي')
+		.replace(/ة/g, 'ه');
+
+const normalize = (text: string) =>
+	normalizeArabic(
+		text
+			.toLowerCase()
+			.replace(/[^\p{L}\p{N}\s]/gu, '')
+			.trim(),
+	);
 
 const responses = [
-	// english response
 	{
-		pattern: /(name|who are you|who is|what is your name)/i,
 		lang: 'en',
+		pattern: /\b(name|who are you|who is this|your name)\b/i,
 		responses: [
 			`I am ${portfolioData.name}, a ${portfolioData.role}.`,
-			`You're chatting with ${portfolioData.name}, professional ${portfolioData.role}.`,
-			`I go by ${portfolioData.name} and I work as ${portfolioData.role}.`,
+			`You're chatting with ${portfolioData.name}, working as a ${portfolioData.role}.`,
+			`${portfolioData.name} here, ${portfolioData.role}.`,
 		],
 	},
 	{
-		pattern: /(stack|skills|tech|tools|using|know|proficient in)/i,
 		lang: 'en',
+		pattern: /\b(stack|skills?|tech|tools?|frameworks?|libraries?)\b/i,
 		responses: [
-			`My tech stack includes: ${portfolioData.stack.join(', ')}.`,
-			`I mainly work with technologies like ${portfolioData.stack
-				.slice(0, 5)
+			`My main tech stack includes ${portfolioData.stack.join(', ')}.`,
+			`I work mostly with ${portfolioData.stack
+				.slice(0, 6)
 				.join(', ')} and more.`,
-			`I am proficient in ${portfolioData.stack.join(', ')}.`,
+			`I'm experienced with ${portfolioData.stack.join(', ')}.`,
 		],
 	},
 	{
-		pattern: /(experience|years|worked)/i,
-		lang: 'en',
+		lang: 'ar',
+		pattern: /(اسمك|اسمك ايه|انت مين|مين انت)/,
 		responses: [
-			`I have ${
+			`أنا ${portfolioData.name}، ${portfolioData.role}.`,
+			`اسمي ${portfolioData.name} وبشتغل ${portfolioData.role}.`,
+		],
+	},
+	{
+		lang: 'ar',
+		pattern: /(مهارات|بتعرف ايه|ستاك|تقنيات|تكنولوجي|فريمورك)/,
+		responses: [
+			`بشتغل بشكل أساسي بـ ${portfolioData.stack.join(', ')}.`,
+			`مهاراتي التقنية تشمل ${portfolioData.stack.join(', ')}.`,
+		],
+	},
+	{
+		lang: 'ar',
+		pattern: /(خبره|خبرتك|شركة|شركات|سنين خبره|اشتغلت قد ايه)/,
+		responses: [
+			`عندي خبرة ${portfolioData.experience} في مجال الفرونت إند.`,
+			`خبرتي تمتد لـ ${
 				portfolioData.experience
-			} of experience, including roles like ${portfolioData.detailedExperience.join(
-				', ',
-			)}.`,
-			`With ${portfolioData.experience}, I handled projects of various scales.`,
+			} وشملت ${portfolioData.detailedExperience.join(', ')}.`,
 		],
 	},
 	{
-		pattern:
-			/(contact|email|phone|reach|call|whatsapp|social|linkedin|github)/i,
-		lang: 'en',
+		lang: 'ar',
+		pattern: /(مشاريع|اعمالك|بورتفوليو|اشتغلت على ايه)/,
 		responses: [
-			`You can reach me at ${portfolioData.email} or ${
-				portfolioData.phone
-			}. Socials: ${portfolioData.socials.map(s => s.platform).join(', ')}.`,
-			`Feel free to contact me via email at ${
-				portfolioData.email
-			} or on ${portfolioData.socials.map(s => s.platform).join(' and ')}.`,
-		],
-	},
-	{
-		pattern: /(project|work|portfolio)/i,
-		lang: 'en',
-		responses: [
-			`Check my portfolio: ${portfolioData.projects}.`,
-			`Projects include: ${portfolioData.projects
+			`من مشاريعي ${portfolioData.projects}.`,
+			`اشتغلت على مشاريع زي ${portfolioData.projects
 				.split(',')
-				.slice(0, 3)
-				.join(', ')} and more.`,
+				.slice(0, 4)
+				.join(', ')}.`,
 		],
 	},
 	{
-		pattern: /(education|study|university|college|degree)/i,
-		lang: 'en',
-		responses: [
-			`I studied at: ${portfolioData.education?.join(', ')}.`,
-			`My educational background includes ${portfolioData.education?.[0]}.`,
-		],
-	},
-	{
-		pattern: /(hello|hi|hey|greetings)/i,
-		lang: 'en',
-		responses: [
-			`Hello! I'm ${portfolioData.name}'s portfolio assistant. Ask me about my skills or projects.`,
-			`Hi! You can ask me about my experience, projects, or how to contact me.`,
-		],
-	},
-	{
-		pattern: /(thank|thanks)/i,
-		lang: 'en',
-		responses: [
-			"You're welcome!",
-			'Happy to help!',
-			'Anytime! Feel free to ask more.',
-		],
-	},
-	{
-		pattern: /(hire|job|available|work with)/i,
-		lang: 'en',
-		responses: [
-			`I am open to new opportunities! Contact me at ${portfolioData.email}.`,
-			`I'd love to collaborate. Reach me via ${portfolioData.phone}.`,
-		],
-	},
-	// Arabic responses
-	{
-		pattern: /(اسمك|مين انت|انت مين|من حضرتك)/i,
 		lang: 'ar',
+		pattern: /(تواصل|اكلمك|ايميل|رقم|لينكدان|جيتهاب)/,
 		responses: [
-			`أنا كيرلس مجدى، ${portfolioData.role}.`,
-			`اسمي كيرلس مجدى وأنا متخصص في ${portfolioData.role}.`,
-		],
-	},
-	{
-		pattern: /(مهارات|بتشتغل بايه|بتعرف ايه)/i,
-		lang: 'ar',
-		responses: [
-			`أعمل أساسًا مع: ${portfolioData.stack.join(', ')}.`,
-			`مهاراتي تشمل: ${portfolioData.stack.join(', ')}.`,
-		],
-	},
-	{
-		pattern: /(خبرة|اشتغلت كام سنة|اشتغلت في|مدة خبرتك|خبرتك| اشتغلت | شغلك)/i,
-		lang: 'ar',
-		responses: [
-			`لدي خبرة ${
-				portfolioData.experience
-			}، وعملت كـ ${portfolioData.detailedExperience.join(', ')}.`,
-			`خبرتي تمتد لـ ${portfolioData.experience} في مشاريع مختلفة.`,
-		],
-	},
-	{
-		pattern: /(تواصل|رقم|ايميل|طرق التواصل)/i,
-		lang: 'ar',
-		responses: [
-			`يمكنك التواصل معي على ${portfolioData.email} أو ${
-				portfolioData.phone
-			}. وسائل التواصل: ${portfolioData.socials
+			`تقدر تتواصل معايا على ${portfolioData.email} أو ${portfolioData.phone}.`,
+			`للتواصل ${portfolioData.email} وكمان على ${portfolioData.socials
 				.map(s => s.platform)
 				.join(', ')}.`,
-			`للتواصل، أرسل ايميل إلى ${portfolioData.email} أو تواصل عبر ${portfolioData.socials[0].platform}.`,
 		],
 	},
 	{
-		pattern: /(مشاريع|اعمالك|اشتغلت على ايه|الاعمال)/i,
 		lang: 'ar',
+		pattern: /(اهلا|مرحبا|السلام عليكم|هاي)/,
 		responses: [
-			`بعض مشاريعي: ${portfolioData.projects}.`,
-			`مشاريعي تشمل: ${portfolioData.projects
-				.split(',')
-				.slice(0, 3)
-				.join(', ')} والمزيد.`,
+			`أهلاً! اسألني عن خبرتي أو مشاريعي.`,
+			`مرحبًا، تقدر تسأل عن أي حاجة تخص البورتفوليو.`,
 		],
 	},
 	{
-		pattern: /(تعليم|ادرس|جامعة|دراسة|الشهادة)/i,
 		lang: 'ar',
-		responses: [
-			`درست في: ${portfolioData.education?.join(', ')}.`,
-			`تحصيلي العلمي يشمل ${portfolioData.education?.[0]}.`,
-		],
-	},
-	{
-		pattern: /(السلام عليكم|اهلا|هاي|مرحبا)/i,
-		lang: 'ar',
-		responses: [
-			`مرحبًا! أنا مساعد كيرلس مجدى الافتراضي. ممكن أساعدك بحاجة؟`,
-			`السلام عليكم! يمكنك سؤالي عن مهاراتي أو مشاريعي أو طرق التواصل معي.`,
-		],
-	},
-	{
-		pattern: /(شكرا|مشكور|متشكر)/i,
-		lang: 'ar',
-		responses: ['على الرحب والسعة!', 'أي وقت! اسأل عن أي شيء آخر إذا أحببت.'],
-	},
-	{
-		pattern: /(متاح|توظيف|فرص عمل|تعاون)/i,
-		lang: 'ar',
-		responses: [
-			`أنا متاح حالياً لفرص جديدة! تواصل معي على ${portfolioData.email}.`,
-			`متاح للتعاون أو فرص عمل جديدة. تواصل معي عبر ${portfolioData.phone}.`,
-		],
+		pattern: /(شكرا|متشكر|تسلم)/,
+		responses: ['العفو!', 'في أي وقت.'],
 	},
 ];
 
@@ -184,15 +108,13 @@ export async function POST(req: Request) {
 	try {
 		const { messages } = await req.json();
 		const lastMessage = messages[messages.length - 1];
-		const question = lastMessage.content.trim();
-
+		const question = normalize(lastMessage.content);
 		const lang = detectLanguage(question);
 
-		// Default refusal message if question outside portfolio
 		const refusal =
 			lang === 'ar'
-				? 'أنا مخصص فقط للإجابة عن أسئلة البرتفوليو، لا أستطيع الرد على شيء آخر.'
-				: 'I am only designed to answer portfolio-related questions, I cannot respond to other topics.';
+				? 'أنا مخصص فقط للإجابة عن الأسئلة المتعلقة بالبورتفوليو.'
+				: 'I only answer portfolio-related questions.';
 
 		let answer = refusal;
 
@@ -206,13 +128,9 @@ export async function POST(req: Request) {
 		const encoder = new TextEncoder();
 		const stream = new ReadableStream({
 			async start(controller) {
-				const chunks = answer.split(' ');
-				for (let i = 0; i < chunks.length; i++) {
-					const chunk = chunks[i] + (i === chunks.length - 1 ? '' : ' ');
-					controller.enqueue(encoder.encode(chunk));
-					await new Promise(resolve =>
-						setTimeout(resolve, 20 + Math.random() * 40),
-					);
+				for (const word of answer.split(' ')) {
+					controller.enqueue(encoder.encode(word + ' '));
+					await new Promise(r => setTimeout(r, 20 + Math.random() * 40));
 				}
 				controller.close();
 			},
@@ -224,11 +142,7 @@ export async function POST(req: Request) {
 				'Cache-Control': 'no-cache',
 			},
 		});
-	} catch (error) {
-		console.error('Chat API Error:', error);
-		return new Response(
-			`Error: ${error instanceof Error ? error.message : 'Unknown error'}`,
-			{ status: 500 },
-		);
+	} catch (err) {
+		return new Response(`Internal Server Error ${err}`, { status: 500 });
 	}
 }

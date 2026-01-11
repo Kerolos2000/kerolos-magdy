@@ -10,49 +10,56 @@ export interface Message {
 }
 
 export const useChat = () => {
-	const [messages, setMessages] = useState<Message[]>([]);
+	const [messages, setMessages] = useState<Message[]>([
+		{
+			id: '0',
+			role: 'assistant',
+			content: 'Hello, How can i help you ?',
+			timestamp: 0,
+		},
+	]);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
-	const abortControllerRef = useRef<AbortController | null>(null);
+	const abortRef = useRef<AbortController | null>(null);
 
 	const clearMessages = useCallback(() => {
-		if (abortControllerRef.current) {
-			abortControllerRef.current.abort();
-			abortControllerRef.current = null;
-		}
+		abortRef.current?.abort();
+		abortRef.current = null;
 		setMessages([]);
-		setError(null);
 		setIsLoading(false);
+		setError(null);
 	}, []);
 
 	const sendMessage = useCallback(
 		async (content: string) => {
 			if (!content.trim() || isLoading) return;
 
-			if (abortControllerRef.current) {
-				abortControllerRef.current.abort();
-			}
+			abortRef.current?.abort();
+			const controller = new AbortController();
+			abortRef.current = controller;
 
-			const abortController = new AbortController();
-			abortControllerRef.current = abortController;
+			const now = Date.now();
 
-			const timestamp = Date.now();
 			const userMessage: Message = {
-				id: timestamp.toString(),
+				id: now.toString(),
 				role: 'user',
 				content: content.trim(),
-				timestamp,
+				timestamp: now,
 			};
 
-			const assistantMessageId = (timestamp + 1).toString();
-			const assistantMessage: Message = {
-				id: assistantMessageId,
-				role: 'assistant',
-				content: '',
-				timestamp: timestamp + 1,
-			};
+			const assistantId = (now + 1).toString();
 
-			setMessages(prev => [...prev, userMessage, assistantMessage]);
+			setMessages(prev => [
+				...prev,
+				userMessage,
+				{
+					id: assistantId,
+					role: 'assistant',
+					content: '',
+					timestamp: now + 1,
+				},
+			]);
+
 			setIsLoading(true);
 			setError(null);
 
@@ -60,45 +67,36 @@ export const useChat = () => {
 				const response = await fetch('/api/chat', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({
-						messages: [...messages, userMessage],
-					}),
-					signal: abortController.signal,
+					body: JSON.stringify({ messages: [...messages, userMessage] }),
+					signal: controller.signal,
 				});
 
-				if (!response.ok) throw new Error('Network response was not ok');
-				if (!response.body) throw new Error('No response body');
+				if (!response.ok || !response.body) throw new Error('Request failed');
 
 				const reader = response.body.getReader();
 				const decoder = new TextDecoder();
-				let accumulatedContent = '';
+				let text = '';
 
 				while (true) {
 					const { done, value } = await reader.read();
 					if (done) break;
+					text += decoder.decode(value, { stream: true });
 
-					accumulatedContent += decoder.decode(value, { stream: true });
 					setMessages(prev =>
-						prev.map(msg =>
-							msg.id === assistantMessageId
-								? { ...msg, content: accumulatedContent }
-								: msg,
-						),
+						prev.map(m => (m.id === assistantId ? { ...m, content: text } : m)),
 					);
 				}
 			} catch (err) {
 				if (err !== 'AbortError') {
-					setError(`Something went wrong: ${err}`);
-					setMessages(prev =>
-						prev.filter(msg => msg.id !== assistantMessageId),
-					);
+					setError('Something went wrong');
+					setMessages(prev => prev.filter(m => m.id !== assistantId));
 				}
 			} finally {
 				setIsLoading(false);
-				abortControllerRef.current = null;
+				abortRef.current = null;
 			}
 		},
-		[messages, isLoading],
+		[isLoading, messages],
 	);
 
 	return {

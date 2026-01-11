@@ -2,7 +2,7 @@
 import { IconSend, IconX } from '@tabler/icons-react';
 import { useEffect, useRef } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
-import { useChat } from 'src/hooks/useChat';
+import { useChat } from 'src/hooks';
 import { ChatMessage } from './chat-message';
 
 interface ChatWindowProps {
@@ -52,7 +52,7 @@ export const ChatWindow = ({ onClose }: ChatWindowProps) => {
 						<span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75' />
 					</div>
 					<h3 className='font-semibold text-neutral-800 dark:text-white'>
-						Portfolio AI
+						Portfolio AI (Beta)
 					</h3>
 				</div>
 				<button

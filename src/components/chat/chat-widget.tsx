@@ -16,7 +16,7 @@ export const ChatWidget = () => {
 						initial={{ opacity: 0, scale: 0.9, y: 20 }}
 						animate={{ opacity: 1, scale: 1, y: 0 }}
 						exit={{ opacity: 0, scale: 0.9, y: 20 }}
-						className='h-125 w-[calc(100vw-2rem)] sm:w-85 mb-3 overflow-hidden rounded-2xl border bg-white shadow-2xl dark:bg-neutral-900 dark:border-neutral-800'
+						className='h-125 w-[calc(100vw-2rem)] sm:w-90 mb-3 overflow-hidden rounded-2xl border bg-white shadow-2xl dark:bg-neutral-900 dark:border-neutral-800'
 					>
 						<ChatWindow onClose={() => setIsOpen(false)} />
 					</motion.div>
