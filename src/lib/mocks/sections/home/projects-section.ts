@@ -7,7 +7,7 @@ interface ProductItem {
 export const ProductsItems: ProductItem[] = [
 	{
 		title: 'Runnet',
-		link: 'https://www.runnet.io/',
+		link: 'https://runnet.vercel.app/',
 		thumbnail: '/runnet1.webp',
 	},
 	{
