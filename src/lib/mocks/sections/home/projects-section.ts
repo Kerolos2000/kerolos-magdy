@@ -21,9 +21,9 @@ export const ProductsItems: ProductItem[] = [
 		thumbnail: '/freelance1.webp',
 	},
 	{
-		title: 'Noxe',
-		link: 'https://movies-app-react-lime.vercel.app/',
-		thumbnail: '/project4.webp',
+		title: 'Adasa',
+		link: 'https://adasa-bay.vercel.app/',
+		thumbnail: '/adasa.webp',
 	},
 	{
 		title: 'Innova EG',
@@ -46,8 +46,8 @@ export const ProductsItems: ProductItem[] = [
 		thumbnail: '/project3.webp',
 	},
 	{
-		title: 'Tic Tac Toe',
-		link: 'https://xogame-orcin.vercel.app/',
-		thumbnail: '/project1.webp',
+		title: 'Noxe',
+		link: 'https://movies-app-react-lime.vercel.app/',
+		thumbnail: '/project4.webp',
 	},
 ];

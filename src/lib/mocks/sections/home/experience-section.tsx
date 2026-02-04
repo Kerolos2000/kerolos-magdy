@@ -15,7 +15,7 @@ export const ExperienceItems: TimelineEntry[] = [
 			<div className='space-y-3'>
 				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
 					<IconDeviceLaptop className='h-4 w-4 text-emerald-700' />
-					<span>Remote — Ongoing</span>
+					<span>Remote • 06/2023 – Present</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
 					Collaborating with multiple international clients to deliver
@@ -190,12 +190,16 @@ export const ExperienceItems: TimelineEntry[] = [
 		),
 	},
 	{
-		title: 'Front-End Diploma',
+		title: 'Front-End Diploma React & Next.js',
 		content: (
 			<div className='space-y-3'>
 				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
 					<IconCertificate className='h-4 w-4 text-amber-600' />
-					<span>Route Egypt Academy — Alexandria Branch</span>
+					<span>Route Egypt Academy • 11/2022 – 05/2023</span>
+				</div>
+				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
+					<IconMapPin className='h-4 w-4 text-emerald-700' />
+					<span>Alexandria Branch</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
 					Completed a comprehensive program covering <strong>HTML5</strong>,{' '}
@@ -215,6 +219,27 @@ export const ExperienceItems: TimelineEntry[] = [
 						className='w-full sm:w-1/2 rounded-lg object-contain shadow-sm'
 					/>
 				</div>
+			</div>
+		),
+	},
+	{
+		title: 'Angular Framework',
+		content: (
+			<div className='space-y-3'>
+				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
+					<IconCertificate className='h-4 w-4 text-amber-600' />
+					<span>Route Egypt Academy • 12/2025 – Present</span>
+				</div>
+				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
+					<IconMapPin className='h-4 w-4 text-emerald-700' />
+					<span>Alexandria Branch</span>
+				</div>
+				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
+					Completed a comprehensive program covering <strong>HTML5</strong>,{' '}
+					<strong>Angular</strong>,<strong>typeScript</strong>,{' '}
+					<strong>Angular Material</strong>, Gained practical experience
+					building UI layouts and dynamic web interfaces with best practices.
+				</p>
 			</div>
 		),
 	},

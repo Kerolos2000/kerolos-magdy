@@ -27,7 +27,7 @@ export const ChatWidget = () => {
 				whileHover={{ scale: 1.05 }}
 				whileTap={{ scale: 0.95 }}
 				onClick={() => setIsOpen(!isOpen)}
-				className='flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100/60 hover:bg-neutral-200/70 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/60 backdrop-blur-[6px] transition-colors'
+				className='cursor-pointer flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200/60 hover:bg-neutral-300/70 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/60 backdrop-blur-sm transition-colors'
 			>
 				<IconMessageChatbot className='h-5 w-5 text-neutral-800 dark:text-neutral-50' />
 			</motion.button>

@@ -1,5 +1,6 @@
 import {
 	IconApi,
+	IconBrandAngular,
 	IconBrandBootstrap,
 	IconBrandCss3,
 	IconBrandGithub,
@@ -27,6 +28,7 @@ export const SkillsItems: SkillsItem[] = [
 	{ name: 'JavaScript', Icon: IconBrandJavascript },
 	{ name: 'Next.js', Icon: IconBrandNextjs },
 	{ name: 'React.js', Icon: IconBrandReact },
+	{ name: 'Angular', Icon: IconBrandAngular },
 	{ name: 'React Native', Icon: IconBrandReact },
 	{ name: 'React Hook Form', Icon: IconForms },
 	{ name: 'Zod', Icon: IconDatabase },
@@ -39,8 +41,7 @@ export const SkillsItems: SkillsItem[] = [
 	{ name: 'Bootstrap', Icon: IconBrandBootstrap },
 	{ name: 'React Admin', Icon: IconBrandVscode },
 	{ name: 'HTML5', Icon: IconBrandHtml5 },
-	{ name: 'CSS3', Icon: IconBrandCss3 },
-	{ name: 'SCSS', Icon: IconBrandCss3 },
+	{ name: 'CSS3 / SCSS', Icon: IconBrandCss3 },
 	{ name: 'Supabase', Icon: IconDatabase },
 	{ name: 'Git & GitHub', Icon: IconBrandGithub },
 ];

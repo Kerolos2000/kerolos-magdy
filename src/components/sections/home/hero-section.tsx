@@ -9,7 +9,7 @@ export default function HomeHeroSection() {
 	return (
 		<section className='relative py-12 sm:py-16 flex items-center justify-center overflow-hidden'>
 			<div className='absolute inset-0'>
-				<div className='absolute top-0 -z-10 h-full w-full [&>div]:absolute [&>div]:bottom-auto [&>div]:left-auto [&>div]:right-0 [&>div]:top-0 [&>div]:h-[180px] sm:[&>div]:h-[260px] md:[&>div]:h-80 lg:[&>div]:h-[380px] xl:[&>div]:h-[420px] [&>div]:w-[180px] sm:[&>div]:w-[260px] md:[&>div]:w-[320px] lg:[&>div]:w-[380px] xl:[&>div]:w-[420px] [&>div]:-translate-x-[50%] [&>div]:translate-y-[20%] [&>div]:rounded-full [&>div]:bg-[rgba(109,244,173,0.3)] dark:[&>div]:bg-[rgba(109,244,173,0.15)] [&>div]:blur-[80px] [&>div]:animate-[fadePulse_10s_ease-in-out_infinite]'>
+				<div className='absolute top-0 -z-10 h-full w-full [&>div]:absolute [&>div]:bottom-auto [&>div]:left-auto [&>div]:right-0 [&>div]:top-0 [&>div]:h-45 sm:[&>div]:h-65 md:[&>div]:h-80 lg:[&>div]:h-95 xl:[&>div]:h-105 [&>div]:w-45 sm:[&>div]:w-65 md:[&>div]:w-[320px] lg:[&>div]:w-95 xl:[&>div]:w-105 [&>div]:-translate-x-[50%] [&>div]:translate-y-[20%] [&>div]:rounded-full [&>div]:bg-[rgba(109,244,173,0.3)] dark:[&>div]:bg-[rgba(109,244,173,0.15)] [&>div]:blur-[80px] [&>div]:animate-[fadePulse_10s_ease-in-out_infinite]'>
 					<div></div>
 				</div>
 			</div>
@@ -39,6 +39,8 @@ export default function HomeHeroSection() {
 						React
 						<span className='text-emerald-500'> | </span>
 						Next.js
+						<span className='text-emerald-500'> | </span>
+						Angular
 					</p>
 
 					<Link
