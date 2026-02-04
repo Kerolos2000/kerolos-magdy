@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kerolos Magdy | Frontend Developer Portfolio
 
-## Getting Started
+A high-performance, personal portfolio website built with **Next.js 16** and **Tailwind CSS v4**.
 
-First, run the development server:
+[![Live Demo](https://img.shields.io/badge/live-demo-brightgreen)](https://kerolos-magdy-portfolio.vercel.app/)
+
+## 🚀 Overview
+
+This project is a showcase of advanced frontend development skills, featuring a premium dark-themed UI, smooth scroll animations, interactive 3D elements, and a dynamic blog system. It is designed to demonstrate mastery in building modern, responsive, and accessible web applications.
+
+## ✨ Features
+
+- **Next.js 16:** Leveraging the latest App Router and React Server Components for optimal performance.
+- **Modern Styling:** Built with **Tailwind CSS v4** for a sleek, responsive design.
+- **Animations:** GSAP & Framer Motion Complex UI transitions and scroll-triggered effects.
+- **Smooth Scrolling:** Integrated with **Lenis** for a fluid navigation experience.
+- **Dark Mode:** Fully supported with `next-themes` and a custom color palette.
+- **Typography:** Uses **Geist** and **Inter** fonts for a clean, professional look.
+- **Form Handling:** Robust validation with **React Hook Form** and **Zod**.
+- **SEO Optimized:** Automatic sitemap generation and semantic HTML structure.
+
+## 🔗 Links
+
+- **Live Demo:** [kerolos-magdy-portfolio.vercel.app](https://kerolos-magdy-portfolio.vercel.app/)
+
+## 🛠️ Usage
+
+Follow these steps to run the project locally.
+
+### Prerequisites
+
+- Node.js (Latest LTS version recommended)
+- A package manager: npm, yarn, or pnpm
+
+### Installation
+
+Clone the repository and install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/kerolos-next-portfolio.git
+cd kerolos-next-portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Using npm
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### Using yarn
 
-## Learn More
+```bash
+yarn
+yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+#### Using pnpm
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm install
+pnpm dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The application will be available at `http://localhost:3000`.
 
-## Deploy on Vercel
+## 🏗️ Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/app/`: App Router pages, layouts, and global styles.
+- `src/components/`: Reusable UI components using atomic design principles.
+- `src/hooks/`: Custom React hooks for shared logic.
+- `src/lib/`: Configuration for libraries (GSAP, Lenis, etc.) and helper functions.
+- `src/utils/`: General utility functions and constants.
+- `src/validation/`: Zod schemas for form validation and type safety.
+- `public/`: Static assets like images, icons, and fonts.
