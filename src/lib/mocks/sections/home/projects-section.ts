@@ -46,8 +46,8 @@ export const ProductsItems: ProductItem[] = [
 		thumbnail: '/project3.webp',
 	},
 	{
-		title: 'Noxe',
-		link: 'https://movies-app-react-lime.vercel.app/',
+		title: 'NutriPlan',
+		link: 'https://nutriplan-exam-seven.vercel.app/',
 		thumbnail: '/project4.webp',
 	},
 ];
