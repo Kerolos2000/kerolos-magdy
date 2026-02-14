@@ -5,7 +5,7 @@ export default function HomeSkillsSection() {
 	return (
 		<section
 			id='home-skills-section'
-			className='space-y-8 py-8 container mx-auto px-4 sm:px-6 lg:px-8 w-full'
+			className='section-container space-y-8'
 		>
 			<MainTitle
 				regularText='Some of My'

@@ -123,7 +123,7 @@ export const Header = () => (
 			boldText='Projects'
 			regularText='Explore My'
 		/>
-		<p className='max-w-2xl text-base text-neutral-600 dark:text-neutral-300'>
+		<p className='section-description'>
 			I create modern and elegant web products using cutting-edge technologies
 			and frameworks, focusing on performance, scalability, and user experience.
 		</p>

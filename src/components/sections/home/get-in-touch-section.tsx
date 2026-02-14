@@ -14,7 +14,7 @@ export default function HomeGetInTouchSection() {
 							regularText='Ready to collaborate on'
 							boldText='Next Project ?'
 						/>
-						<p className='max-w-2xl text-base text-neutral-600 dark:text-neutral-300'>
+						<p className='section-description'>
 							Whether you need a modern website, a fast web app, or a complete
 							design system, I can help you plan, build, and launch it
 							efficiently and at scale.
@@ -25,7 +25,7 @@ export default function HomeGetInTouchSection() {
 							href='https://api.whatsapp.com/send/?phone=201205224238&text&type=phone_number&app_absent=0'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='w-fit px-6 py-2 sm:px-7 rounded-lg bg-neutral-50/50 dark:bg-neutral-100/10 backdrop-blur-sm border border-card-foreground/30 hover:border-card-foreground/50 text-foreground transition-all duration-300 flex items-center gap-2'
+							className='main-button'
 						>
 							Get in Touch
 						</Link>

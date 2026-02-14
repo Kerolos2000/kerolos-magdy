@@ -190,12 +190,27 @@
   }
 }
 
+/* COMPONENTS */
+@layer components {
+  .main-button {
+    @apply w-fit px-6 py-3 sm:px-7 rounded-lg bg-neutral-50/50 dark:bg-neutral-100/10 backdrop-blur-sm border border-card-foreground/30 hover:border-card-foreground/50 text-foreground transition-all duration-300 flex items-center gap-2
+  }
+
+  .section-container {
+    @apply py-12 sm:py-16 container mx-auto px-4 sm:px-6 lg:px-8 w-full
+  }
+
+  .section-description {
+    @apply max-w-2xl text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed
+  }
+}
+
 /* GLOBALS */
 html {
   scrollbar-width: none;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1280px) {
   html {
     scroll-behavior: smooth;
   }
