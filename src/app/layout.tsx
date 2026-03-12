@@ -9,6 +9,7 @@ import {
 	Footer,
 	SmoothScroll,
 } from 'src/components';
+import RevealLoader from 'src/components/ui/reveal-loader';
 import './globals.css';
 
 const inter = Inter({
@@ -89,6 +90,11 @@ export default function RootLayout({
 					{children}
 					<FloatingAppBar />
 					<Footer />
+					<RevealLoader
+						text='KEROLOS'
+						staggerOrder='left-to-right'
+						movementDirection='top-down'
+					/>
 				</ThemeProvider>
 				<SmoothScroll />
 				<Analytics mode='production' />

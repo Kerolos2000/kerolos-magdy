@@ -7,6 +7,7 @@ export * from './flowing-menu';
 export * from './light-grid';
 export * from './main-title';
 export * from './number-ticker';
+export * from './reveal-loader';
 export * from './scroll-based-velocity';
 export * from './timeline';
 export * from './toggle-theme';
