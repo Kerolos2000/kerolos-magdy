@@ -38,7 +38,7 @@ export default function HomeProjectsSection() {
 	return (
 		<section
 			id='home-projects-section'
-			className='py-8  w-full  overflow-hidden'
+			className='py-8 w-full overflow-hidden'
 		>
 			<div
 				ref={ref}
@@ -80,12 +80,14 @@ const InfiniteRow = ({
 						: 'animate-marquee'
 				} gap-4 md:gap-8`}
 			>
-				{[...products, ...products, ...products].map((product, index) => (
-					<ProductCard
-						key={index}
-						product={product}
-					/>
-				))}
+				{[...products, ...products, ...products, ...products].map(
+					(product, index) => (
+						<ProductCard
+							key={index}
+							product={product}
+						/>
+					),
+				)}
 			</div>
 		</div>
 	);
@@ -99,18 +101,19 @@ export const ProductCard = ({
 	<Link
 		href={product.link}
 		target='_blank'
-		className='group/product relative shrink-0 w-56 sm:w-[20rem] md:w-104 border border-primary/20 rounded-2xl shadow-sm overflow-hidden cursor-pointer block'
+		className='group/product relative shrink-0 w-56 sm:w-[20rem] aspect-4/3 border border-primary/20 rounded-2xl shadow-sm overflow-hidden cursor-pointer block'
 	>
-		<div className='relative w-full aspect-video overflow-hidden rounded-2xl'>
+		<div className='relative w-full aspect-4/3 overflow-hidden'>
 			<Image
 				src={product.thumbnail}
 				alt={product.title}
-				fill
-				sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-				className='object-cover'
+				width={1024}
+				height={768}
 			/>
 		</div>
+
 		<div className='absolute inset-0 bg-black opacity-0 group-hover/product:opacity-60 transition-opacity pointer-events-none'></div>
+
 		<h2 className='absolute bottom-4 left-4 text-white text-sm sm:text-base md:text-lg font-medium opacity-0 group-hover/product:opacity-100 transition-opacity pointer-events-none'>
 			{product.title}
 		</h2>

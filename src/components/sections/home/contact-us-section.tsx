@@ -58,7 +58,7 @@ export default function HomeContactUsSection() {
 							type='text'
 							placeholder='Your Name'
 							{...register('name')}
-							className='w-full rounded-lg border border-card-foreground/30 p-2 bg-transparent outline-none'
+							className='w-full rounded-lg border border-card-foreground/30 focus:border-card-foreground/50 transition-all duration-300 p-2 bg-transparent outline-none'
 						/>
 						{errors.name && (
 							<p className='text-red-500 text-sm'>{errors.name.message}</p>
@@ -69,7 +69,7 @@ export default function HomeContactUsSection() {
 							type='email'
 							placeholder='Your Email'
 							{...register('email')}
-							className='w-full rounded-lg border border-card-foreground/30 p-2 bg-transparent outline-none'
+							className='w-full rounded-lg border border-card-foreground/30 focus:border-card-foreground/50 transition-all duration-300 p-2 bg-transparent outline-none'
 						/>
 						{errors.email && (
 							<p className='text-red-500 text-sm'>{errors.email.message}</p>
@@ -79,7 +79,7 @@ export default function HomeContactUsSection() {
 						<textarea
 							placeholder='Your Message'
 							{...register('message')}
-							className='w-full h-28 rounded-lg border border-card-foreground/30 p-2 bg-transparent outline-none resize-none'
+							className='w-full h-28 rounded-lg border border-card-foreground/30 focus:border-card-foreground/50 transition-all duration-300 p-2 bg-transparent outline-none resize-none'
 						/>
 						{errors.message && (
 							<p className='text-red-500 text-sm'>{errors.message.message}</p>
@@ -88,7 +88,7 @@ export default function HomeContactUsSection() {
 					<button
 						type='submit'
 						disabled={status === 'sending'}
-						className='cursor-pointer text-center w-full px-6 sm:px-7 py-2 rounded-lg bg-neutral-50/50 dark:bg-neutral-100/10 backdrop-blur-sm border border-card-foreground/30 hover:border-card-foreground/50 text-foreground transition-all duration-300 flex items-center justify-center'
+						className='cursor-pointer text-center w-full px-6 sm:px-7 py-2 rounded-lg bg-neutral-50/50 dark:bg-neutral-100/10 backdrop-blur-sm border border-card-foreground/30 focus:border-card-foreground/50 transition-all duration-300 hover:border-card-foreground/50 text-foreground flex items-center justify-center'
 					>
 						{status === 'sending' ? 'Sending...' : 'Send Message'}
 					</button>

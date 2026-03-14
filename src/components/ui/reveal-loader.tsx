@@ -3,7 +3,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Anton } from 'next/font/google';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { cn } from 'src/utils';
 
 const anton = Anton({
@@ -48,7 +48,7 @@ interface RevealLoaderProps {
 
 const RevealLoader = ({
 	text = 'VENGEANCE',
-	textSize = '120px',
+	textSize = '100px',
 	textColor = 'white',
 	bgColors = ['#00573a', '#000000'],
 	angle = 0,
@@ -59,6 +59,14 @@ const RevealLoader = ({
 	onComplete,
 }: RevealLoaderProps) => {
 	const preloaderRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		document.body.style.overflowY = 'hidden';
+
+		return () => {
+			document.body.style.overflowY = '';
+		};
+	}, []);
 
 	const getBackgroundStyle = () => {
 		if (bgColors.length === 0) return { backgroundColor: 'black' };
@@ -99,7 +107,10 @@ const RevealLoader = ({
 	useGSAP(
 		() => {
 			const tl = gsap.timeline({
-				onComplete: onComplete,
+				onComplete: () => {
+					document.body.style.overflow = 'auto';
+					onComplete?.();
+				},
 			});
 
 			const moveProps = getAnimationProperties(movementDirection);
@@ -137,7 +148,7 @@ const RevealLoader = ({
 	return (
 		<div
 			className={cn(
-				'absolute inset-0 z-50 flex overflow-hidden bg-transparent',
+				'fixed inset-0 z-50 flex overflow-hidden bg-transparent',
 				className,
 			)}
 			ref={preloaderRef}

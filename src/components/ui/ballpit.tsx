@@ -486,14 +486,10 @@ class Y extends MeshPhysicalMaterial {
 			shader.fragmentShader = shader.fragmentShader.replace(
 				'void main() {',
 				`
-        void RE_Direct_Scattering(const in IncidentLight directLight, const in vec2 uv, const in vec3 geometryPosition, const in vec3 geometryNormal, const in vec3 geometryViewDir, const in vec3 geometryClearcoatNormal, inout ReflectedLight reflectedLight) {
+        void RE_Direct_Scattering(const in IncidentLight directLight, const in vec2 uv, const in vec3 geometryPosition, const in vec3 geometryNormal, const in vec3 geometryViewDir, const in vec3 geometryClearcoatNormal, const in vec3 baseColor, inout ReflectedLight reflectedLight) {
           vec3 scatteringHalf = normalize(directLight.direction + (geometryNormal * thicknessDistortion));
           float scatteringDot = pow(saturate(dot(geometryViewDir, -scatteringHalf)), thicknessPower) * thicknessScale;
-          #ifdef USE_COLOR
-            vec3 scatteringIllu = (scatteringDot + thicknessAmbient) * vColor;
-          #else
-            vec3 scatteringIllu = (scatteringDot + thicknessAmbient) * diffuse;
-          #endif
+          vec3 scatteringIllu = (scatteringDot + thicknessAmbient) * baseColor;
           reflectedLight.directDiffuse += scatteringIllu * thicknessAttenuation * directLight.color;
         }
 
@@ -504,7 +500,7 @@ class Y extends MeshPhysicalMaterial {
 				'RE_Direct( directLight, geometryPosition, geometryNormal, geometryViewDir, geometryClearcoatNormal, material, reflectedLight );',
 				`
           RE_Direct( directLight, geometryPosition, geometryNormal, geometryViewDir, geometryClearcoatNormal, material, reflectedLight );
-          RE_Direct_Scattering(directLight, vUv, geometryPosition, geometryNormal, geometryViewDir, geometryClearcoatNormal, reflectedLight);
+          RE_Direct_Scattering(directLight, vUv, geometryPosition, geometryNormal, geometryViewDir, geometryClearcoatNormal, diffuseColor.rgb, reflectedLight);
         `,
 			);
 			shader.fragmentShader = shader.fragmentShader.replace(
