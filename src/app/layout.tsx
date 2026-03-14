@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 		type: 'website',
 		images: [
 			{
-				url: 'https://kerolos-magdy-portfolio.vercel.app/fav.webp',
+				url: 'https://kerolos-magdy-portfolio.vercel.app/favicon.ico',
 				width: 1200,
 				height: 630,
 				alt: 'Kerolos Magdy Portfolio',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
 			},
 		],
 	},
-	icons: { icon: '/fav.webp' },
+	icons: { icon: '/favicon.ico' },
 };
 
 export default function RootLayout({

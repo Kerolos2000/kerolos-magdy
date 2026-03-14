@@ -8,17 +8,17 @@ export const ProductsItems: ProductItem[] = [
 	{
 		title: 'Runnet',
 		link: 'https://runnet.vercel.app/',
-		thumbnail: '/runnet1.webp',
+		thumbnail: '/runnet-1.webp',
 	},
 	{
 		title: 'Growth Level Academy',
 		link: 'https://growthlevelacademy.com/',
-		thumbnail: '/freelance2.webp',
+		thumbnail: '/growth-level.webp',
 	},
 	{
 		title: 'El Romany E-Commerce',
 		link: 'https://romany1.com/',
-		thumbnail: '/freelance1.webp',
+		thumbnail: '/el-romany.webp',
 	},
 	{
 		title: 'Adasa',
@@ -28,26 +28,26 @@ export const ProductsItems: ProductItem[] = [
 	{
 		title: 'Innova EG',
 		link: 'https://innova.com.eg/',
-		thumbnail: '/freelance3.webp',
+		thumbnail: '/innova.webp',
+	},
+	{
+		title: 'Social App',
+		link: 'https://social-app-next-ts.vercel.app/',
+		thumbnail: '/social-app.webp',
 	},
 	{
 		title: 'Shop Next',
 		link: 'https://shop-next-ts.vercel.app/en',
-		thumbnail: '/freelance4.webp',
-	},
-	{
-		title: 'Angora Template Clone',
-		link: 'https://angora-templet.vercel.app/',
-		thumbnail: '/project2.webp',
+		thumbnail: '/shop-next.webp',
 	},
 	{
 		title: 'Old Portfolio',
 		link: 'https://kerolos-magdy-old.vercel.app/',
-		thumbnail: '/project3.webp',
+		thumbnail: '/old-portfolio.webp',
 	},
 	{
 		title: 'NutriPlan',
 		link: 'https://nutriplan-exam-seven.vercel.app/',
-		thumbnail: '/project4.webp',
+		thumbnail: '/nutriplan.webp',
 	},
 ];

@@ -39,31 +39,31 @@ export const ExperienceItems: TimelineEntry[] = [
 				</div>
 				<div className='grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2'>
 					<Image
-						src='/freelance1.webp'
-						alt='Freelance Project 1'
-						width={600}
-						height={250}
+						src='/el-romany.webp'
+						alt='El Romany'
+						width={1024}
+						height={768}
 						className='h-full w-full rounded-lg object-cover object-top shadow-sm'
 					/>
 					<Image
-						src='/freelance2.webp'
-						alt='Freelance Project 2'
-						width={600}
-						height={250}
+						src='/growth-level.webp'
+						alt='Growth Level'
+						width={1024}
+						height={768}
 						className='h-full w-full rounded-lg object-cover object-top shadow-sm'
 					/>
 					<Image
-						src='/freelance3.webp'
-						alt='Freelance Project 3'
-						width={600}
-						height={250}
+						src='/innova.webp'
+						alt='Innova'
+						width={1024}
+						height={768}
 						className='h-full w-full rounded-lg object-cover object-top shadow-sm'
 					/>
 					<Image
-						src='/freelance4.webp'
-						alt='Freelance Project 4'
-						width={600}
-						height={250}
+						src='/shop-next.webp'
+						alt='Shop Next'
+						width={1024}
+						height={768}
 						className='h-full w-full rounded-lg object-cover object-top shadow-sm'
 					/>
 				</div>
@@ -128,17 +128,17 @@ export const ExperienceItems: TimelineEntry[] = [
 				</p>
 				<div className='grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2'>
 					<Image
-						src='/runnet1.webp'
+						src='/runnet-1.webp'
 						alt='Runnet Admin Dashboard'
-						width={600}
-						height={250}
+						width={1024}
+						height={768}
 						className='w-full rounded-lg object-cover shadow-sm'
 					/>
 					<Image
-						src='/runnet2.webp'
+						src='/runnet-2.webp'
 						alt='Runnet Analytics'
-						width={600}
-						height={250}
+						width={1024}
+						height={768}
 						className='w-full rounded-lg object-cover shadow-sm'
 					/>
 				</div>
@@ -214,8 +214,8 @@ export const ExperienceItems: TimelineEntry[] = [
 					<Image
 						src='/route.webp'
 						alt='Front-End Diploma Certificate'
-						width={500}
-						height={300}
+						width={977}
+						height={963}
 						className='w-full sm:w-1/2 rounded-lg object-contain shadow-sm'
 					/>
 				</div>
