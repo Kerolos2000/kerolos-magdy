@@ -2,7 +2,7 @@ import { cn } from 'src/utils';
 
 export const LightGrid = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<div className='relative flex w-full flex-col overflow-hidden rounded-md md:flex-row md:items-center md:justify-center'>
+		<div className='relative flex w-full flex-col overflow-hidden rounded-lg md:flex-row md:items-center md:justify-center'>
 			<div
 				className={cn(
 					'pointer-events-none absolute inset-0 bg-size-[40px_40px] select-none',

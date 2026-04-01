@@ -232,7 +232,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
 	return (
 		<div
 			{...props}
-			className={cn('absolute z-50 h-2 w-2', props.className)}
+			className={cn('absolute z-40 h-2 w-2', props.className)}
 		>
 			<motion.div
 				initial={{ opacity: 0 }}

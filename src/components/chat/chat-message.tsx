@@ -33,8 +33,8 @@ export const ChatMessage = ({ role, content }: ChatMessageProps) => {
 				className={cn(
 					'relative px-4 py-2 text-sm shadow-sm max-w-[80%]',
 					isUser
-						? 'rounded-2xl rounded-tr-none bg-neutral-900 text-white dark:bg-white dark:text-neutral-900'
-						: 'rounded-2xl rounded-tl-none bg-white text-neutral-800 border dark:bg-neutral-900 dark:text-neutral-100 dark:border-neutral-800',
+						? 'rounded-lg rounded-tr-none bg-neutral-900 text-white dark:bg-white dark:text-neutral-900'
+						: 'rounded-lg rounded-tl-none bg-white text-neutral-800 border dark:bg-neutral-900 dark:text-neutral-100 dark:border-neutral-800',
 				)}
 			>
 				{content && (

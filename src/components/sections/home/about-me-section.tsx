@@ -15,7 +15,7 @@ export default function HomeAboutMeSection() {
 						key={index}
 						className='inter-var'
 					>
-						<CardBody className='relative overflow-hidden rounded-xl border border-black/10 dark:border-white/10 bg-white/5 dark:bg-black/20 backdrop-blur-md transition-all duration-300 hover:border-emerald-500 dark:hover:border-emerald-400/40'>
+						<CardBody className='relative overflow-hidden rounded-lg border border-black/10 dark:border-white/10 bg-neutral-50/50 dark:bg-neutral-900/20 backdrop-blur-md transition-all duration-300 hover:border-emerald-500 dark:hover:border-emerald-400/40'>
 							<Ballpit
 								className='absolute inset-0 -z-2'
 								count={25}
@@ -32,7 +32,7 @@ export default function HomeAboutMeSection() {
 								]}
 								followCursor={false}
 							/>
-							<div className='p-8'>
+							<div className='p-8 h-full'>
 								<CardItem
 									translateZ='60'
 									className='flex items-center gap-3 text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-4'

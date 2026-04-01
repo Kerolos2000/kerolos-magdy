@@ -101,7 +101,7 @@ export const ProductCard = ({
 	<Link
 		href={product.link}
 		target='_blank'
-		className='group/product relative shrink-0 w-56 sm:w-[20rem] aspect-4/3 border border-primary/20 rounded-2xl shadow-sm overflow-hidden cursor-pointer block'
+		className='group/product relative shrink-0 w-56 sm:w-[20rem] aspect-4/3 border border-primary/20 rounded-lg shadow-sm overflow-hidden cursor-pointer block'
 	>
 		<div className='relative w-full aspect-4/3 overflow-hidden'>
 			<Image

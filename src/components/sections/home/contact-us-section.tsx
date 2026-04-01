@@ -47,44 +47,48 @@ export default function HomeContactUsSection() {
 			<div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
 				<form
 					onSubmit={handleSubmit(onSubmit)}
-					className='w-full bg-transparent rounded-2xl space-y-4'
+					className='w-full space-y-4'
 				>
 					<MainTitle
 						regularText='Contact'
 						boldText='Me'
 					/>
+
 					<div>
 						<input
 							type='text'
 							placeholder='Your Name'
 							{...register('name')}
-							className='w-full rounded-lg border border-card-foreground/30 focus:border-card-foreground/50 transition-all duration-300 p-2 bg-transparent outline-none'
+							className='w-full rounded-lg border border-neutral-200 dark:border-white/10 focus:border-emerald-500 dark:focus:border-emerald-500 transition-all duration-300 px-4 py-3 bg-white dark:bg-neutral-900/60 outline-none text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-sm'
 						/>
 						{errors.name && (
 							<p className='text-red-500 text-sm'>{errors.name.message}</p>
 						)}
 					</div>
+
 					<div>
 						<input
 							type='email'
 							placeholder='Your Email'
 							{...register('email')}
-							className='w-full rounded-lg border border-card-foreground/30 focus:border-card-foreground/50 transition-all duration-300 p-2 bg-transparent outline-none'
+							className='w-full rounded-lg border border-neutral-200 dark:border-white/10 focus:border-emerald-500 dark:focus:border-emerald-500 transition-all duration-300 px-4 py-3 bg-white dark:bg-neutral-900/60 outline-none text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-sm'
 						/>
 						{errors.email && (
 							<p className='text-red-500 text-sm'>{errors.email.message}</p>
 						)}
 					</div>
+
 					<div>
 						<textarea
 							placeholder='Your Message'
 							{...register('message')}
-							className='w-full h-28 rounded-lg border border-card-foreground/30 focus:border-card-foreground/50 transition-all duration-300 p-2 bg-transparent outline-none resize-none'
+							className='w-full h-32 rounded-lg border border-neutral-200 dark:border-white/10 focus:border-emerald-500 dark:focus:border-emerald-500 transition-all duration-300 px-4 py-3 bg-white dark:bg-neutral-900/60 outline-none resize-none text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-sm'
 						/>
 						{errors.message && (
 							<p className='text-red-500 text-sm'>{errors.message.message}</p>
 						)}
 					</div>
+
 					<button
 						type='submit'
 						disabled={status === 'sending'}
@@ -92,17 +96,19 @@ export default function HomeContactUsSection() {
 					>
 						{status === 'sending' ? 'Sending...' : 'Send Message'}
 					</button>
+
 					{status === 'success' && (
-						<p className='text-emerald-500 text-center text-sm'>
-							Message sent successfully.
+						<p className='text-emerald-500 text-center text-sm flex items-center justify-center gap-2'>
+							Message sent successfully!
 						</p>
 					)}
 					{status === 'error' && (
-						<p className='text-red-500 text-center text-sm'>
-							Failed to send. Try again.
+						<p className='text-red-500 text-center text-sm flex items-center justify-center gap-2'>
+							Failed to send. Please try again.
 						</p>
 					)}
 				</form>
+
 				<FlowingMenu items={ContactUsItems} />
 			</div>
 		</section>

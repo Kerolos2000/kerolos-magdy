@@ -97,7 +97,7 @@ export default function RootLayout({
 					/>
 				</ThemeProvider>
 				<SmoothScroll />
-				<Analytics mode='production' />
+				<Analytics />
 				<SpeedInsights />
 				<ChatWidget />
 			</body>

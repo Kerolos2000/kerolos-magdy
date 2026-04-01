@@ -193,7 +193,7 @@
 /* COMPONENTS */
 @layer components {
   .main-button {
-    @apply w-fit px-6 py-3 sm:px-7 rounded-lg bg-neutral-50/50 dark:bg-neutral-100/10 backdrop-blur-sm border border-card-foreground/30 hover:border-card-foreground/50 text-foreground transition-all duration-300 flex items-center gap-2
+    @apply w-fit px-6 py-3 sm:px-7 rounded-lg bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-neutral-200 dark:border-white/10 hover:border-emerald-500/60 dark:hover:border-emerald-500/40 hover:bg-white dark:hover:bg-white/8 text-neutral-800 dark:text-neutral-100 font-medium transition-all duration-300 flex items-center gap-2 shadow-sm hover:shadow-md hover:shadow-emerald-500/10
   }
 
   .section-container {
@@ -201,13 +201,20 @@
   }
 
   .section-description {
-    @apply max-w-2xl text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed
+    @apply max-w-2xl text-base sm:text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed
   }
 }
 
 /* GLOBALS */
 html {
+  position: relative;
+  height: 100%;
   scrollbar-width: none;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
 }
 
 @media (max-width: 1280px) {

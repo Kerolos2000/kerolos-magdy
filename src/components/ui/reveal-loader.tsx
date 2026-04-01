@@ -3,7 +3,8 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Anton } from 'next/font/google';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import { LoaderStore, useLoaderStore } from 'src/hooks';
 import { cn } from 'src/utils';
 
 const anton = Anton({
@@ -60,14 +61,6 @@ const RevealLoader = ({
 }: RevealLoaderProps) => {
 	const preloaderRef = useRef<HTMLDivElement>(null);
 
-	useEffect(() => {
-		document.body.style.overflowY = 'hidden';
-
-		return () => {
-			document.body.style.overflowY = '';
-		};
-	}, []);
-
 	const getBackgroundStyle = () => {
 		if (bgColors.length === 0) return { backgroundColor: 'black' };
 		if (bgColors.length === 1) return { backgroundColor: bgColors[0] };
@@ -104,11 +97,14 @@ const RevealLoader = ({
 		}
 	};
 
+	const setIsLoading = useLoaderStore(
+		(state: LoaderStore) => state.setIsLoading,
+	);
 	useGSAP(
 		() => {
 			const tl = gsap.timeline({
 				onComplete: () => {
-					document.body.style.overflow = 'auto';
+					setIsLoading(false);
 					onComplete?.();
 				},
 			});
