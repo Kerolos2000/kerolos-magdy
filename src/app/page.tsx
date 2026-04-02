@@ -1,9 +1,6 @@
 import dynamic from 'next/dynamic';
+import { HomeHeroSection } from 'src/components';
 
-const HomeHeroSection = dynamic(
-	() => import('src/components').then(m => m.HomeHeroSection),
-	{ ssr: true },
-);
 const HomeAboutMeSection = dynamic(
 	() => import('src/components').then(m => m.HomeAboutMeSection),
 	{ ssr: true },
