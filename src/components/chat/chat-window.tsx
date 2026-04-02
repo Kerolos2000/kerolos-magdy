@@ -79,7 +79,7 @@ export const ChatWindow = ({ onClose }: ChatWindowProps) => {
 			<div className='border-t p-4 bg-white dark:bg-neutral-900 dark:border-neutral-800'>
 				<form
 					onSubmit={handleSubmit(onSubmit)}
-					className='flex items-center gap-2 rounded-full border bg-neutral-50 px-4 py-2 focus-within:ring-2 focus-within:ring-emerald-500/20 focus-within:border-emerald-500 dark:bg-neutral-950 dark:border-neutral-800'
+					className='flex items-center gap-2 rounded-full border bg-neutral-50 px-4 py-2 focus-within:border-emerald-500 dark:bg-neutral-950 dark:border-neutral-800'
 				>
 					<input
 						{...register('message')}

@@ -59,7 +59,7 @@ export default function HomeContactUsSection() {
 							type='text'
 							placeholder='Your Name'
 							{...register('name')}
-							className='w-full rounded-lg border border-neutral-200 dark:border-white/10 focus:border-emerald-500 dark:focus:border-emerald-500 transition-all duration-300 px-4 py-3 bg-white dark:bg-neutral-900/60 outline-none text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-sm'
+							className='w-full rounded-lg border border-neutral-200 dark:border-white/10 focus:border-emerald-500 dark:focus:border-emerald-500 transition-all duration-300 px-4 py-3 bg-neutral-50/75 dark:bg-neutral-900/20 outline-none text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-sm'
 						/>
 						{errors.name && (
 							<p className='text-red-500 text-sm'>{errors.name.message}</p>
@@ -71,7 +71,7 @@ export default function HomeContactUsSection() {
 							type='email'
 							placeholder='Your Email'
 							{...register('email')}
-							className='w-full rounded-lg border border-neutral-200 dark:border-white/10 focus:border-emerald-500 dark:focus:border-emerald-500 transition-all duration-300 px-4 py-3 bg-white dark:bg-neutral-900/60 outline-none text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-sm'
+							className='w-full rounded-lg border border-neutral-200 dark:border-white/10 focus:border-emerald-500 dark:focus:border-emerald-500 transition-all duration-300 px-4 py-3 bg-neutral-50/75 dark:bg-neutral-900/20 outline-none text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-sm'
 						/>
 						{errors.email && (
 							<p className='text-red-500 text-sm'>{errors.email.message}</p>
@@ -82,7 +82,7 @@ export default function HomeContactUsSection() {
 						<textarea
 							placeholder='Your Message'
 							{...register('message')}
-							className='w-full h-32 rounded-lg border border-neutral-200 dark:border-white/10 focus:border-emerald-500 dark:focus:border-emerald-500 transition-all duration-300 px-4 py-3 bg-white dark:bg-neutral-900/60 outline-none resize-none text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-sm'
+							className='w-full h-32 rounded-lg border border-neutral-200 dark:border-white/10 focus:border-emerald-500 dark:focus:border-emerald-500 transition-all duration-300 px-4 py-3 bg-neutral-50/75 dark:bg-neutral-900/20 outline-none resize-none text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-sm'
 						/>
 						{errors.message && (
 							<p className='text-red-500 text-sm'>{errors.message.message}</p>

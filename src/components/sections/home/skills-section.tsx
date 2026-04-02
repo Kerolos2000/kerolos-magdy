@@ -18,7 +18,7 @@ export default function HomeSkillsSection() {
 							key={name}
 							className='group relative'
 						>
-							<div className='relative h-full flex items-center pointer-events-none backdrop-blur-sm bg-card/20 border border-border/50 hover:border-emerald-500/50 rounded-lg px-4 py-2.5 transition-all duration-300 hover:bg-card/40 hover:shadow-sm hover:shadow-emerald-500/5'>
+							<div className='second-card'>
 								<div className='flex items-center gap-3'>
 									<div className='relative shrink-0'>
 										<div className='relative p-1.5 rounded-lg bg-neutral-100 dark:bg-neutral-900 group-hover:bg-neutral-500/10 transition-all duration-300'>

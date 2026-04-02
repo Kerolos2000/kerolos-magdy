@@ -12,7 +12,7 @@ export default function HomeBreakSection() {
 		>
 			<div
 				className='relative flex w-full flex-col items-center justify-center overflow-hidden rotate-1 my-8 
-        bg-neutral-50 dark:bg-neutral-900 transition-colors duration-300'
+        bg-neutral-50/75 dark:bg-neutral-900/50 transition-colors duration-300'
 			>
 				<ScrollVelocityContainer
 					className='text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-20 flex flex-col

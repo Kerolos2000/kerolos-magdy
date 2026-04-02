@@ -1,6 +1,25 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* GLOBALS */
+html {
+  position: relative;
+  height: 100%;
+  scrollbar-width: none;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+@media (max-width: 1280px) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+
 /* CUSTOM VARIANTS */
 @custom-variant dark (&:is(.dark *));
 
@@ -68,18 +87,31 @@
   }
 
   @keyframes shiny-text {
-    0%, 90%, 100% {
+
+    0%,
+    90%,
+    100% {
       background-position: calc(-100% - var(--shiny-width)) 0;
     }
-    30%, 60% {
+
+    30%,
+    60% {
       background-position: calc(100% + var(--shiny-width)) 0;
     }
   }
 
   @keyframes cell-ripple {
-    0% { opacity: 0.4; }
-    50% { opacity: 0.8; }
-    100% { opacity: 0.4; }
+    0% {
+      opacity: 0.4;
+    }
+
+    50% {
+      opacity: 0.8;
+    }
+
+    100% {
+      opacity: 0.4;
+    }
   }
 }
 
@@ -104,11 +136,6 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -117,7 +144,6 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-
   --loader-bg-start: #ffffff;
   --loader-bg-end: #ccf3e5;
   --loader-text: #000000;
@@ -143,11 +169,6 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -156,7 +177,6 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-
   --loader-bg-start: #000000;
   --loader-bg-end: #001a11;
   --loader-text: #ffffff;
@@ -164,18 +184,35 @@
 
 /* KEYFRAMES */
 @keyframes fadePulse {
-  0%, 100% { opacity: 0.1; }
-  50% { opacity: 0.5; }
+
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.333%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.333%);
+  }
 }
 
 @keyframes marquee-reverse {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(33.333%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(33.333%);
+  }
 }
 
 /* ANIMATIONS */
@@ -192,41 +229,29 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
   }
 }
 
-/* COMPONENTS */
-@layer components {
-  .main-button {
-    @apply w-fit px-6 py-3 sm:px-7 rounded-lg bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-neutral-200 dark:border-white/10 hover:border-emerald-500/60 dark:hover:border-emerald-500/40 hover:bg-white dark:hover:bg-white/8 text-neutral-800 dark:text-neutral-100 font-medium transition-all duration-300 flex items-center gap-2 shadow-sm hover:shadow-md hover:shadow-emerald-500/10
-  }
-
-  .section-container {
-    @apply py-12 sm:py-16 container mx-auto px-4 sm:px-6 lg:px-8 w-full
-  }
-
-  .section-description {
-    @apply max-w-2xl text-base sm:text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed
-  }
+@utility main-button {
+  @apply w-fit px-6 py-3 sm:px-7 rounded-lg bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-neutral-200 dark:border-white/10 hover:border-emerald-500/60 dark:hover:border-emerald-500/40 hover:bg-white dark:hover:bg-white/8 text-neutral-800 dark:text-neutral-100 font-medium transition-all duration-300 flex items-center gap-2 shadow-sm hover:shadow-md hover:shadow-emerald-500/10
 }
 
-/* GLOBALS */
-html {
-  position: relative;
-  height: 100%;
-  scrollbar-width: none;
+@utility section-container {
+  @apply py-12 sm:py-16 container mx-auto px-4 sm:px-6 lg:px-8 w-full
 }
 
-body {
-  position: relative;
-  min-height: 100%;
+@utility section-description {
+  @apply max-w-2xl text-base sm:text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed
 }
 
-@media (max-width: 1280px) {
-  html {
-    scroll-behavior: smooth;
-  }
+@utility main-card {
+  @apply relative overflow-hidden rounded-lg border border-black/10 dark:border-white/10 bg-neutral-50/75 dark:bg-neutral-900/50 backdrop-blur-md transition-all duration-300 hover:border-emerald-500 dark:hover:border-emerald-400/40
+}
+
+@utility second-card {
+  @apply relative h-full flex items-center pointer-events-none backdrop-blur-sm bg-neutral-50/75 dark:bg-neutral-900/50 border border-border/50 hover:border-emerald-500/50 rounded-lg px-4 py-2.5 transition-all duration-300 hover:bg-card/40 hover:shadow-sm hover:shadow-emerald-500/5
 }

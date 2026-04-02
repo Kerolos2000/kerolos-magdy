@@ -23,7 +23,7 @@ export default function HomeHeroSection() {
 				</div>
 
 				<div className='relative w-full z-10 flex flex-col items-center justify-center space-y-4 sm:space-y-8 text-center'>
-					<div className='inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-xl bg-card/50 border border-border'>
+					<div className='inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-xl bg-card/20 border border-border'>
 						<div className='w-2 h-2 rounded-full bg-emerald-500' />
 						<span className='text-xs sm:text-sm font-medium tracking-wide text-muted-foreground'>
 							AVAILABLE FOR WORK
@@ -55,7 +55,7 @@ export default function HomeHeroSection() {
 					</Link>
 
 					<div className='flex flex-col items-center gap-2'>
-						<span className='text-[10px] sm:text-xs text-xs text-muted-foreground uppercase tracking-wider'>
+						<span className='text-2xs sm:text-xs text-xs text-muted-foreground uppercase tracking-wider'>
 							Scroll Down
 						</span>
 						<div className='w-6 h-10 border-2 border-emerald-500/50 rounded-full flex justify-center p-2'>

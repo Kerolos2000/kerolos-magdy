@@ -62,7 +62,9 @@ export default function Footer() {
 												rel='noopener noreferrer'
 												aria-label={label}
 												title={label}
-												className='flex items-center justify-center rounded-lg bg-neutral-200 p-2.5 text-neutral-700 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-900 hover:text-white hover:shadow-sm dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-100 dark:hover:text-black'
+												className='flex items-center justify-center rounded-lg  p-2.5 text-neutral-700 shadow-sm transition-all duration-300 hover:-translate-y-1  hover:text-white hover:shadow-sm dark:text-neutral-300  dark:hover:text-black
+												
+												bg-neutral-50/75 dark:bg-neutral-900/50 dark:hover:bg-neutral-100 hover:bg-neutral-900'
 											>
 												{Icon && <Icon className='h-5 w-5' />}
 											</Link>
@@ -78,7 +80,7 @@ export default function Footer() {
 			<div className='my-12 h-px bg-linear-to-r from-transparent via-neutral-400 to-transparent dark:via-neutral-700' />
 
 			<div className='relative flex items-center justify-center'>
-				<h1 className='mb-0 text-center text-5xl font-black tracking-tight text-transparent sm:mb-6 md:text-6xl lg:text-[7rem] bg-linear-to-b from-neutral-600 via-neutral-400 to-neutral-200 bg-clip-text dark:from-neutral-400 dark:via-neutral-600 dark:to-neutral-900 select-none'>
+				<h1 className='mb-0 text-center text-5xl font-black tracking-tight text-transparent sm:mb-6 md:text-6xl lg:text-[7rem] bg-linear-to-b from-neutral-700 via-neutral-500 to-neutral-300 bg-clip-text dark:from-neutral-400 dark:via-neutral-600 dark:to-neutral-900 select-none'>
 					KEROLOS
 				</h1>
 			</div>
