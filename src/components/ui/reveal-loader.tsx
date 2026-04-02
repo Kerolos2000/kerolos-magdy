@@ -50,9 +50,8 @@ interface RevealLoaderProps {
 const RevealLoader = ({
 	text = 'VENGEANCE',
 	textSize = '100px',
-	textColor = 'white',
-	bgColors = ['#00573a', '#000000'],
-	angle = 0,
+	textColor,
+	angle = 180,
 	staggerOrder = 'left-to-right',
 	movementDirection = 'top-down',
 	textFadeDelay = 0.5,
@@ -62,10 +61,8 @@ const RevealLoader = ({
 	const preloaderRef = useRef<HTMLDivElement>(null);
 
 	const getBackgroundStyle = () => {
-		if (bgColors.length === 0) return { backgroundColor: 'black' };
-		if (bgColors.length === 1) return { backgroundColor: bgColors[0] };
 		return {
-			backgroundImage: `linear-gradient(${angle}deg, ${bgColors.join(', ')})`,
+			backgroundImage: `linear-gradient(${angle}deg, var(--loader-bg-start), var(--loader-bg-end))`,
 		};
 	};
 
@@ -166,7 +163,7 @@ const RevealLoader = ({
 						)}
 						style={{
 							fontSize: textSize,
-							color: textColor,
+							color: textColor || 'var(--loader-text)',
 							fontWeight: '400',
 							fontFeatureSettings: 'normal',
 							fontVariationSettings: 'normal',

@@ -117,6 +117,10 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --loader-bg-start: #ffffff;
+  --loader-bg-end: #ccf3e5;
+  --loader-text: #000000;
 }
 
 /* DARK MODE */
@@ -152,6 +156,10 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  --loader-bg-start: #000000;
+  --loader-bg-end: #001a11;
+  --loader-text: #ffffff;
 }
 
 /* KEYFRAMES */
