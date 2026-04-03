@@ -3,14 +3,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { Inter } from 'next/font/google';
-import {
-	ChatWidget,
-	FloatingAppBar,
-	Footer,
-	SmoothScroll,
-} from 'src/components';
-import RevealLoader from 'src/components/ui/reveal-loader';
+
+import { ChatWidget } from './features';
 import './globals.css';
+import { FloatingAppBar, Footer, RevealLoader, SmoothScroll } from './shared';
 
 const inter = Inter({
 	subsets: ['latin'],
