@@ -62,7 +62,7 @@ export const RevealLoader = ({
 
 	const getBackgroundStyle = () => {
 		return {
-			backgroundImage: `linear-gradient(${angle}deg, var(--loader-bg-start), var(--loader-bg-end))`,
+			backgroundImage: `linear-gradient(${angle}deg, var(--background), var(--foreground))`,
 		};
 	};
 
@@ -163,7 +163,7 @@ export const RevealLoader = ({
 						)}
 						style={{
 							fontSize: textSize,
-							color: textColor || 'var(--loader-text)',
+							color: textColor || 'var(--foreground)',
 							fontWeight: '400',
 							fontFeatureSettings: 'normal',
 							fontVariationSettings: 'normal',

@@ -3,36 +3,30 @@ import { FooterSections, FooterSocials } from 'src/shared';
 
 export default function Footer() {
 	return (
-		<footer className='overflow-hidden pt-8 pb-16 border-t border-neutral-200 dark:border-neutral-800 dark:bg-neutral-950'>
-			<div className='container mx-auto px-4 sm:px-6 lg:px-8  flex flex-col justify-between gap-12 md:flex-row'>
+		<footer className='overflow-hidden border-t border-border pt-8 pb-16 sm:pb-20'>
+			<div className='container mx-auto flex flex-col justify-between gap-12 px-4 sm:px-6 lg:flex-row lg:px-8'>
 				<div className='flex-1'>
-					<Link
-						href='/'
-						className='group inline-block'
-						title='Back to home'
-					>
-						<h2 className='bg-linear-to-r from-neutral-900 via-neutral-700 to-neutral-900 bg-clip-text text-2xl font-bold text-transparent transition-transform duration-300 group-hover:scale-105 dark:from-neutral-100 dark:via-neutral-300 dark:to-neutral-100'>
-							Kerolos Magdy
-						</h2>
-					</Link>
-					<p className='mt-4 max-w-xs text-sm leading-relaxed text-neutral-600 dark:text-neutral-400'>
+					<h2 className='bg-linear-to-r from-foreground via-muted to-foreground bg-clip-text text-2xl font-bold text-transparent'>
+						Kerolos Magdy
+					</h2>
+
+					<p className='mt-4 max-w-xs text-sm leading-relaxed text-muted'>
 						Frontend developer crafting beautiful and functional web
 						experiences.
 					</p>
-					<p className='mt-6 text-xs text-neutral-500 dark:text-neutral-500'>
+
+					<p className='mt-6 text-xs text-muted'>
 						© {new Date().getFullYear()} Kerolos Magdy. All rights reserved.
 					</p>
 				</div>
 
 				<div className='grid flex-1 grid-cols-2 gap-12 md:grid-cols-3'>
 					{FooterSections.map(({ title, items }, index) => (
-						<div
-							key={index}
-							className={index === 1 ? 'flex flex-col' : ''}
-						>
-							<h3 className='mb-5 text-sm font-semibold uppercase tracking-wider text-neutral-800 dark:text-neutral-100'>
+						<div key={index}>
+							<h3 className='mb-5 text-sm font-semibold uppercase tracking-wider text-foreground'>
 								{title}
 							</h3>
+
 							<div className='mb-6 flex flex-col gap-3'>
 								{items.map(({ label, href, download, icon: Icon }) => (
 									<Link
@@ -40,7 +34,7 @@ export default function Footer() {
 										href={href}
 										download={download}
 										title={label}
-										className='inline-flex items-center gap-1 text-sm text-neutral-600 transition-all duration-300 hover:translate-x-1 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100'
+										className='inline-flex items-center gap-2 text-sm text-muted transition-all duration-300 hover:translate-x-1 hover:text-foreground'
 									>
 										{Icon && <Icon className='h-4 w-4' />}
 										{label}
@@ -50,9 +44,10 @@ export default function Footer() {
 
 							{index === 1 && (
 								<div>
-									<h3 className='mb-5 text-sm font-semibold uppercase tracking-wider text-neutral-800 dark:text-neutral-100'>
+									<h3 className='mb-5 text-sm font-semibold uppercase tracking-wider text-foreground'>
 										Connect
 									</h3>
+
 									<div className='flex flex-wrap gap-3'>
 										{FooterSocials.map(({ href, icon: Icon, label }) => (
 											<Link
@@ -62,9 +57,7 @@ export default function Footer() {
 												rel='noopener noreferrer'
 												aria-label={label}
 												title={label}
-												className='flex items-center justify-center rounded-lg  p-2.5 text-neutral-700 shadow-sm transition-all duration-300 hover:-translate-y-1  hover:text-white hover:shadow-sm dark:text-neutral-300  dark:hover:text-black
-												
-												bg-neutral-50/75 dark:bg-neutral-900/50 dark:hover:bg-neutral-100 hover:bg-neutral-900'
+												className='flex items-center justify-center rounded-lg border border-border bg-card p-2.5 text-foreground transition-all duration-300 hover:-translate-y-1 hover:bg-foreground hover:text-background'
 											>
 												{Icon && <Icon className='h-5 w-5' />}
 											</Link>
@@ -77,13 +70,11 @@ export default function Footer() {
 				</div>
 			</div>
 
-			<div className='my-12 h-px bg-linear-to-r from-transparent via-neutral-400 to-transparent dark:via-neutral-700' />
+			<div className='my-12 h-px bg-linear-to-r from-transparent via-border to-transparent' />
 
-			<div className='relative flex items-center justify-center'>
-				<h1 className='mb-0 text-center text-5xl font-black tracking-tight text-transparent sm:mb-6 md:text-6xl lg:text-[7rem] bg-linear-to-b from-neutral-700 via-neutral-500 to-neutral-300 bg-clip-text dark:from-neutral-400 dark:via-neutral-600 dark:to-neutral-900 select-none'>
-					KEROLOS
-				</h1>
-			</div>
+			<h1 className='text-center font-black tracking-tight text-transparent text-7xl lg:text-[7rem] bg-linear-to-b from-muted to-transparent bg-clip-text select-none'>
+				KEROLOS
+			</h1>
 		</footer>
 	);
 }

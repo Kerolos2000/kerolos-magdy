@@ -24,7 +24,7 @@ export const ChatMessage = ({ role, content }: ChatMessageProps) => {
 					'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border shadow-sm',
 					isUser
 						? 'bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300'
-						: 'bg-emerald-600 text-white border-emerald-600',
+						: 'bg-brand text-white border-brand',
 				)}
 			>
 				{isUser ? <IconUser size={16} /> : <IconRobot size={16} />}

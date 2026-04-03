@@ -42,8 +42,8 @@ export default function HomeAboutMeSection() {
 									translateZ='60'
 									className='flex items-center gap-3 text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-4'
 								>
-									<div className='p-2 bg-emerald-500/10 dark:bg-emerald-400/10 rounded-lg'>
-										<Icon className='w-7 h-7 text-emerald-600 dark:text-emerald-400' />
+									<div className='p-2 bg-brand/10 dark:bg-brand/10 rounded-lg'>
+										<Icon className='w-7 h-7 text-brand dark:text-brand' />
 									</div>
 									{title}
 								</CardItem>
@@ -85,7 +85,7 @@ export default function HomeAboutMeSection() {
 
 								<CardItem
 									translateZ='30'
-									className='absolute z-[-1] right-4 bottom-4 w-32 sm:w-40 h-32 sm:h-40 text-emerald-500/10 pointer-events-none select-none'
+									className='absolute z-[-1] right-4 bottom-4 w-32 sm:w-40 h-32 sm:h-40 text-brand/10 pointer-events-none select-none'
 								>
 									<Icon className='w-full h-full text-neutral-300 dark:text-neutral-600' />
 								</CardItem>

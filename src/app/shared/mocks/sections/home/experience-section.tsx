@@ -6,7 +6,7 @@ import {
 	IconTool,
 } from '@tabler/icons-react';
 import Image from 'next/image';
-import { TimelineEntry } from 'src/components';
+import { TimelineEntry } from 'src/shared';
 
 export const ExperienceItems: TimelineEntry[] = [
 	{
@@ -14,7 +14,7 @@ export const ExperienceItems: TimelineEntry[] = [
 		content: (
 			<div className='space-y-3'>
 				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconDeviceLaptop className='h-4 w-4 text-emerald-700' />
+					<IconDeviceLaptop className='h-4 w-4 text-brand-strong' />
 					<span>Remote • 06/2023 – Present</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
@@ -75,11 +75,11 @@ export const ExperienceItems: TimelineEntry[] = [
 		content: (
 			<div className='space-y-3'>
 				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconBriefcase className='h-4 w-4 text-emerald-700' />
+					<IconBriefcase className='h-4 w-4 text-brand-strong' />
 					<span>Part-Time • 04/2025 – 07/2025</span>
 				</div>
 				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconMapPin className='h-4 w-4 text-emerald-700' />
+					<IconMapPin className='h-4 w-4 text-brand-strong' />
 					<span>Alexandria, Egypt</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
@@ -110,11 +110,11 @@ export const ExperienceItems: TimelineEntry[] = [
 		content: (
 			<div className='space-y-3'>
 				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconBriefcase className='h-4 w-4 text-emerald-700' />
+					<IconBriefcase className='h-4 w-4 text-brand-strong' />
 					<span>Full-Time • 10/2024 – 04/2025</span>
 				</div>
 				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconMapPin className='h-4 w-4 text-emerald-700' />
+					<IconMapPin className='h-4 w-4 text-brand-strong' />
 					<span>Remote - Netherlands</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
@@ -160,11 +160,11 @@ export const ExperienceItems: TimelineEntry[] = [
 		content: (
 			<div className='space-y-3'>
 				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconBriefcase className='h-4 w-4 text-emerald-700' />
+					<IconBriefcase className='h-4 w-4 text-brand-strong' />
 					<span>Full-Time • 08/2023 – 09/2024</span>
 				</div>
 				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconMapPin className='h-4 w-4 text-emerald-700' />
+					<IconMapPin className='h-4 w-4 text-brand-strong' />
 					<span>Alexandria, Egypt</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
@@ -198,7 +198,7 @@ export const ExperienceItems: TimelineEntry[] = [
 					<span>Route Egypt Academy • 11/2022 – 05/2023</span>
 				</div>
 				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconMapPin className='h-4 w-4 text-emerald-700' />
+					<IconMapPin className='h-4 w-4 text-brand-strong' />
 					<span>Alexandria Branch</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
@@ -231,7 +231,7 @@ export const ExperienceItems: TimelineEntry[] = [
 					<span>Route Egypt Academy • 12/2025 – Present</span>
 				</div>
 				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconMapPin className='h-4 w-4 text-emerald-700' />
+					<IconMapPin className='h-4 w-4 text-brand-strong' />
 					<span>Alexandria Branch</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>

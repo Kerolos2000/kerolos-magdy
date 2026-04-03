@@ -12,7 +12,7 @@ export default function HomeBreakSection() {
 		>
 			<div
 				className='relative flex w-full flex-col items-center justify-center overflow-hidden rotate-1 my-8 
-        bg-neutral-50/75 dark:bg-neutral-900/50 transition-colors duration-300'
+        bg-card transition-colors duration-300'
 			>
 				<ScrollVelocityContainer
 					className='text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-20 flex flex-col
@@ -36,7 +36,7 @@ export default function HomeBreakSection() {
 					>
 						<AnimatedGradientText className='px-3 py-2'>
 							React & Next.js{' '}
-							<span className='px-3 py-2 text-accent-foreground'>•</span>
+							<span className='px-3 py-2 text-foreground'>•</span>
 						</AnimatedGradientText>
 					</ScrollVelocityRow>
 				</ScrollVelocityContainer>

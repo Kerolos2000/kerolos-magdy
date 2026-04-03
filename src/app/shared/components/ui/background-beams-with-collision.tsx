@@ -194,7 +194,7 @@ const CollisionMechanism = React.forwardRef<
 					repeatDelay: beamOptions.repeatDelay || 0,
 				}}
 				className={cn(
-					'absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-linear-to-t from-emerald-500 via-emerald-100 to-transparent',
+					'absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-linear-to-t from-brand via-brand-soft to-transparent',
 					beamOptions.className,
 				)}
 			/>
@@ -239,7 +239,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
 				transition={{ duration: 1.5, ease: 'easeOut' }}
-				className='absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-linear-to-r from-transparent via-emerald-500 to-transparent blur-sm'
+				className='absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-linear-to-r from-transparent via-brand to-transparent blur-sm'
 			/>
 			{spans.map(span => (
 				<motion.span
@@ -247,7 +247,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
 					initial={{ x: span.initialX, y: span.initialY, opacity: 1 }}
 					animate={{ x: span.directionX, y: span.directionY, opacity: 0 }}
 					transition={{ duration: span.duration, ease: 'easeOut' }}
-					className='absolute h-1 w-1 rounded-full bg-linear-to-b from-emerald-500 to-emerald-500'
+					className='absolute h-1 w-1 rounded-full bg-linear-to-b from-brand to-brand'
 				/>
 			))}
 		</div>

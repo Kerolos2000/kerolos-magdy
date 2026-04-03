@@ -4,7 +4,7 @@ export default function HomeCounterSection() {
 	return (
 		<section
 			id='home-counter-section'
-			className='py-8 bg-neutral-50/75 dark:bg-neutral-900/50'
+			className='py-8 bg-card'
 		>
 			<div className='relative container mx-auto px-4 sm:px-6 lg:px-8 w-full'>
 				<div className='grid grid-cols-2 md:grid-cols-4 gap-4 '>
@@ -15,11 +15,9 @@ export default function HomeCounterSection() {
 						>
 							<div className='text-5xl md:text-6xl font-bold mb-3 flex items-center justify-center flex-nowrap'>
 								<NumberTicker value={value} />
-								<span className='text-muted-foreground'>+</span>
+								<span className='text-muted'>+</span>
 							</div>
-							<p className='text-sm md:text-base text-muted-foreground'>
-								{label}
-							</p>
+							<p className='text-sm md:text-base text-muted'>{label}</p>
 						</div>
 					))}
 				</div>

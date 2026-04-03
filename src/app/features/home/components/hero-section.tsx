@@ -13,16 +13,16 @@ export default function HomeHeroSection() {
 
 			<BackgroundBeamsWithCollision>
 				<div className='absolute inset-0 pointer-events-none overflow-hidden opacity-70 dark:opacity-50'>
-					<div className='absolute w-px h-full top-0 left-[15%] sm:left-[25%] bg-linear-to-b from-transparent via-emerald-700 dark:via-emerald-200 to-transparent' />
-					<div className='absolute w-px h-full top-0 right-[15%] sm:right-[25%] bg-linear-to-b from-transparent via-emerald-700 dark:via-emerald-200 to-transparent' />
-					<div className='absolute w-full h-px left-0 -top-full sm:top-[26%] bg-linear-to-r from-transparent via-emerald-700 dark:via-emerald-200 to-transparent' />
-					<div className='absolute w-full h-px left-0 -bottom-full sm:bottom-[25%] bg-linear-to-r from-transparent via-emerald-700 dark:via-emerald-200 to-transparent' />
+					<div className='absolute w-px h-full top-0 left-[15%] sm:left-[25%] bg-linear-to-b from-transparent via-brand-strong dark:via-brand-medium to-transparent' />
+					<div className='absolute w-px h-full top-0 right-[15%] sm:right-[25%] bg-linear-to-b from-transparent via-brand-strong dark:via-brand-medium to-transparent' />
+					<div className='absolute w-full h-px left-0 -top-full sm:top-[26%] bg-linear-to-r from-transparent via-brand-strong dark:via-brand-medium to-transparent' />
+					<div className='absolute w-full h-px left-0 -bottom-full sm:bottom-[25%] bg-linear-to-r from-transparent via-brand-strong dark:via-brand-medium to-transparent' />
 				</div>
 
 				<div className='relative w-full z-10 flex flex-col items-center justify-center space-y-4 sm:space-y-8 text-center'>
 					<div className='inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-xl bg-card/20 border border-border'>
-						<div className='w-2 h-2 rounded-full bg-emerald-500' />
-						<span className='text-xs sm:text-sm font-medium tracking-wide text-muted-foreground'>
+						<div className='w-2 h-2 rounded-full bg-brand' />
+						<span className='text-xs sm:text-sm font-medium tracking-wide text-muted'>
 							AVAILABLE FOR WORK
 						</span>
 					</div>
@@ -32,11 +32,11 @@ export default function HomeHeroSection() {
 						<span className='text-3xl sm:text-5xl md:text-7xl'>MAGDY</span>
 					</h1>
 
-					<p className='text-lg sm:text-xl md:text-2xl font-light tracking-wide max-w-3xl mx-auto text-muted-foreground'>
+					<p className='text-lg sm:text-xl md:text-2xl font-light tracking-wide max-w-3xl mx-auto text-muted'>
 						React
-						<span className='text-emerald-500'> | </span>
+						<span className='text-brand'> | </span>
 						Next.js
-						<span className='text-emerald-500'> | </span>
+						<span className='text-brand'> | </span>
 						Angular
 					</p>
 
@@ -52,11 +52,11 @@ export default function HomeHeroSection() {
 					</Link>
 
 					<div className='flex flex-col items-center gap-2'>
-						<span className='text-2xs sm:text-xs text-xs text-muted-foreground uppercase tracking-wider'>
+						<span className='text-2xs sm:text-xs text-xs text-muted uppercase tracking-wider'>
 							Scroll Down
 						</span>
-						<div className='w-6 h-10 border-2 border-emerald-500/50 rounded-full flex justify-center p-2'>
-							<div className='w-1 h-3 bg-emerald-500 rounded-full animate-bounce' />
+						<div className='w-6 h-10 border-2 border-brand-medium rounded-full flex justify-center p-2'>
+							<div className='w-1 h-3 bg-brand rounded-full animate-bounce' />
 						</div>
 					</div>
 				</div>
