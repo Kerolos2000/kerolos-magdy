@@ -3,6 +3,7 @@
 
 /* GLOBALS */
 html {
+  position: relative;
   scrollbar-width: none;
 }
 
@@ -29,13 +30,12 @@ html {
   --color-card: var(--card);
   --color-muted: var(--muted);
   --color-border: var(--border);
-  --color-input: var(--input);
 
-  --color-brand-softer: var(--color-emerald-50);
-  --color-brand-soft: var(--color-emerald-100);
-  --color-brand-medium: var(--color-emerald-200);
-  --color-brand: var(--color-emerald-600);
-  --color-brand-strong: var(--color-emerald-700);
+  --color-brand-softer: var(--brand-softer);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-medium: var(--brand-medium);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
 
   /* Animations */
   --animate-gradient: gradient 8s linear infinite;
@@ -127,7 +127,12 @@ html {
   --card: oklch(0.99 0 0);
   --muted: oklch(0.556 0 0);
   --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+
+  --brand-softer: var(--color-emerald-200);
+  --brand-soft: var(--color-emerald-300);
+  --brand-medium: var(--color-emerald-400);
+  --brand: var(--color-emerald-800);
+  --brand-strong: var(--color-emerald-900);
 }
 
 /* DARK MODE */
@@ -136,8 +141,13 @@ html {
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.16 0 0);
   --muted: oklch(0.708 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
+  --border: oklch(0.3 0 0);
+
+  --brand-softer: var(--color-emerald-50);
+  --brand-soft: var(--color-emerald-100);
+  --brand-medium: var(--color-emerald-200);
+  --brand: var(--color-emerald-600);
+  --brand-strong: var(--color-emerald-700);
 }
 
 @utility main-button {

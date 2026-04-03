@@ -48,7 +48,7 @@ interface RevealLoaderProps {
 }
 
 export const RevealLoader = ({
-	text = 'VENGEANCE',
+	text = 'Loading',
 	textSize = '100px',
 	textColor,
 	angle = 180,
@@ -62,7 +62,7 @@ export const RevealLoader = ({
 
 	const getBackgroundStyle = () => {
 		return {
-			backgroundImage: `linear-gradient(${angle}deg, var(--background), var(--foreground))`,
+			backgroundImage: `linear-gradient(${angle}deg, var(--background), var(--border))`,
 		};
 	};
 

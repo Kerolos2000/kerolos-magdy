@@ -51,14 +51,16 @@ export default function HomeHeroSection() {
 						</span>
 					</Link>
 
-					<div className='flex flex-col items-center gap-2'>
-						<span className='text-2xs sm:text-xs text-xs text-muted uppercase tracking-wider'>
-							Scroll Down
-						</span>
-						<div className='w-6 h-10 border-2 border-brand-medium rounded-full flex justify-center p-2'>
-							<div className='w-1 h-3 bg-brand rounded-full animate-bounce' />
+					<Link href='#home-about-me-section'>
+						<div className='flex flex-col items-center gap-2'>
+							<span className='text-2xs sm:text-xs text-xs text-muted uppercase tracking-wider'>
+								Scroll Down
+							</span>
+							<div className='w-6 h-10 border-2 border-brand-medium rounded-full flex justify-center p-2'>
+								<div className='w-1 h-3 bg-brand rounded-full animate-bounce' />
+							</div>
 						</div>
-					</div>
+					</Link>
 				</div>
 			</BackgroundBeamsWithCollision>
 		</section>
