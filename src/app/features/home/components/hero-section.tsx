@@ -6,7 +6,7 @@ export default function HomeHeroSection() {
 	return (
 		<section className='relative py-12 sm:py-16 flex items-center justify-center overflow-hidden'>
 			<div className='absolute inset-0'>
-				<div className='absolute top-0 -z-10 h-full w-full [&>div]:absolute [&>div]:bottom-auto [&>div]:left-auto [&>div]:right-0 [&>div]:top-0 [&>div]:h-45 sm:[&>div]:h-65 md:[&>div]:h-80 lg:[&>div]:h-95 xl:[&>div]:h-105 [&>div]:w-45 sm:[&>div]:w-65 md:[&>div]:w-[320px] lg:[&>div]:w-95 xl:[&>div]:w-105 [&>div]:-translate-x-[50%] [&>div]:translate-y-[20%] [&>div]:rounded-full [&>div]:bg-[rgba(109,244,173,0.3)] dark:[&>div]:bg-[rgba(109,244,173,0.15)] [&>div]:blur-[80px] [&>div]:animate-[fadePulse_10s_ease-in-out_infinite]'>
+				<div className='absolute top-0 -z-10 h-full w-full [&>div]:absolute [&>div]:bottom-auto [&>div]:left-auto [&>div]:right-0 [&>div]:top-0 [&>div]:h-45 sm:[&>div]:h-65 md:[&>div]:h-80 lg:[&>div]:h-95 xl:[&>div]:h-105 [&>div]:w-45 sm:[&>div]:w-65 md:[&>div]:w-[320px] lg:[&>div]:w-95 xl:[&>div]:w-105 [&>div]:-translate-x-[50%] [&>div]:translate-y-[20%] [&>div]:rounded-full [&>div]:bg-brand/25 dark:[&>div]:bg-brand-strong/25 [&>div]:blur-3xl [&>div]:animate-[fadePulse_10s_ease-in-out_infinite]'>
 					<div></div>
 				</div>
 			</div>
@@ -56,8 +56,8 @@ export default function HomeHeroSection() {
 							<span className='text-2xs sm:text-xs text-xs text-muted uppercase tracking-wider'>
 								Scroll Down
 							</span>
-							<div className='w-6 h-10 border-2 border-brand-medium rounded-full flex justify-center p-2'>
-								<div className='w-1 h-3 bg-brand rounded-full animate-bounce' />
+							<div className='w-6 h-10 border-2 border-brand rounded-full flex justify-center p-2'>
+								<div className='w-1 h-3 bg-brand-medium rounded-full animate-bounce' />
 							</div>
 						</div>
 					</Link>

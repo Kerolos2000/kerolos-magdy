@@ -79,7 +79,7 @@ const FloatingDockMobile = ({
 										target={item.href.startsWith('http') ? '_blank' : '_self'}
 										href={item.href}
 										download={item.download}
-										className='flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200/60 hover:bg-neutral-300/70 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/60 backdrop-blur-sm transition-colors'
+										className='floating-button'
 									>
 										<div className='text-neutral-800 dark:text-neutral-50'>
 											{item.icon}
@@ -89,7 +89,7 @@ const FloatingDockMobile = ({
 									<button
 										aria-label={item.title}
 										onClick={item.onClick}
-										className='flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200/60 hover:bg-neutral-300/70 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/60 backdrop-blur-sm transition-colors'
+										className='floating-button'
 									>
 										<div className='text-neutral-800 dark:text-neutral-50'>
 											{item.icon}
@@ -105,7 +105,7 @@ const FloatingDockMobile = ({
 			<button
 				aria-label={open ? 'Close menu' : 'Open menu'}
 				onClick={() => setOpen(!open)}
-				className='flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200/60 hover:bg-neutral-300/70 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/60 backdrop-blur-sm transition-colors'
+				className='floating-button'
 			>
 				<IconLayoutNavbarCollapse className='h-5 w-5 text-neutral-800 dark:text-neutral-50' />
 			</button>
@@ -205,8 +205,7 @@ function IconContainer({
 		onMouseEnter: () => setHovered(true),
 		onMouseLeave: () => setHovered(false),
 		style: { width, height },
-		className:
-			'relative flex aspect-square items-center justify-center rounded-full bg-neutral-200/60 hover:bg-neutral-300/70 dark:bg-neutral-700/50 dark:hover:bg-neutral-600/60 backdrop-blur-[6px] transition-colors cursor-pointer',
+		className: 'relative floating-button',
 	};
 
 	if (href)

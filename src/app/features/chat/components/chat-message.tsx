@@ -15,31 +15,27 @@ export const ChatMessage = ({ role, content }: ChatMessageProps) => {
 			initial={{ opacity: 0, y: 10 }}
 			animate={{ opacity: 1, y: 0 }}
 			className={cn(
-				'flex w-full items-start gap-3',
+				'flex w-full items-start gap-2',
 				isUser ? 'flex-row-reverse' : 'flex-row',
 			)}
 		>
 			<div
 				className={cn(
-					'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border shadow-sm',
-					isUser
-						? 'bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300'
-						: 'bg-brand text-white border-brand',
+					'flex size-8 shrink-0 items-center justify-center rounded-full border shadow-sm',
+					isUser ? 'bg-background text-foreground' : 'bg-brand text-background',
 				)}
 			>
 				{isUser ? <IconUser size={16} /> : <IconRobot size={16} />}
 			</div>
 			<div
 				className={cn(
-					'relative px-4 py-2 text-sm shadow-sm max-w-[80%]',
+					'relative px-4 py-2 text-sm shadow-sm max-w-[80%] rounded-lg',
 					isUser
-						? 'rounded-lg rounded-tr-none bg-neutral-900 text-white dark:bg-white dark:text-neutral-900'
-						: 'rounded-lg rounded-tl-none bg-white text-neutral-800 border dark:bg-neutral-900 dark:text-neutral-100 dark:border-neutral-800',
+						? 'rounded-tr-none bg-foreground text-background'
+						: 'rounded-tl-none bg-brand text-background',
 				)}
 			>
-				{content && (
-					<p className='whitespace-pre-wrap leading-relaxed'>{content}</p>
-				)}
+				{content && <p className='whitespace-pre-wrap'>{content}</p>}
 			</div>
 		</motion.div>
 	);

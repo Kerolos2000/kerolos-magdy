@@ -5,7 +5,6 @@ import React, { useEffect, useRef } from 'react';
 import {
 	ACESFilmicToneMapping,
 	AmbientLight,
-	Timer,
 	Color,
 	InstancedMesh,
 	MathUtils,
@@ -20,6 +19,7 @@ import {
 	ShaderChunk,
 	SphereGeometry,
 	SRGBColorSpace,
+	Timer,
 	Vector2,
 	Vector3,
 	WebGLRenderer,
@@ -512,10 +512,34 @@ class Y extends MeshPhysicalMaterial {
 	onBeforeCompile2?: (shader: any) => void;
 }
 
+function resolveColor(col: any): number {
+	if (typeof col === 'number') return col;
+	if (typeof col === 'string') {
+		const el = document.createElement('div');
+		el.style.color = col;
+		el.style.display = 'none';
+		document.body.appendChild(el);
+		const comp = window.getComputedStyle(el).color;
+		const canvas = document.createElement('canvas');
+		canvas.width = 1;
+		canvas.height = 1;
+		const ctx = canvas.getContext('2d', { willReadFrequently: true });
+		if (ctx) {
+			ctx.fillStyle = comp;
+			ctx.fillRect(0, 0, 1, 1);
+			const data = ctx.getImageData(0, 0, 1, 1).data;
+			document.body.removeChild(el);
+			return (data[0] << 16) | (data[1] << 8) | data[2];
+		}
+		document.body.removeChild(el);
+	}
+	return 0x000000;
+}
+
 const XConfig = {
 	count: 200,
-	colors: [0, 0, 0],
-	ambientColor: 0xffffff,
+	colors: [0, 0, 0] as any[],
+	ambientColor: 0xffffff as any,
 	ambientIntensity: 1,
 	lightIntensity: 200,
 	materialParams: {
@@ -779,19 +803,20 @@ class Z extends InstancedMesh {
 
 	#setupLights() {
 		this.ambientLight = new AmbientLight(
-			this.config.ambientColor,
+			resolveColor(this.config.ambientColor),
 			this.config.ambientIntensity,
 		);
 		this.add(this.ambientLight);
 		this.light = new PointLight(
-			this.config.colors[0],
+			resolveColor(this.config.colors[0]),
 			this.config.lightIntensity,
 		);
 		this.add(this.light);
 	}
 
-	setColors(colors: number[]) {
+	setColors(colors: any[]) {
 		if (Array.isArray(colors) && colors.length > 1) {
+			const resolvedColors = colors.map(resolveColor);
 			const colorUtils = (function (colorsArr: number[]) {
 				let baseColors: number[] = colorsArr;
 				let colorObjects: Color[] = [];
@@ -820,7 +845,7 @@ class Z extends InstancedMesh {
 						return out;
 					},
 				};
-			})(colors);
+			})(resolvedColors);
 			for (let idx = 0; idx < this.count; idx++) {
 				this.setColorAt(idx, colorUtils.getColorAt(idx / this.count));
 				if (idx === 0) {
@@ -938,6 +963,7 @@ interface BallpitProps {
 export const Ballpit: React.FC<BallpitProps> = ({
 	className = '',
 	followCursor = true,
+	colors,
 	...props
 }) => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -949,6 +975,7 @@ export const Ballpit: React.FC<BallpitProps> = ({
 
 		spheresInstanceRef.current = createBallpit(canvas, {
 			followCursor,
+			colors,
 			...props,
 		});
 

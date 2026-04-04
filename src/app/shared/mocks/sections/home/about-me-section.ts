@@ -11,7 +11,6 @@ import {
 export interface AboutMeDetail {
 	icon: LucideIcon | null;
 	text?: string;
-	translateZ: string;
 	isButton?: boolean;
 }
 
@@ -26,17 +25,16 @@ export const AboutMeSectionData: AboutMeCard[] = [
 		title: 'Personal',
 		icon: User,
 		details: [
-			{ icon: MapPin, text: 'Alexandria, Egypt', translateZ: '50' },
+			{ icon: MapPin, text: 'Alexandria, Egypt' },
 			{
 				icon: Calendar,
 				text:
 					String(
 						new Date().getFullYear() - new Date('2000/10/14').getFullYear(),
 					) + ' years old',
-				translateZ: '40',
 			},
-			{ icon: Briefcase, text: 'Available to work', translateZ: '50' },
-			{ icon: null, translateZ: '60', isButton: true },
+			{ icon: Briefcase, text: 'Available to work' },
+			{ icon: null, isButton: true },
 		],
 	},
 	{
@@ -46,11 +44,10 @@ export const AboutMeSectionData: AboutMeCard[] = [
 			{
 				icon: GraduationCap,
 				text: 'Faculty of Business MIS Department',
-				translateZ: '50',
 			},
-			{ icon: MapPin, text: 'Alexandria, Egypt', translateZ: '40' },
-			{ icon: Award, text: 'Very Good with Honor', translateZ: '50' },
-			{ icon: Calendar, text: '2018 – 2022', translateZ: '40' },
+			{ icon: MapPin, text: 'Alexandria, Egypt' },
+			{ icon: Award, text: 'Very Good with Honor' },
+			{ icon: Calendar, text: '2018 – 2022' },
 		],
 	},
 ];

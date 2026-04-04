@@ -14,10 +14,7 @@ export default function HomeBreakSection() {
 				className='relative flex w-full flex-col items-center justify-center overflow-hidden rotate-1 my-8 
         bg-card transition-colors duration-300'
 			>
-				<ScrollVelocityContainer
-					className='text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-20 flex flex-col
-          text-neutral-900 dark:text-neutral-100'
-				>
+				<ScrollVelocityContainer className='text-4xl font-bold md:text-7xl md:leading-20 flex flex-col'>
 					<ScrollVelocityRow
 						baseVelocity={20}
 						direction={1}
@@ -41,8 +38,8 @@ export default function HomeBreakSection() {
 					</ScrollVelocityRow>
 				</ScrollVelocityContainer>
 
-				<div className='pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r from-neutral-50 dark:from-neutral-900' />
-				<div className='pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l from-neutral-50 dark:from-neutral-900' />
+				<div className='pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r from-background to-transparent' />
+				<div className='pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l from-background to-transparent' />
 			</div>
 		</section>
 	);

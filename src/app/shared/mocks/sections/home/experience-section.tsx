@@ -13,8 +13,8 @@ export const ExperienceItems: TimelineEntry[] = [
 		title: 'Freelance Frontend Engineer',
 		content: (
 			<div className='space-y-3'>
-				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconDeviceLaptop className='h-4 w-4 text-brand-strong' />
+				<div className='stack-row items-center text-sm'>
+					<IconDeviceLaptop className='size-4 text-brand-strong' />
 					<span>Remote • 06/2023 – Present</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
@@ -26,8 +26,8 @@ export const ExperienceItems: TimelineEntry[] = [
 					<strong>shadcn/ui</strong>, <strong>Tailwind CSS</strong>, and{' '}
 					<strong>React Hook Form</strong>.
 				</p>
-				<div className='flex flex-wrap items-center gap-3 text-xs text-neutral-600 dark:text-neutral-400'>
-					<IconTool className='h-3 w-3' />
+				<div className='stack-row flex-wrap items-center text-xs text-muted'>
+					<IconTool className='size-3 text-muted' />
 					<span>Next.js</span>
 					<span>React Native</span>
 					<span>Zustand</span>
@@ -43,28 +43,28 @@ export const ExperienceItems: TimelineEntry[] = [
 						alt='El Romany'
 						width={1024}
 						height={768}
-						className='h-full w-full rounded-lg object-cover object-top shadow-sm'
+						className='size-full rounded-lg object-cover object-top shadow-sm'
 					/>
 					<Image
 						src='/growth-level.webp'
 						alt='Growth Level'
 						width={1024}
 						height={768}
-						className='h-full w-full rounded-lg object-cover object-top shadow-sm'
+						className='size-full rounded-lg object-cover object-top shadow-sm'
 					/>
 					<Image
 						src='/innova.webp'
 						alt='Innova'
 						width={1024}
 						height={768}
-						className='h-full w-full rounded-lg object-cover object-top shadow-sm'
+						className='size-full rounded-lg object-cover object-top shadow-sm'
 					/>
 					<Image
 						src='/shop-next.webp'
 						alt='Shop Next'
 						width={1024}
 						height={768}
-						className='h-full w-full rounded-lg object-cover object-top shadow-sm'
+						className='size-full rounded-lg object-cover object-top shadow-sm'
 					/>
 				</div>
 			</div>
@@ -74,15 +74,15 @@ export const ExperienceItems: TimelineEntry[] = [
 		title: 'Echoes Travel',
 		content: (
 			<div className='space-y-3'>
-				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconBriefcase className='h-4 w-4 text-brand-strong' />
+				<div className='stack-row items-center text-sm'>
+					<IconBriefcase className='size-4 text-brand-strong' />
 					<span>Part-Time • 04/2025 – 07/2025</span>
 				</div>
-				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconMapPin className='h-4 w-4 text-brand-strong' />
+				<div className='stack-row items-center text-sm'>
+					<IconMapPin className='size-4 text-brand-strong' />
 					<span>Alexandria, Egypt</span>
 				</div>
-				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
+				<p className='text-sm'>
 					Led a frontend team to develop advanced travel booking interfaces
 					using <strong>React.js</strong> and <strong>Material UI</strong>.
 					Oversaw architecture and code quality, implemented complex forms with{' '}
@@ -91,8 +91,8 @@ export const ExperienceItems: TimelineEntry[] = [
 					performance optimization.
 				</p>
 
-				<div className='flex flex-wrap items-center gap-3 text-xs text-neutral-600 dark:text-neutral-400'>
-					<IconTool className='h-3 w-3' />
+				<div className='stack-row flex-wrap items-center text-xs text-muted'>
+					<IconTool className='size-3 text-muted' />
 					<span>React.js</span>
 					<span>TypeScript</span>
 					<span>Material UI</span>
@@ -109,12 +109,12 @@ export const ExperienceItems: TimelineEntry[] = [
 		title: 'Runnet Platform',
 		content: (
 			<div className='space-y-3'>
-				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconBriefcase className='h-4 w-4 text-brand-strong' />
+				<div className='flex items-center gap-2 text-sm'>
+					<IconBriefcase className='size-4 text-brand-strong' />
 					<span>Full-Time • 10/2024 – 04/2025</span>
 				</div>
-				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconMapPin className='h-4 w-4 text-brand-strong' />
+				<div className='flex items-center gap-2 text-sm'>
+					<IconMapPin className='size-4 text-brand-strong' />
 					<span>Remote - Netherlands</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
@@ -142,8 +142,8 @@ export const ExperienceItems: TimelineEntry[] = [
 						className='w-full rounded-lg object-cover shadow-sm'
 					/>
 				</div>
-				<div className='flex flex-wrap items-center gap-3 text-xs text-neutral-600 dark:text-neutral-400'>
-					<IconTool className='h-3 w-3' />
+				<div className='stack-row flex-wrap items-center text-xs text-muted'>
+					<IconTool className='size-3 text-muted' />
 					<span>React.js</span>
 					<span>Next.js</span>
 					<span>TypeScript</span>
@@ -159,12 +159,12 @@ export const ExperienceItems: TimelineEntry[] = [
 		title: 'BM Enterprises Management',
 		content: (
 			<div className='space-y-3'>
-				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconBriefcase className='h-4 w-4 text-brand-strong' />
+				<div className='flex items-center gap-2 text-sm'>
+					<IconBriefcase className='size-4 text-brand-strong' />
 					<span>Full-Time • 08/2023 – 09/2024</span>
 				</div>
-				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconMapPin className='h-4 w-4 text-brand-strong' />
+				<div className='flex items-center gap-2 text-sm'>
+					<IconMapPin className='size-4 text-brand-strong' />
 					<span>Alexandria, Egypt</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
@@ -175,8 +175,8 @@ export const ExperienceItems: TimelineEntry[] = [
 					<strong>Axios</strong> and improved app structure with{' '}
 					<strong>SCSS</strong> and <strong>Zustand</strong>.
 				</p>
-				<div className='flex flex-wrap items-center gap-3 text-xs text-neutral-600 dark:text-neutral-400'>
-					<IconTool className='h-3 w-3' />
+				<div className='stack-row flex-wrap items-center text-xs text-muted'>
+					<IconTool className='size-3 text-muted' />
 					<span>React.js</span>
 					<span>TypeScript</span>
 					<span>Material UI</span>
@@ -193,12 +193,12 @@ export const ExperienceItems: TimelineEntry[] = [
 		title: 'Front-End Diploma React & Next.js',
 		content: (
 			<div className='space-y-3'>
-				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconCertificate className='h-4 w-4 text-amber-600' />
+				<div className='flex items-center gap-2 text-sm'>
+					<IconCertificate className='size-4 text-amber-600' />
 					<span>Route Egypt Academy • 11/2022 – 05/2023</span>
 				</div>
-				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconMapPin className='h-4 w-4 text-brand-strong' />
+				<div className='flex items-center gap-2 text-sm'>
+					<IconMapPin className='size-4 text-brand-strong' />
 					<span>Alexandria Branch</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>
@@ -226,12 +226,12 @@ export const ExperienceItems: TimelineEntry[] = [
 		title: 'Angular Framework',
 		content: (
 			<div className='space-y-3'>
-				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconCertificate className='h-4 w-4 text-amber-600' />
+				<div className='flex items-center gap-2 text-sm'>
+					<IconCertificate className='size-4 text-amber-600' />
 					<span>Route Egypt Academy • 12/2025 – Present</span>
 				</div>
-				<div className='flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300'>
-					<IconMapPin className='h-4 w-4 text-brand-strong' />
+				<div className='flex items-center gap-2 text-sm'>
+					<IconMapPin className='size-4 text-brand-strong' />
 					<span>Alexandria Branch</span>
 				</div>
 				<p className='text-sm text-neutral-800 dark:text-neutral-200'>

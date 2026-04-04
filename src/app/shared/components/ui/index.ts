@@ -1,4 +1,3 @@
-export * from './3d-card';
 export * from './animated-gradient-text';
 export * from './background-beams-with-collision';
 export * from './ballpit';

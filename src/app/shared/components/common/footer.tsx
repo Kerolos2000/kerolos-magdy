@@ -27,7 +27,7 @@ export default function Footer() {
 								{title}
 							</h3>
 
-							<div className='mb-6 flex flex-col gap-3'>
+							<div className='mb-6 flex flex-col gap-2'>
 								{items.map(({ label, href, download, icon: Icon }) => (
 									<Link
 										key={label}
@@ -48,7 +48,7 @@ export default function Footer() {
 										Connect
 									</h3>
 
-									<div className='flex flex-wrap gap-3'>
+									<div className='flex flex-wrap gap-2'>
 										{FooterSocials.map(({ href, icon: Icon, label }) => (
 											<Link
 												key={label}

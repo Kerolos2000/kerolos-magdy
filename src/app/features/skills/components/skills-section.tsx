@@ -18,9 +18,9 @@ export default function HomeSkillsSection() {
 							className='group relative'
 						>
 							<div className='second-card'>
-								<div className='flex items-center gap-3'>
+								<div className='flex items-center gap-2'>
 									<div className='relative shrink-0'>
-										<div className='relative p-1.5 rounded-lg bg-neutral-100 dark:bg-neutral-900 group-hover:bg-neutral-500/10 transition-all duration-300'>
+										<div className='relative p-1.5 rounded-lg bg-card transition-all duration-300'>
 											<Icon
 												size={20}
 												className='text-foreground/80 group-hover:text-brand transition-colors duration-300'
@@ -34,7 +34,7 @@ export default function HomeSkillsSection() {
 									</span>
 								</div>
 
-								<div className='absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-brand-medium to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+								<div className='absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-brand to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
 							</div>
 						</div>
 					);

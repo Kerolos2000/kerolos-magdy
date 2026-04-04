@@ -56,45 +56,45 @@ export default function HomeContactUsSection() {
 						boldText='Me'
 					/>
 
-					<div>
+					<div className='stack-column'>
 						<input
 							type='text'
 							placeholder='Your Name'
 							{...register('name')}
-							className='w-full rounded-lg border border-neutral-200 dark:border-white/10 focus:border-brand dark:focus:border-brand transition-all duration-300 px-4 py-3 bg-neutral-50/75 dark:bg-neutral-900/20 outline-none text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-sm'
+							className='input-field'
 						/>
 						{errors.name && (
-							<p className='text-red-500 text-sm'>{errors.name.message}</p>
+							<p className='error-message'>{errors.name.message}</p>
 						)}
 					</div>
 
-					<div>
+					<div className='stack-column'>
 						<input
 							type='email'
 							placeholder='Your Email'
 							{...register('email')}
-							className='w-full rounded-lg border border-neutral-200 dark:border-white/10 focus:border-brand dark:focus:border-brand transition-all duration-300 px-4 py-3 bg-neutral-50/75 dark:bg-neutral-900/20 outline-none text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-sm'
+							className='input-field'
 						/>
 						{errors.email && (
-							<p className='text-red-500 text-sm'>{errors.email.message}</p>
+							<p className='error-message'>{errors.email.message}</p>
 						)}
 					</div>
 
-					<div>
+					<div className='stack-column'>
 						<textarea
 							placeholder='Your Message'
 							{...register('message')}
-							className='w-full h-32 rounded-lg border border-neutral-200 dark:border-white/10 focus:border-brand dark:focus:border-brand transition-all duration-300 px-4 py-3 bg-neutral-50/75 dark:bg-neutral-900/20 outline-none resize-none text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-sm'
+							className='w-full h-32 input-field resize-none'
 						/>
 						{errors.message && (
-							<p className='text-red-500 text-sm'>{errors.message.message}</p>
+							<p className='error-message'>{errors.message.message}</p>
 						)}
 					</div>
 
 					<button
 						type='submit'
 						disabled={status === 'sending'}
-						className='cursor-pointer text-center w-full px-6 sm:px-7 py-2 rounded-lg bg-neutral-50/50 dark:bg-neutral-100/10 backdrop-blur-sm border border-card-foreground/30 focus:border-card-foreground/50 transition-all duration-300 hover:border-card-foreground/50 text-foreground flex items-center justify-center'
+						className='main-button w-full'
 					>
 						{status === 'sending' ? 'Sending...' : 'Send Message'}
 					</button>
@@ -105,7 +105,7 @@ export default function HomeContactUsSection() {
 						</p>
 					)}
 					{status === 'error' && (
-						<p className='text-red-500 text-center text-sm flex items-center justify-center gap-2'>
+						<p className='error-message text-center'>
 							Failed to send. Please try again.
 						</p>
 					)}

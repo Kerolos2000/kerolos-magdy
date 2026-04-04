@@ -11,7 +11,7 @@ export default function HomeCounterSection() {
 					{CounterStats.map(({ label, value }) => (
 						<div
 							key={label}
-							className='relative border border-primary/20 rounded-lg shadow-sm px-4 py-6 text-center bg-neutral-100 dark:bg-neutral-950'
+							className='relative border rounded-lg shadow-sm px-4 py-6 text-center bg-background'
 						>
 							<div className='text-5xl md:text-6xl font-bold mb-3 flex items-center justify-center flex-nowrap'>
 								<NumberTicker value={value} />

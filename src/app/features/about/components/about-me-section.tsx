@@ -1,12 +1,6 @@
 import { IconFileDownload } from '@tabler/icons-react';
 import Link from 'next/link';
-import {
-	AboutMeSectionData,
-	Ballpit,
-	CardBody,
-	CardContainer,
-	CardItem,
-} from 'src/shared';
+import { AboutMeSectionData, Ballpit } from 'src/shared';
 
 export default function HomeAboutMeSection() {
 	return (
@@ -15,83 +9,62 @@ export default function HomeAboutMeSection() {
 			id='home-about-me-section'
 		>
 			<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-				{AboutMeSectionData.map(({ details, icon: Icon, title }, index) => (
-					<CardContainer
-						key={index}
-						className='inter-var'
+				{AboutMeSectionData.map(({ details, icon: Icon, title }) => (
+					<div
+						key={title}
+						className='main-card'
 					>
-						<CardBody className='main-card'>
-							<Ballpit
-								className='absolute inset-0 -z-2'
-								count={25}
-								gravity={0.1}
-								colors={[
-									'#022C22',
-									'#064E3B',
-									'#065F46',
-									'#047857',
-									'#059669',
-									'#10B981',
-									'#34D399',
-									'#6EE7B7',
-								]}
-								followCursor={false}
-							/>
-							<div className='p-8 h-full'>
-								<CardItem
-									translateZ='60'
-									className='flex items-center gap-3 text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-4'
-								>
-									<div className='p-2 bg-brand/10 dark:bg-brand/10 rounded-lg'>
-										<Icon className='w-7 h-7 text-brand dark:text-brand' />
-									</div>
-									{title}
-								</CardItem>
+						<Ballpit
+							className='absolute inset-0 -z-2'
+							count={20}
+							gravity={0.1}
+							colors={[
+								'var(--brand)',
+								'var(--brand)',
+								'var(--brand-medium)',
+								'var(--brand-strong)',
+								'var(--brand-medium)',
+								'var(--brand-strong)',
+							]}
+							followCursor={false}
+						/>
 
-								<div className='space-y-4'>
-									{details.map(
-										({ isButton, icon: Icon, text, translateZ }, j) =>
-											isButton ? (
-												<CardItem
-													className='mt-4'
-													key={j}
-													translateZ={translateZ}
-												>
-													<Link
-														href='/Kerolos-Magdy-Resume.pdf'
-														download
-														className='main-button'
-													>
-														<IconFileDownload className='w-4 h-4 sm:w-5 sm:h-5' />
-														<span className='font-medium text-xs sm:text-sm tracking-wide'>
-															VIEW RESUME
-														</span>
-													</Link>
-												</CardItem>
-											) : (
-												<CardItem
-													key={j}
-													translateZ={translateZ}
-													className='flex items-center gap-3 text-neutral-900 dark:text-neutral-100 mb-2'
-												>
-													{Icon && (
-														<Icon className='w-4 h-4 text-neutral-700 dark:text-neutral-400' />
-													)}
-													{text}
-												</CardItem>
-											),
-									)}
+						<div className='p-8 h-full stack-column gap-4'>
+							<div className='stack-row items-center text-2xl font-bold'>
+								<div className='p-2 bg-brand/10 dark:bg-brand/10 rounded-lg'>
+									<Icon className='size-7 text-brand dark:text-brand' />
 								</div>
-
-								<CardItem
-									translateZ='30'
-									className='absolute z-[-1] right-4 bottom-4 w-32 sm:w-40 h-32 sm:h-40 text-brand/10 pointer-events-none select-none'
-								>
-									<Icon className='w-full h-full text-neutral-300 dark:text-neutral-600' />
-								</CardItem>
+								{title}
 							</div>
-						</CardBody>
-					</CardContainer>
+
+							<div className='stack-column gap-4'>
+								{details.map(({ isButton, icon: Icon, text }, index) =>
+									isButton ? (
+										<div key={index}>
+											<Link
+												href='/Kerolos-Magdy-Resume.pdf'
+												download
+												className='main-button text-sm'
+											>
+												<IconFileDownload className='size-4 sm:size-5' />
+												VIEW RESUME
+											</Link>
+										</div>
+									) : (
+										<div
+											key={text}
+											className='stack-row items-center text-muted'
+										>
+											{Icon && <Icon className='size-4' />}
+											{text}
+										</div>
+									),
+								)}
+							</div>
+
+							<Icon className='absolute -z-1 right-4 bottom-4 size-32 sm:size-40 select-none text-muted opacity-25' />
+						</div>
+					</div>
 				))}
 			</div>
 		</section>

@@ -7,6 +7,12 @@ html {
   scrollbar-width: none;
 }
 
+@media (max-width: 1280px) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* CUSTOM VARIANTS */
 @custom-variant dark (&:is(.dark *));
 
@@ -28,6 +34,7 @@ html {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
+  --color-card-soft: var(--card-soft);
   --color-muted: var(--muted);
   --color-border: var(--border);
 
@@ -125,6 +132,7 @@ html {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(0.99 0 0);
+  --card-soft: oklch(0.97 0 0);
   --muted: oklch(0.556 0 0);
   --border: oklch(0.922 0 0);
 
@@ -140,6 +148,7 @@ html {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.16 0 0);
+  --card-soft: oklch(0.23 0 0);
   --muted: oklch(0.708 0 0);
   --border: oklch(0.3 0 0);
 
@@ -150,8 +159,16 @@ html {
   --brand-strong: var(--color-emerald-700);
 }
 
+@utility btn {
+  @apply px-6 sm:px-7 rounded-lg backdrop-blur-sm transition-all duration-300 flex items-center justify-center cursor-pointer
+}
+
 @utility main-button {
-  @apply w-fit px-6 py-3 sm:px-7 rounded-lg bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-neutral-200 dark:border-white/10 hover:border-brand-medium dark:hover:border-brand-soft hover:bg-white dark:hover:bg-white/8 text-neutral-800 dark:text-neutral-100 font-medium transition-all duration-300 flex items-center gap-2 shadow-sm hover:shadow-md hover:shadow-brand-softer
+  @apply btn w-fit py-3 bg-white/80 dark:bg-white/5 border border-neutral-200 dark:border-white/10 hover:border-brand-medium dark:hover:border-brand hover:bg-white dark:hover:bg-white/8 text-neutral-800 dark:text-neutral-100 font-medium gap-2
+}
+
+@utility floating-button {
+  @apply cursor-pointer flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200/60 hover:bg-neutral-300/70 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/60 backdrop-blur-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed
 }
 
 @utility section-container {
@@ -159,7 +176,7 @@ html {
 }
 
 @utility section-description {
-  @apply max-w-2xl text-base sm:text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed
+  @apply max-w-2xl text-base sm:text-lg text-muted leading-relaxed
 }
 
 @utility main-card {
@@ -168,4 +185,20 @@ html {
 
 @utility second-card {
   @apply relative h-full flex items-center pointer-events-none backdrop-blur-sm bg-card border border-border/50 hover:border-brand-strong rounded-lg px-4 py-2.5 transition-all duration-300 hover:bg-card/40 hover:shadow-sm hover:shadow-brand-softer
+}
+
+@utility stack-column {
+  @apply flex flex-col gap-2
+}
+
+@utility stack-row {
+  @apply flex flex-row gap-2
+}
+
+@utility input-field {
+  @apply w-full rounded-lg border focus:border-brand transition-all duration-300 px-4 py-2 bg-card placeholder:text-muted text-sm
+}
+
+@utility error-message {
+  @apply text-red-800 dark:text-red-200 text-sm
 }

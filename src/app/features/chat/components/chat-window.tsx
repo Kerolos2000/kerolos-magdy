@@ -1,16 +1,14 @@
 'use client';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { IconSend, IconX } from '@tabler/icons-react';
 import { useEffect, useRef } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { useChat } from '../hooks';
+import { ChatMessageSchema, chatMessageSchema } from '../validation';
 import { ChatMessage } from './chat-message';
 
 interface ChatWindowProps {
 	onClose: () => void;
-}
-
-interface FormValues {
-	message: string;
 }
 
 export const ChatWindow = ({ onClose }: ChatWindowProps) => {
@@ -22,9 +20,10 @@ export const ChatWindow = ({ onClose }: ChatWindowProps) => {
 		handleSubmit,
 		reset,
 		control,
-		formState: { isSubmitting },
-	} = useForm<FormValues>({
+		formState: { isSubmitting, errors },
+	} = useForm<ChatMessageSchema>({
 		defaultValues: { message: '' },
+		resolver: zodResolver(chatMessageSchema),
 	});
 
 	const message = useWatch({
@@ -38,26 +37,24 @@ export const ChatWindow = ({ onClose }: ChatWindowProps) => {
 		}
 	}, [messages]);
 
-	const onSubmit = ({ message }: FormValues) => {
+	const onSubmit = ({ message }: ChatMessageSchema) => {
 		if (!message.trim() || isLoading) return;
 		sendMessage(message);
 		reset();
 	};
 
 	return (
-		<div className='flex h-full flex-col overflow-hidden bg-neutral-50 dark:bg-neutral-950'>
-			<div className='flex items-center justify-between border-b px-4 py-3 bg-white dark:bg-neutral-900 dark:border-neutral-800 shadow-sm z-10'>
-				<div className='flex items-center gap-2'>
-					<div className='relative h-1.5 w-1.5'>
-						<span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75' />
+		<div className='stack-column h-full overflow-hidden bg-background'>
+			<div className='flex items-center justify-between border-b px-4 py-2 bg-card-soft  shadow-sm z-10'>
+				<div className='stack-row gap-3 items-center'>
+					<div className='relative size-1.5'>
+						<span className='absolute inline-flex size-full animate-ping rounded-full bg-brand opacity-75' />
 					</div>
-					<h3 className='font-semibold text-neutral-800 dark:text-white'>
-						Portfolio AI (Beta)
-					</h3>
+					<h3 className='font-semibold text-foreground'>Portfolio AI (Beta)</h3>
 				</div>
 				<button
 					onClick={onClose}
-					className='rounded-full p-1 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:hover:bg-neutral-800 dark:hover:text-neutral-300 transition-colors'
+					className='floating-button'
 				>
 					<IconX size={18} />
 				</button>
@@ -67,30 +64,30 @@ export const ChatWindow = ({ onClose }: ChatWindowProps) => {
 				ref={scrollRef}
 				className='flex-1 overflow-y-auto w-full p-4 space-y-4 scroll-smooth'
 			>
-				{messages.map(m => (
+				{messages.map(({ id, role, content }) => (
 					<ChatMessage
-						key={m.id}
-						role={m.role}
-						content={m.content}
+						key={id}
+						role={role}
+						content={content}
 					/>
 				))}
 			</div>
 
-			<div className='border-t p-4 bg-white dark:bg-neutral-900 dark:border-neutral-800'>
+			<div className='border-t px-4 py-2 bg-card-soft'>
 				<form
 					onSubmit={handleSubmit(onSubmit)}
-					className='flex items-center gap-2 rounded-full border bg-neutral-50 px-4 py-2 focus-within:border-brand dark:bg-neutral-950 dark:border-neutral-800'
+					className='stack-row items-center rounded-full border bg-background px-4 py-2 focus-within:border-brand'
 				>
 					<input
 						{...register('message')}
-						className='flex-1 bg-transparent text-sm outline-none placeholder:text-neutral-400 dark:text-white'
+						className='flex-1 bg-input text-sm outline-none placeholder:text-muted'
 						placeholder='Type your message...'
 						disabled={isLoading || isSubmitting}
 					/>
 					<button
 						type='submit'
-						disabled={isLoading || !message?.trim()}
-						className='flex h-8 w-8 items-center justify-center rounded-full bg-neutral-900 text-white transition-all hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed dark:bg-white dark:text-neutral-900'
+						disabled={!!errors.message}
+						className='floating-button'
 					>
 						<IconSend size={14} />
 					</button>
