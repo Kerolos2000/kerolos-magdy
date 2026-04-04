@@ -1,18 +1,13 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "tsBuildInfoFile": ".tsbuildinfo",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
