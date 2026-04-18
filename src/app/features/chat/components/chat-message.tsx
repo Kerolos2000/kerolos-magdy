@@ -9,6 +9,7 @@ export interface ChatMessageProps {
 
 export const ChatMessage = ({ role, content }: ChatMessageProps) => {
 	const isUser = role === 'user';
+	const isThinking = !isUser && !content;
 
 	return (
 		<motion.div
@@ -33,9 +34,30 @@ export const ChatMessage = ({ role, content }: ChatMessageProps) => {
 					isUser
 						? 'rounded-tr-none bg-foreground text-background'
 						: 'rounded-tl-none bg-brand text-background',
+					isThinking && 'flex items-center min-h-[38px]',
 				)}
 			>
-				{content && <p className='whitespace-pre-wrap'>{content}</p>}
+				{content ? (
+					<p className='whitespace-pre-wrap leading-relaxed'>{content}</p>
+				) : isThinking ? (
+					<div className='flex items-center gap-1 px-1'>
+						<motion.div
+							className='size-1.5 rounded-full bg-background/80'
+							animate={{ y: [0, -3, 0] }}
+							transition={{ duration: 0.6, repeat: Infinity, delay: 0 }}
+						/>
+						<motion.div
+							className='size-1.5 rounded-full bg-background/80'
+							animate={{ y: [0, -3, 0] }}
+							transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }}
+						/>
+						<motion.div
+							className='size-1.5 rounded-full bg-background/80'
+							animate={{ y: [0, -3, 0] }}
+							transition={{ duration: 0.6, repeat: Infinity, delay: 0.4 }}
+						/>
+					</div>
+				) : null}
 			</div>
 		</motion.div>
 	);
