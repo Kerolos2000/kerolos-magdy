@@ -1,26 +1,26 @@
 {
   "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "new-york",
+  "aliases": {
+    "components": "src/shared/components",
+    "hooks": "src/shared/hooks",
+    "lib": "src/shared/utils",
+    "ui": "src/shared/components/ui",
+    "utils": "src/shared/utils/cn"
+  },
+  "iconLibrary": "lucide",
+  "registries": {
+    "@aceternity": "https://ui.aceternity.com/registry/{name}.json",
+    "@magicui": "https://magicui.design/r/{name}.json",
+    "@react-bits": "https://reactbits.dev/r/{name}.json"
+  },
   "rsc": true,
-  "tsx": true,
+  "style": "new-york",
   "tailwind": {
+    "baseColor": "neutral",
     "config": "",
     "css": "src/app/globals.css",
-    "baseColor": "neutral",
     "cssVariables": true,
     "prefix": ""
   },
-  "iconLibrary": "lucide",
-  "aliases": {
-    "components": "src/components",
-    "utils": "src/lib/utils",
-    "ui": "src/components/ui",
-    "lib": "src/lib",
-    "hooks": "src/hooks"
-  },
-  "registries": {
-    "@magicui": "https://magicui.design/r/{name}.json",
-    "@aceternity": "https://ui.aceternity.com/registry/{name}.json",
-    "@react-bits": "https://reactbits.dev/r/{name}.json"
-  }
+  "tsx": true
 }

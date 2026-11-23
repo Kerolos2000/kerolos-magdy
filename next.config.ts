@@ -1,9 +1,14 @@
-import type { NextConfig } from 'next';
+import { type NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-	images: {
-		remotePatterns: [{ protocol: 'https', hostname: '*' }],
-	},
-	allowedDevOrigins: ['local-origin.dev', '*.local-origin.dev'],
+  allowedDevOrigins: ['local-origin.dev', '*.local-origin.dev'],
+  experimental: {
+    optimizePackageImports: ['@tabler/icons-react', 'lucide-react', 'motion/react'],
+  },
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [{ hostname: '*', protocol: 'https' }],
+  },
 };
+
 export default nextConfig;

@@ -1,12 +1,13 @@
 {
-	"arrowParens": "avoid",
-	"endOfLine": "auto",
-	"jsxSingleQuote": true,
-	"parser": "typescript",
-	"semi": true,
-	"singleAttributePerLine": true,
-	"singleQuote": true,
-	"tabWidth": 2,
-	"trailingComma": "all",
-	"useTabs": true
+  "arrowParens": "avoid",
+  "endOfLine": "auto",
+  "jsxSingleQuote": true,
+  "parser": "typescript",
+  "printWidth": 100,
+  "semi": true,
+  "singleAttributePerLine": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false
 }

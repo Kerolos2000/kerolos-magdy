@@ -1,0 +1,38 @@
+import { AnimatedGradientText } from 'src/shared/components/ui/animated-gradient-text/AnimatedGradientText';
+import {
+  ScrollVelocityContainer,
+  ScrollVelocityRow,
+} from 'src/shared/components/ui/scroll-velocity/ScrollBasedVelocity';
+import { SECTION_IDS } from 'src/shared/constants/sections';
+
+export const BreakSection = () => (
+  <section
+    className='max-w-full overflow-hidden'
+    id={SECTION_IDS.break}
+  >
+    <div className='relative flex w-full flex-col items-center justify-center overflow-hidden rotate-1 my-8 bg-card transition-colors duration-300'>
+      <ScrollVelocityContainer className='text-4xl font-bold md:text-7xl md:leading-20 flex flex-col'>
+        <ScrollVelocityRow
+          baseVelocity={20}
+          direction={1}
+        >
+          <span className='px-3 py-2'>
+            Frontend Developer <AnimatedGradientText className='px-3 py-2'>•</AnimatedGradientText>
+          </span>
+        </ScrollVelocityRow>
+
+        <ScrollVelocityRow
+          baseVelocity={20}
+          direction={-1}
+        >
+          <AnimatedGradientText className='px-3 py-2'>
+            React & Next.js <span className='px-3 py-2 text-foreground'>•</span>
+          </AnimatedGradientText>
+        </ScrollVelocityRow>
+      </ScrollVelocityContainer>
+
+      <div className='pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r from-background to-transparent' />
+      <div className='pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l from-background to-transparent' />
+    </div>
+  </section>
+);

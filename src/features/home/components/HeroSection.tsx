@@ -1,0 +1,68 @@
+import { IconBrandWhatsapp } from '@tabler/icons-react';
+import Link from 'next/link';
+import { AnimatedGradientText } from 'src/shared/components/ui/animated-gradient-text/AnimatedGradientText';
+import { BackgroundBeamsWithCollision } from 'src/shared/components/ui/background-beams/BackgroundBeamsWithCollision';
+import { PROFILE } from 'src/shared/constants/profile';
+import { SECTION_IDS } from 'src/shared/constants/sections';
+
+export const HeroSection = () => (
+  <section className='relative py-12 sm:py-16 flex items-center justify-center overflow-hidden'>
+    <div className='absolute inset-0 pointer-events-none'>
+      <div className='absolute top-0 -z-10 h-full w-full [&>div]:absolute [&>div]:bottom-auto [&>div]:left-auto [&>div]:right-0 [&>div]:top-0 [&>div]:h-45 sm:[&>div]:h-65 md:[&>div]:h-80 lg:[&>div]:h-95 xl:[&>div]:h-105 [&>div]:w-45 sm:[&>div]:w-65 md:[&>div]:w-[320px] lg:[&>div]:w-95 xl:[&>div]:w-105 [&>div]:-translate-x-[50%] [&>div]:translate-y-[20%] [&>div]:rounded-full [&>div]:bg-brand/25 dark:[&>div]:bg-brand-strong/25 [&>div]:blur-3xl [&>div]:transform-gpu [&>div]:will-change-[opacity] [&>div]:animate-[fadePulse_10s_ease-in-out_infinite]'>
+        <div />
+      </div>
+    </div>
+
+    <BackgroundBeamsWithCollision>
+      <div className='absolute inset-0 pointer-events-none overflow-hidden opacity-70 dark:opacity-50'>
+        <div className='absolute w-px h-full top-0 left-[15%] sm:left-[25%] bg-linear-to-b from-transparent via-brand-strong dark:via-brand-medium to-transparent' />
+        <div className='absolute w-px h-full top-0 right-[15%] sm:right-[25%] bg-linear-to-b from-transparent via-brand-strong dark:via-brand-medium to-transparent' />
+        <div className='absolute w-full h-px left-0 -top-full sm:top-[26%] bg-linear-to-r from-transparent via-brand-strong dark:via-brand-medium to-transparent' />
+        <div className='absolute w-full h-px left-0 -bottom-full sm:bottom-[25%] bg-linear-to-r from-transparent via-brand-strong dark:via-brand-medium to-transparent' />
+      </div>
+
+      <div className='relative w-full z-10 flex flex-col items-center justify-center space-y-4 sm:space-y-8 text-center'>
+        <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-xl bg-card/20 border border-border'>
+          <div className='w-2 h-2 rounded-full bg-brand' />
+          <span className='text-xs sm:text-sm font-medium tracking-wide text-muted'>
+            AVAILABLE FOR WORK
+          </span>
+        </div>
+
+        <h1 className='text-4xl sm:text-6xl md:text-8xl font-bold text-foreground flex flex-col items-center gap-1 sm:gap-2'>
+          <AnimatedGradientText>KEROLOS</AnimatedGradientText>
+          <span className='text-3xl sm:text-5xl md:text-7xl'>MAGDY</span>
+        </h1>
+
+        <p className='text-lg sm:text-xl md:text-2xl font-light tracking-wide max-w-3xl mx-auto text-muted'>
+          React
+          <span className='text-brand'> | </span>
+          Next.js
+          <span className='text-brand'> | </span>
+          Angular
+        </p>
+
+        <Link
+          className='main-button'
+          href={PROFILE.whatsappUrl}
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          <IconBrandWhatsapp size='1.2rem' />
+          <span className='font-medium text-xs sm:text-sm tracking-wide'>GET IN TOUCH</span>
+        </Link>
+
+        <Link href={`#${SECTION_IDS.about}`}>
+          <div className='flex flex-col items-center gap-2'>
+            <span className='text-2xs sm:text-xs text-muted uppercase tracking-wider'>
+              Scroll Down
+            </span>
+            <div className='w-6 h-10 border-2 border-brand rounded-full flex justify-center p-2'>
+              <div className='w-1 h-3 bg-brand-medium rounded-full animate-bounce' />
+            </div>
+          </div>
+        </Link>
+      </div>
+    </BackgroundBeamsWithCollision>
+  </section>
+);

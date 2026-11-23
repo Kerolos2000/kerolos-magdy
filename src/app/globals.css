@@ -83,48 +83,161 @@ html {
       opacity: 0.4;
     }
   }
+}
 
-  /* KEYFRAMES */
-  @keyframes fadePulse {
-
-    0%,
-    100% {
-      opacity: 0.1;
-    }
-
-    50% {
-      opacity: 0.5;
-    }
+/* KEYFRAMES */
+@keyframes fadePulse {
+  0%,
+  100% {
+    opacity: 0.1;
   }
 
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
+  50% {
+    opacity: 0.5;
+  }
+}
 
-    100% {
-      transform: translateX(-33.333%);
-    }
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
   }
 
-  @keyframes marquee-reverse {
-    0% {
-      transform: translateX(0);
-    }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
 
-    100% {
-      transform: translateX(33.333%);
-    }
+@keyframes marquee-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes loader-char-in {
+  0% {
+    transform: translate3d(0, 110%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes loader-text-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loader-bar-top-down {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes loader-bar-bottom-up {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes loader-bar-fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loader-bar-scale-vertical {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 0, 1);
   }
 }
 
 /* ANIMATIONS */
 .animate-marquee {
   animation: marquee 25s linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee-reverse {
   animation: marquee-reverse 25s linear infinite;
+  will-change: transform;
+}
+
+.loader-char {
+  animation-delay: var(--char-delay, 0ms);
+  animation-duration: 0.36s;
+  animation-fill-mode: both;
+  animation-name: loader-char-in;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.loader-text-wrap {
+  animation-delay: var(--text-out-delay, 720ms);
+  animation-duration: 0.28s;
+  animation-fill-mode: forwards;
+  animation-name: loader-text-out;
+  animation-timing-function: ease-out;
+  will-change: opacity;
+}
+
+.loader-bar {
+  animation-delay: var(--bar-delay, 640ms);
+  animation-duration: 0.52s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.loader-bar--top-down {
+  animation-name: loader-bar-top-down;
+}
+
+.loader-bar--bottom-up {
+  animation-name: loader-bar-bottom-up;
+}
+
+.loader-bar--fade-out {
+  animation-name: loader-bar-fade-out;
+}
+
+.loader-bar--scale-vertical {
+  animation-name: loader-bar-scale-vertical;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation-play-state: paused;
+  }
 }
 
 /* ROOT LIGHT */

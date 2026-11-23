@@ -1,51 +1,44 @@
 import dynamic from 'next/dynamic';
-import { HomeHeroSection } from './features';
+import { HeroSection } from 'src/features/home/components/HeroSection';
+import { SECTION_IDS } from 'src/shared/constants/sections';
 
-const HomeAboutMeSection = dynamic(
-	() => import('src/features/about').then(m => m.HomeAboutMeSection),
-	{ ssr: true },
+const AboutMeSection = dynamic(() =>
+  import('src/features/about/components/AboutMeSection').then(m => m.AboutMeSection),
 );
-const HomeBreakSection = dynamic(
-	() => import('src/features/home').then(m => m.HomeBreakSection),
-	{ ssr: true },
+const BreakSection = dynamic(() =>
+  import('src/features/home/components/BreakSection').then(m => m.BreakSection),
 );
-const HomeSkillsSection = dynamic(
-	() => import('src/features/skills').then(m => m.HomeSkillsSection),
-	{ ssr: true },
+const SkillsSection = dynamic(() =>
+  import('src/features/skills/components/SkillsSection').then(m => m.SkillsSection),
 );
-const HomeExperienceSection = dynamic(
-	() => import('src/features/experience').then(m => m.HomeExperienceSection),
-	{ ssr: true },
+const ExperienceSection = dynamic(() =>
+  import('src/features/experience/components/ExperienceSection').then(m => m.ExperienceSection),
 );
-const HomeCounterSection = dynamic(
-	() => import('src/features/home').then(m => m.HomeCounterSection),
-	{ ssr: true },
+const CounterSection = dynamic(() =>
+  import('src/features/home/components/CounterSection').then(m => m.CounterSection),
 );
-const HomeProjectsSection = dynamic(
-	() => import('src/features/projects').then(m => m.HomeProjectsSection),
-	{ ssr: true },
+const ProjectsSection = dynamic(() =>
+  import('src/features/projects/components/ProjectsSection').then(m => m.ProjectsSection),
 );
-const HomeGetInTouchSection = dynamic(
-	() => import('src/features/contact').then(m => m.HomeGetInTouchSection),
-	{ ssr: true },
+const GetInTouchSection = dynamic(() =>
+  import('src/features/contact/components/GetInTouchSection').then(m => m.GetInTouchSection),
 );
-const HomeContactUsSection = dynamic(
-	() => import('src/features/contact').then(m => m.HomeContactUsSection),
-	{ ssr: true },
+const ContactSection = dynamic(() =>
+  import('src/features/contact/components/ContactSection').then(m => m.ContactSection),
 );
 
-export default function Home() {
-	return (
-		<main id='home-page'>
-			<HomeHeroSection />
-			<HomeAboutMeSection />
-			<HomeBreakSection />
-			<HomeSkillsSection />
-			<HomeExperienceSection />
-			<HomeCounterSection />
-			<HomeProjectsSection />
-			<HomeGetInTouchSection />
-			<HomeContactUsSection />
-		</main>
-	);
+export default function HomePage() {
+  return (
+    <main id={SECTION_IDS.homePage}>
+      <HeroSection />
+      <AboutMeSection />
+      <BreakSection />
+      <SkillsSection />
+      <ExperienceSection />
+      <CounterSection />
+      <ProjectsSection />
+      <GetInTouchSection />
+      <ContactSection />
+    </main>
+  );
 }
